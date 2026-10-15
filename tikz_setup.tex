@@ -1,0 +1,421 @@
+\usepackage[americanvoltages]{circuitikz}
+\usepackage{pgfplots}
+\usepackage{pgf-pie}
+
+\usetikzlibrary{
+    intersections, 
+    fillbetween,
+    patterns,
+    decorations.pathreplacing,
+    decorations.pathmorphing,
+    decorations.text,
+    decorations.markings,
+    arrows.meta,
+    arrows,
+    shapes,
+    shapes.geometric,
+    shadows,
+    calligraphy,
+    backgrounds,
+    intersections,
+    calc,
+    math,
+    positioning,
+    }
+
+\pgfplotsset{compat=1.18}
+
+\pgfdeclarelayer{ft}
+\pgfdeclarelayer{bg}
+\pgfsetlayers{bg, main, ft}
+
+% Usage: \hexpic[]{height}{Alt text}{image path}
+\newcommand{\hexpic}[4][]{%
+  \begin{tikzpicture}[baseline=(hex.base)]
+    \node (hex) [
+      draw=white, 
+      minimum size=#2, 
+      regular polygon, 
+      regular polygon sides=6, 
+      rotate=90,
+    ] {};
+    \begin{scope}
+      \clip (hex.corner 1) -- (hex.corner 2) -- (hex.corner 3) -- 
+            (hex.corner 4) -- (hex.corner 5) -- (hex.corner 6) -- cycle;
+      \node at (hex.center) [#1] {
+        \includegraphics[height=#2, alt={#3}]{#4}
+      };
+    \end{scope}
+  \end{tikzpicture}
+}
+
+\tikzset{middlearrow/.style={
+        decoration={markings, 
+        mark= at position 0.5 with {\arrow{#1}},
+        },
+        postaction={decorate}
+    }
+}
+
+% Usage: \tikztodo[width]{height}{description/notes}
+\newcommand{\tikztodo}[3][0.8\textwidth]{%
+  \begin{center}
+    \fbox{%
+      \parbox[c][#2][c]{#1}{%
+        \centering
+        \textbf{\textcolor{red}{TODO: TikZ Diagram}}\\[0.5em]
+        \small #3%
+      }%
+    }%
+  \end{center}%
+}
+
+% Macro: \drawrails{<number_of_1cm_segments>}
+\newcommand{\drawrails}[1]{
+  % Calculate total depth: 1 cm per segment
+  \pgfmathsetmacro{\railheight}{-1 * #1}
+  
+  % L1 Rail (x = 0)
+  \draw[thick] (0, 0) -- (0, \railheight cm);
+    
+  % L2 Rail (x = 15)
+  \draw[thick] (15, 0) -- (15, \railheight cm);
+}
+
+\newcommand{\ccwplus}{%
+  \begin{tikzpicture}[baseline=(char.base)]
+    \node(char) at (0,0) {\(\scriptscriptstyle +\)};
+    \draw[->, >=stealth, semithick] (0.2,0) arc (0:230:0.18cm);
+  \end{tikzpicture}%
+}
+
+%====================================================================================
+% Timer Ladder Symbol - Could be used for TON, TOF, RTO....
+%====================================================================================
+\tikzset{
+    TON/.pic={
+
+        \draw[
+          BakerBlack
+        ]
+        (0,0)
+        -- ++(0,0.375)
+        -- ++(3.5,0)
+        coordinate[pos=0.5](-TOP)
+        -- ++(0,-1.75)
+        coordinate[pos=3/14](-OUT)
+        coordinate[pos=0.5](-EN1)
+        coordinate[pos=0.875](-DN1)
+        -- ++(-3.5,0)        
+        -- (0,0)
+        coordinate(-IN);
+
+        \node[
+          text=BakerBlack,
+          font=\bfseries,
+          anchor=east
+        ](pre)
+        at ($(-TOP)-(0,1.75em)$)
+        {{\small PRE:}};
+
+        \node[
+          text=BakerBlack,
+          font=\bfseries,
+          anchor=east
+        ](acc)
+        at ($(pre.east)-(0,1em)$)
+        {{\small ACC:}};
+
+        \coordinate (-PRE) at (pre.east); % For the preset value
+        \coordinate (-ACC) at (acc.east);
+
+        \draw[
+            BakerBlack
+        ]
+        (-EN1)
+        -- ++(0.5,0)
+        coordinate(-EN2)
+        node[
+            text=BakerBlack,
+            anchor=west
+        ]
+        {{\small EN}};
+
+        \draw[
+            BakerBlack
+        ]
+        (-DN1)
+        -- ++(0.5,0)
+        coordinate(-DN2)
+        node[
+            text=BakerBlack,
+            anchor=west
+        ]
+        {{\small DN}};
+
+    }
+}
+
+%====================================================================================
+% Oval ladder symbol, good for ONS, RES, etc.
+%====================================================================================
+\tikzset{
+    ONS/.pic={
+
+        \draw[
+          BakerBlack
+        ]
+        (0,0)
+        coordinate(-IN)
+        -- ++(0.75,0)
+        node[
+          draw=BakerBlack, 
+          text=BakerBlack, 
+          font=\small, 
+          minimum width=1.5cm, 
+          minimum height=0.75cm, 
+          anchor=west, 
+          rounded corners=0.25cm
+          ](ons){};
+        
+        \draw[BakerBlack] (ons.east) -- ++(0.75,0) coordinate(-OUT);
+
+        \coordinate(-INS) at (ons.center);
+        \coordinate(-VAR) at (ons.north); 
+    }
+}
+
+%====================================================================================
+% Source A, Source B, Dest box
+%====================================================================================
+\tikzset{
+    SrcDest/.pic={
+      
+        \draw[
+          BakerBlack
+        ]
+        (0,0)
+        coordinate(-IN)
+        -- ++(0,0.375)
+        -- ++(5,0)
+        coordinate[pos=0.5](-TOP)
+        -- ++(0,-3.25)
+        coordinate[pos=3/26](-OUT)
+        -- ++(-5,0)
+        -- (0,0)
+        coordinate(l1);
+
+        \node[
+          text=BakerBlack,
+          font=\bfseries,
+          anchor=west
+        ](srcA)
+        at (l1)
+        {{\small Src A:}};
+
+        \node[
+          text=BakerBlack,
+          font=\bfseries,
+          anchor=west
+        ](srcB)
+        at ($(l1)-(0,2em)$)
+        {{\small Src B:}};
+
+        \node[
+          text=BakerBlack,
+          font=\bfseries,
+          anchor=west
+        ](dest)
+        at ($(srcB.west)-(0,2em)$)
+        {{\small Dest:}};
+
+        \coordinate(-SRCA) at (srcA.east);
+        \coordinate(-AVAL) at ($(srcA.east)-(0,1em)$);
+        \coordinate(-SRCB) at (srcB.east);
+        \coordinate(-BVAL) at ($(srcB.east)-(0,1em)$);
+        \coordinate(-DEST) at ($(-BVAL)-(0,1em)$);
+        \coordinate(-DVAL) at ($(-DEST)-(0,1em)$);
+    }
+}
+
+%====================================================================================
+% Source A, Source B box
+%====================================================================================
+\tikzset{
+    SrcAB/.pic={
+      
+        \draw[
+          BakerBlack
+        ]
+        (0,0)
+        coordinate(-IN)
+        -- ++(0,0.375)
+        -- ++(4,0)
+        coordinate[pos=0.5](-TOP)
+        -- ++(0,-2.25)
+        coordinate[pos=1/6](-OUT)
+        -- ++(-4,0)
+        -- (0,0)
+        coordinate(l1);
+
+        \node[
+          text=BakerBlack,
+          font=\bfseries,
+          anchor=west
+        ](srcA)
+        at (l1)
+        {{\small Src A:}};
+
+        \node[
+          text=BakerBlack,
+          font=\bfseries,
+          anchor=west
+        ](srcB)
+        at ($(l1)-(0,2em)$)
+        {{\small Src B:}};
+
+        \coordinate(-SRCA) at (srcA.east);
+        \coordinate(-AVAL) at ($(srcA.east)-(0,1em)$);
+        \coordinate(-SRCB) at (srcB.east);
+        \coordinate(-BVAL) at ($(srcB.east)-(0,1em)$);
+    }
+}
+
+%====================================================================================
+% LIMIT instruction
+%====================================================================================
+\tikzset{
+    Limit/.pic={
+      
+        \draw[
+          BakerBlack
+        ]
+        (0,0)
+        coordinate(-IN)
+        -- ++(0,0.375)
+        -- ++(4,0)
+        coordinate[pos=0.5](-TOP)
+        -- ++(0,-3.25)
+        coordinate[pos=3/26](-OUT)
+        -- ++(-4,0)
+        -- (0,0)
+        coordinate(l1);
+
+        \node[
+          text=BakerBlack,
+          font=\bfseries,
+          anchor=west
+        ](srcA)
+        at (l1)
+        {{\small Low:}};
+
+        \node[
+          text=BakerBlack,
+          font=\bfseries,
+          anchor=west
+        ](srcB)
+        at ($(l1)-(0,2em)$)
+        {{\small Test:}};
+
+        \node[
+          text=BakerBlack,
+          font=\bfseries,
+          anchor=west
+        ](dest)
+        at ($(srcB.west)-(0,2em)$)
+        {{\small High:}};
+
+        \coordinate(-LO) at (srcA.east);
+        \coordinate(-LOV) at ($(srcA.east)-(0,1em)$);
+        \coordinate(-TEST) at (srcB.east);
+        \coordinate(-TESTV) at ($(srcB.east)-(0,1em)$);
+        \coordinate(-HI) at ($(-TESTV)-(0,1em)$);
+        \coordinate(-HIV) at ($(-HI)-(0,1em)$);
+    }
+}
+
+%====================================================================================
+% Source Destination box
+%====================================================================================
+\tikzset{
+    SrcSingle/.pic={
+      
+        \draw[
+          BakerBlack
+        ]
+        (0,0)
+        coordinate(-IN)
+        -- ++(0,0.375)
+        -- ++(6,0)
+        coordinate[pos=0.5](-TOP)
+        -- ++(0,-2.25)
+        coordinate[pos=1/6](-OUT)
+        -- ++(-6,0)
+        -- (0,0)
+        coordinate(l1);
+
+        \node[
+          text=BakerBlack,
+          font=\bfseries,
+          anchor=west
+        ](srcA)
+        at (l1)
+        {{\small Source:}};
+
+        \node[
+          text=BakerBlack,
+          font=\bfseries,
+          anchor=east
+        ](srcB)
+        at ($(srcA.east)-(0,2em)$)
+        {{\small Dest:}};
+
+        \coordinate(-SRC) at (srcA.east);
+        \coordinate(-SRCV) at ($(srcA.east)-(0,1em)$);
+        \coordinate(-DEST) at (srcB.east);
+        \coordinate(-DESTV) at ($(srcB.east)-(0,1em)$);
+    }
+}
+
+%====================================================================================
+% Compute Box
+%====================================================================================
+\tikzset{
+    CPT/.pic={
+      
+        \draw[
+          BakerBlack
+        ]
+        (0,0)
+        coordinate(-IN)
+        -- ++(0,0.375)
+        -- ++(8.5,0)
+        coordinate[pos=0.5](-TOP)
+        -- ++(0,-1.75)
+        coordinate[pos=3/14](-OUT)
+        -- ++(-8.5,0)
+        -- (0,0)
+        coordinate(l1);
+
+        \node[
+          text=BakerBlack,
+          font=\bfseries,
+          anchor=west
+        ](srcA)
+        at (l1)
+        {{\small Source:}};
+
+        \node[
+          text=BakerBlack,
+          font=\bfseries,
+          anchor=east
+        ](srcB)
+        at ($(srcA.east)-(0,2em)$)
+        {{\small Exp:}};
+
+        \coordinate(-DEST) at (srcA.east);
+        \coordinate(-DESTV) at ($(srcA.east)-(0,1em)$);
+        \coordinate(-EXP) at (srcB.east);
+        \coordinate(-EXPV) at ($(srcB.east)-(0,1em)$);
+    }
+}
