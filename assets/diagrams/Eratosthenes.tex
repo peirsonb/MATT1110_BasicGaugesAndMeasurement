@@ -1,0 +1,165 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={A diagram illustrating Eratosthenes experimental setup to calculate the circumference of the Earth. A blue circle represents the Earth with a labeled point at the center. Two vertical rods are positioned on the Earth surface, one labeled Rod at Alexandria located at the top and one labeled Rod at Syene located to the upper right. Parallel yellow sunlight rays originate from a yellow circle labeled Sun located at the top right. At Syene, sunlight strikes directly along the vertical line of the rod resulting in no shadow. At Alexandria, the incoming sunlight strikes at an angle relative to the rod, creating a green shadow cast along the curved surface of the Earth. Dashed lines connect the rods to the center of the Earth, forming an central angle theta that matches the angle theta formed between the top of the rod at Alexandria and the incoming sunlight ray.}
+    ]
+
+    \node[
+        draw=LakeBlue,
+        text=LakeBlue,
+        thick,
+        circle,
+        minimum size=10cm,
+        inner sep=0
+    ]
+    (earth)
+    at (0,0)
+    {};
+
+    \node[
+        draw=LakeBlue,
+        fill=LakeBlue,
+        circle,
+        minimum size=0.5cm,
+        label=below:{\textcolor{LakeBlue}{Center of Earth}}
+    ]
+    at (earth.center)
+    {};
+
+    \draw[
+        BakerBlack,
+        dashed
+    ]
+    (earth.center)
+    -- (earth.north);
+
+    \draw[
+        BakerBlack,
+        dashed
+    ]
+    (earth.center)
+    -- (earth.north east);
+
+    \draw[
+        BakerADARed,
+        thin
+    ]
+    (earth.center)
+    ++(0,2)
+    arc[start angle=90, end angle=45, radius=2]
+    node[text=BakerBlack, midway, below]{$\theta$};
+
+    \draw[
+        BakerBlack,
+        line width=3pt
+    ]
+    (earth.north)
+    -- ++(0,2cm)
+    coordinate(alex_top);
+
+    \draw[
+        BakerBlack,
+        line width=3pt
+    ]
+    (earth.north east)
+    -- +(45:2)
+    coordinate(syene_top);
+
+    \draw (earth.north east) +(45:8)
+        node[
+            draw=HoneyYellow,
+            fill=HoneyYellow,
+            circle,
+            minimum size=2cm,
+            inner sep=0
+        ](sun)
+        {Sun};
+
+    \draw[
+        HoneyYellow,
+        ultra thick,
+        ->,
+        shorten <= 2cm,
+        shorten >= 1cm
+    ]
+    (sun.center)
+    -- (alex_top);
+
+    \draw[
+        HoneyYellow,
+        ultra thick,
+        ->,
+        shorten <= 2cm,
+        shorten >= 1cm
+    ]
+    (sun.center)
+    -- (syene_top);
+
+    \draw[
+        UpNorthGreen,
+        line width=4pt
+    ]
+    (earth.north)
+    arc[start angle=90, end angle=135, radius=5cm]
+    coordinate(shadow);
+
+    \node[
+        text=BakerBlack,
+        anchor=south east,
+        align=right
+    ]
+    at (shadow)
+    {Shadow};
+
+    \draw[
+        BakerBlack,
+        dashed,
+        shorten >=-3cm
+    ]
+    (shadow)
+    -- (alex_top);
+
+    \draw[
+        BakerADARed,
+        thin
+    ]
+    (alex_top)
+    ++(0,-1)
+    arc[start angle=270, end angle=225, radius=1]
+    node[text=BakerBlack, midway, below]{$\theta$};
+
+    \draw[
+        BakerADARed,
+        <-
+    ]
+    (alex_top)
+    to[out=135, in=0] ++(-2,1)
+    node[
+        text=BakerBlack,
+        anchor=east,
+        align=right
+    ]
+    {Rod at Alexandria};
+
+    \draw[
+        BakerADARed,
+        <-
+    ]
+    (syene_top)
+    to[out=315, in=180] ++(2,-1)
+    node[
+        text=BakerBlack,
+        anchor=west,
+        align=left
+    ]
+    {Rod at Syene};
+
+    \node[
+        text=BakerBlack,
+        anchor=west,
+        align=left
+    ]
+    at (earth.north east)
+    {No shadow};
+
+\end{circuitikz}

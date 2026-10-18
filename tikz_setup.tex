@@ -21,6 +21,9 @@
     calc,
     math,
     positioning,
+    svg.path,
+    shadows,
+    shadows.blur
     }
 
 \pgfplotsset{compat=1.18}
@@ -29,24 +32,56 @@
 \pgfdeclarelayer{bg}
 \pgfsetlayers{bg, main, ft}
 
-% Usage: \hexpic[]{height}{Alt text}{image path}
-\newcommand{\hexpic}[4][]{%
-  \begin{tikzpicture}[baseline=(hex.base)]
-    \node (hex) [
-      draw=white, 
-      minimum size=#2, 
-      regular polygon, 
-      regular polygon sides=6, 
-      rotate=90,
-    ] {};
-    \begin{scope}
-      \clip (hex.corner 1) -- (hex.corner 2) -- (hex.corner 3) -- 
-            (hex.corner 4) -- (hex.corner 5) -- (hex.corner 6) -- cycle;
-      \node at (hex.center) [#1] {
-        \includegraphics[height=#2, alt={#3}]{#4}
-      };
-    \end{scope}
-  \end{tikzpicture}
+% Usage: \hexpic[]{height}{Alt text}{Attribution}{image path}
+\newcommand{\hexpic}[5][]{%
+  \begin{figure}
+    \centering
+    \begin{tikzpicture}[
+      baseline=(hex.base),      
+      every shadow/.style={
+        shadow opacity=70
+        }
+      ]
+      \node (hex) [
+        draw=white, 
+        minimum size=#2, 
+        regular polygon, 
+        regular polygon sides=6, 
+        rotate=90,
+        blur shadow
+      ] {};
+      \begin{scope}
+        \clip (hex.corner 1) -- (hex.corner 2) -- (hex.corner 3) -- 
+              (hex.corner 4) -- (hex.corner 5) -- (hex.corner 6) -- cycle;
+        \node at (hex.center) [#1] {
+          \includegraphics[height=#2, alt={#3}]{#5}
+        };
+      \end{scope}
+    \end{tikzpicture}
+
+    \vspace{0.5em}
+    {\tiny #4\par}
+  \end{figure}  
+}
+
+% Usage: \shadowpic[]{width}{Alt text}{Attribution}{image path}
+\newcommand{\shadowpic}[5][]{%
+  \begin{figure}
+    \centering
+    \begin{tikzpicture}
+      [every shadow/.style={
+        shadow opacity=70
+        }
+      ]
+      \node (image) [
+        inner sep=0,
+        blur shadow
+      ] {\includegraphics[width=#2, alt={#3}]{#5}};
+    \end{tikzpicture}
+
+    \vspace{0.5em}
+    {\tiny #4\par}
+  \end{figure}
 }
 
 \tikzset{middlearrow/.style={
