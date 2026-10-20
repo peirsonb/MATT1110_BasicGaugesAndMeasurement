@@ -1,0 +1,14 @@
+\begin{tikzpicture}[
+    >=latex, 
+    alt={A number line diagram showing intervals from 0 to 1, with vertical tick marks indicating 0, 1/4, 1/2, 3/4, and 1. The tick marks for 0 and 1 are taller than the fractional divisions in between.}
+    ]
+    \draw[BakerBlack] (0,0) -- (0,1) node[text=BakerBlack, anchor=south, align=center]{0};
+    \draw[BakerBlack] (8,0) -- (8,1) node[text=BakerBlack, anchor=south, align=center]{1};
+
+    \foreach \x in {2,4,6}
+        \draw[BakerBlack] (\x,0) -- (\x,0.75);
+
+    \node[BakerBlack, anchor=south, align=center] at (2,0.75){\small $\frac{1}{4}$};
+    \node[BakerBlack, anchor=south, align=center] at (4,0.75){\small $\frac{1}{2}$};
+    \node[BakerBlack, anchor=south, align=center] at (6,0.75){\small $\frac{3}{4}$};                
+\end{tikzpicture}

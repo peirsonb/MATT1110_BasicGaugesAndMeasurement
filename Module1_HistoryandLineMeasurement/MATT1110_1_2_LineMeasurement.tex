@@ -1,0 +1,530 @@
+% ============================================================================
+% Accessibility
+% ============================================================================
+\DocumentMetadata{
+  lang = en-US, 
+  pdfstandard = ua-2, 
+  tagging = on, 
+  tagging-setup = {math/setup=mathml-SE}
+}
+
+% ============================================================================
+% Document Properties - used on title slide and PDF metadata fields
+% ============================================================================
+\def\PresTitle{Line Measurement}  % Required - top line of title slide
+\def\PresSubtitle{Baker College Engineering}         % Optional - second line
+\def\PresAuthor{Brad Peirson}               % Required - below dividing line
+\def\PresInstitute{College of Information Technology and Engineering}       % Optional
+\def\PresDate{}                             % Optional
+\def\PresKeywords{}                         % Optional - used for hyperref
+
+% Presentation Formatting
+% ============================================================================
+\input{../ltxtalk_preamble.tex}
+
+% ============================================================================
+% Document Content
+% ============================================================================
+\begin{document}
+
+\maketitle              % Redefined in the preamble to generate a full frame
+
+\begin{frame}
+    \frametitle{Agenda}
+    \begingroup
+        % Tighten the spacing between paragraphs/TOC lines
+        \setlength{\parskip}{0.3em} 
+        
+        % Optionally tighten the line spacing within an entry
+        %\baselineskip=1.2em 
+        
+        \setcounter{tocdepth}{1} % Show only sections
+    \tableofcontents
+    \setcounter{tocdepth}{2} % Reset back to default so subsections are tracked
+    \endgroup
+\end{frame}
+
+\section{Instrument Selection}
+
+\begin{frame}
+	\frametitle{General Groups}
+
+    \begin{columns}[t]
+        \begin{column}{0.48\linewidth}
+            Non-precision line-graduated measuring instruments
+
+            \shadowpic[]{\linewidth}{A close up view of a metal steel ruler showing inch markings numbered 1 through 5, with fine graduation lines labeled for fractional and decimal measurements such as 20, 50, 10, 32, 64, and 16.}{\textbf{Attribution:} KTo288, \href{https://creativecommons.org/licenses/by-sa/3.0}{CC BY-SA 3.0}, via \href{https://commons.wikimedia.org/wiki/File:SteelRule1.jpg}{Wikimedia Commons}}{SteelRule1}
+        \end{column}
+        \pause
+        \begin{column}{0.48\linewidth}
+            Precision Measuring Instruments
+
+            \shadowpic[]{0.5\linewidth}{Three metallic micrometer tools shown against a white background, including an outside micrometer at the top with printed decimal equivalent charts on its C-shaped frame, an inside or depth micrometer spindle in the middle, and a depth micrometer with a flat base plate at the bottom.}{\textbf{Attribution:} Splarka at English Wikipedia, Public domain, via \href{https://commons.wikimedia.org/wiki/File:Micrometers.jpg}{Wikimedia Commons}}{Micrometers}
+        \end{column}        
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Non-Precision vs Precision}
+
+    \begin{columns}[t]
+        \begin{column}{0.48\linewidth}
+            \begin{block}{Non-precision line-graduated}
+                \begin{itemize}[<+- | alert@+>]
+                    \item{Accuracy is highly dependent on the user}
+                    \item{Capable in applications not requiring precision in thousandths}
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{block}{Precision}
+                \begin{itemize}[<+- | alert@+>]
+                    \item{Accuracy is dependent on the sensitivity/accuracy of the instrument}
+                    \item{Capable down to tenths of thousandths (or smaller)}
+                \end{itemize}
+            \end{block}
+        \end{column}        
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Types of Rules}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{enumerate}[<+- | alert@+>]
+                \item{Rules}
+                \item{Calipers ($\rightarrow$)}
+                \item{Surface gages}
+                \item{Depth gages}
+            \end{enumerate}   
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{An outside spring caliper with curved dark metal legs, a top flexible ring spring, and a threaded adjustment screw resting on a light wood surface.}{\textbf{Attribution:} David E Mead, CC0, via \href{https://commons.wikimedia.org/wiki/File:Outside_spring_caliper_2.jpg}{Wikimedia Commons}}{Outside_spring_caliper_2}
+
+            \centering
+            \vspace{0.25em}
+            {\footnotesize These are \emph{calipers}--they are set to the size of the object being measured, locked in place with the screw, then measured with a \emph{rule}\par}
+        \end{column}        
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Benefits of Non-precision}
+
+    \begin{itemize}[<+- | alert@+>]
+        \item{Temperature doesn't matter as much--graduations are usually bigger than any growth/shrinkage}
+        \item{Measurment pressure doesn't matter--did you screw down the micrometer too hard?}
+    \end{itemize}        
+\end{frame}
+
+\begin{frame}
+	\frametitle{Selecting the Proper Instrument}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{enumerate}[<+- | alert@+>]
+                \item<1->[1.] Physical characteristics of the part
+                \item<2->[2.] Dimensions to be measured
+                \item<3->[3.] Accuracy required
+            \end{enumerate}   
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{enumerate}[<+- | alert@+>]
+                \item<4->[4.] Convenience
+                \item<5->[5.] Adaptability
+                \item<6->[6.] Speed
+                \item<7->[7.] Reliability
+            \end{enumerate}             
+        \end{column}
+    \end{columns}
+         
+\end{frame}
+
+\begin{frame}
+	\frametitle{Accuracy of Measurement (1 of 2)}
+    \centering
+    What is the smallest unit you can measure?
+\end{frame}
+
+\begin{frame}
+	\frametitle{Accuracy of Measurement (2 of 2)}
+    \centering
+    No instrument is capable of controlling the accuracy of measurement finer than the finest graduation on its scale
+\end{frame}
+
+\begin{frame}
+	\frametitle{Control vs Estimation}
+    \begin{itemize}[<+- | alert@+>]
+        \item{You can only \emph{control} a measurement as small as the finest graduation}
+        \item{You can \emph{estimate} a measurement half the size of the finest graduation}
+    \end{itemize}  
+\end{frame}
+
+\begin{frame}
+	\frametitle{Accuracy Example (1 of 4)}
+    \begin{figure}
+        \centering
+        \resizebox{\columnwidth}{!}{
+            \input{../assets/diagrams/LinearScale_0to1_Quarters.tex}
+        }
+        
+        {\footnotesize Let's use this example for our measurement--a scale that reads from 0 to 1 with divisions at each quarter.\par}
+    \end{figure}        
+\end{frame}
+
+\begin{frame}
+	\frametitle{Accuracy Example (2 of 4)}
+    \begin{figure}
+        \centering
+        \resizebox{\columnwidth}{!}{
+            \input{../assets/diagrams/LinearScale_0to1_Quarters_BlueBar.tex}   
+        }
+        {\footnotesize What is the measurement of the blue bar?\par}
+    \end{figure}        
+\end{frame}
+
+\begin{frame}
+	\frametitle{Accuracy Example (3 of 4)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}
+                \item We can only \emph{control} the graduations
+                \item It is either 1/4 or 1/2
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{figure}
+                \centering
+                \resizebox{\columnwidth}{!}{
+                    \input{../assets/diagrams/LinearScale_0to1_Quarters_BlueBar.tex}   
+                }
+            \end{figure}  
+        \end{column}
+    \end{columns}          
+\end{frame}
+
+\begin{frame}
+	\frametitle{Accuracy Example (4 of 4)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}
+                \item We can \emph{estimate} 1/2 the graduations
+                \item We can estimate 3/8 or 1/2
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{figure}
+                \centering
+                \resizebox{\columnwidth}{!}{
+                    \input{../assets/diagrams/LinearScale_0to1_Quarters_BlueBar.tex}   
+                }
+            \end{figure}  
+        \end{column}
+    \end{columns}          
+\end{frame}
+
+\begin{frame}
+	\frametitle{Increasing Accuracy (1 of 3)}
+        \begin{figure}
+            \centering
+            \resizebox{\columnwidth}{!}{
+                \input{../assets/diagrams/LinearScale_0to1_Eighths_BlueBar.tex}
+            }
+        {\footnotesize Adding divisions allows us to \emph{control} smaller dimensions, increasing the measurement accuracy\par}
+        \end{figure}        
+\end{frame}
+
+\begin{frame}
+	\frametitle{Increasing Accuracy (2 of 3)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}
+                \item Now we can \emph{control} 3/8 or 1/2
+                \item Now we can \emph{estimate} 7/16 or 1/2
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{figure}
+                \centering
+                \resizebox{\columnwidth}{!}{
+                    \input{../assets/diagrams/LinearScale_0to1_Eighths_BlueBar.tex}
+                }
+            \end{figure}  
+        \end{column}
+    \end{columns}          
+\end{frame}
+
+\begin{frame}
+	\frametitle{Increasing Accuracy (3 of 3)}
+    \begin{figure}
+        \centering
+        \resizebox{\columnwidth}{!}{
+            \input{../assets/diagrams/LinearScale_0to1_Sixteenths_BlueBar.tex}
+        }
+        {\footnotesize We can continue adding graduations--with 1/16 graduations we can \emph{control} 7/16 or 1/2 and we can \emph{estimate} 15/32\par}
+    \end{figure}        
+\end{frame}
+
+\begin{frame}
+	\frametitle{Rules--Accuracy Limit}
+    \begin{figure}
+        \centering
+        \resizebox{\columnwidth}{!}{
+            \input{../assets/diagrams/LinearScale_0to1_Sixteenths_BlueBar.tex}
+        }
+        {\footnotesize The drawback is that eventually we'll end up with graduations too small to see--that's where we switch to precision instruments\par}
+    \end{figure}        
+\end{frame}
+
+\section{Line Measurement}
+
+\subsection{Rules}
+
+\begin{frame}
+	\frametitle{Rules}
+
+    \shadowpic[]{\linewidth}{A close up view of a wooden ruler featuring the text The Evening Star in a black ornate gothic font along the middle. The top edge shows standard inch measurements numbered 1 through 4 with fine division lines, labeled American-falcon Auburn, Maine. The bottom edge displays typographic point measurements with scales labeled for 6-point and 12-point layout grids.}{\textbf{Attribution:} Jarek Tuszyński, \href{https://creativecommons.org/licenses/by/4.0}{CC BY 4.0}, via Wikimedia Commons}{The_Evening_Star_ruler_-_3}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Traditional Rules}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item{Traditional rulers are made of wood}
+                \item{Prone to damage}
+                \item{Damaged edge = decreased accuracy}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A close up view of a wooden ruler featuring the text The Evening Star in a black ornate gothic font along the middle. The top edge shows standard inch measurements numbered 1 through 4 with fine division lines, labeled American-falcon Auburn, Maine. The bottom edge displays typographic point measurements with scales labeled for 6-point and 12-point layout grids.}{\textbf{Attribution:} Jarek Tuszyński, \href{https://creativecommons.org/licenses/by/4.0}{CC BY 4.0}, via Wikimedia Commons}{The_Evening_Star_ruler_-_3}
+        \end{column}        
+    \end{columns}
+\end{frame}
+
+\subsection{Steel Rules}
+
+\begin{frame}
+    \frametitle{Steel Rules (1 of 2)}
+
+    \shadowpic[]{\linewidth}{Three metal rulers arranged horizontally on a wooden surface, including a short 6-inch pocket ruler at the top, a 12-inch precision steel rule in the middle, and a long Westcott stainless steel ruler at the bottom.}{}{SteelRules}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Steel Rules (2 of 2)}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item{Markings etched into steel -- more accurate}
+                \item{Steel is less likely to become damaged}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{Three metal rulers arranged horizontally on a wooden surface, including a short 6-inch pocket ruler at the top, a 12-inch precision steel rule in the middle, and a long Westcott stainless steel ruler at the bottom.}{}{SteelRules}
+        \end{column}        
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Steel Rule Variety}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item{Available in many different sizes and graduations}
+                \item{Always pick the proper graduation for the job}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{Three metal rulers arranged horizontally on a wooden surface, including a short 6-inch pocket ruler at the top, a 12-inch precision steel rule in the middle, and a long Westcott stainless steel ruler at the bottom.}{}{SteelRules}
+        \end{column}        
+    \end{columns}
+\end{frame}
+
+\subsection{Tempered Steel Rules}
+
+\begin{frame}
+    \frametitle{Tempered Steel Rules (1 of 2)}
+
+    \shadowpic[]{\linewidth}{Two tempered steel precision rules laid horizontally on a dark wood background, with the top rule showing inch markings from 1 through 11 alongside 32nds and 64ths fractional scale labels, and the bottom rule featuring double-sided markings aligned in opposite directions.}{}{TemperedSteelRules}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Tempered Steel Rules (2 of 2)}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item{Available in many different sizes/graduations}
+                \item{Typically VERY stiff -- not meant to be bent}
+                \item{Some include a center channel for accessory clamps}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{Two tempered steel precision rules laid horizontally on a dark wood background, with the top rule showing inch markings from 1 through 11 alongside 32nds and 64ths fractional scale labels, and the bottom rule featuring double-sided markings aligned in opposite directions.}{}{TemperedSteelRules}
+        \end{column}        
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Tempered Steel Rule Accessories}
+
+    \shadowpic[]{0.75\linewidth}{A combination square set mounted along a tempered steel rule on a wooden surface, featuring three black metal attachments: a protractor head on the left, a square head with a spirit level in the center, and a center finder head on the right.}{}{TemperedSteelRules_Accessories}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Square Clamp}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item{Allows for precise measurement at a right angle}
+                \item{Usually has a fixed 45 degree angle}
+                \item{Usually has a spirit level}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A hand holding a combination square flat against the edge of a book titled METAL WORKING INDUSTRY, using the square head and steel rule to measure across a circular diagram printed on the cover.}{}{TemperedSteelRules_Square}
+        \end{column}        
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Height Gauge}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item{Moved to the end of the rule it can also be used as a height gauge}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A combination square tool standing vertically on a wooden surface beside the edge of a book cover, using the steel rule and square head attachment to measure vertical height.}{}{TemperedSteelRules_HeightGauge}
+        \end{column}        
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Protractor Clamp}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item{Used to measure angles}
+                \item{Usually includes a spirit level in line with the \emph{rule}, not the protractor flat}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A protractor head attached to a steel rule resting against the straight edge of a book, with the rule set at an angle across the book cover to demonstrate angular measurement.}{}{TemperedSteelRules_Protractor}
+        \end{column}        
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Center Clamp}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item{Used to locate the center of a circular part}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.5\linewidth}{A person holding a metal center finder tool aligned against the circular bottom of an aluminum can. The black Y-shaped center head cradles the curved edge of the can, with a steel rule extending across the center of the can's base.}{}{TemperedSteelRules_Center}
+        \end{column}        
+    \end{columns}
+\end{frame}
+
+\subsection{Machinist Scales}
+
+\begin{frame}
+    \frametitle{Machinist Scales (1 of 2)}
+    \shadowpic[]{0.75\linewidth}{Three machinist measuring tools laid flat on a dark wooden surface. At the top is a small, T-shaped metal clip, below which are two 6-inch stainless steel pocket rulers placed horizontally. The middle ruler features Balluff branding with inch and millimeter graduations, while the bottom ruler is a Pittsburgh brand steel rule marked with fine fractional inch increments.}{}{MachinistScales}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Machinist Scales (2 of 2)}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item{Typically 6" length}
+                \item{One end rounded}
+                \item{Typically more than one graduation scale}
+                    \begin{itemize}
+                        \item{32nds are most common}
+                        \item{Many have 64ths and/or metric}
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{Three machinist measuring tools laid flat on a dark wooden surface. At the top is a small, T-shaped metal clip, below which are two 6-inch stainless steel pocket rulers placed horizontally. The middle ruler features Balluff branding with inch and millimeter graduations, while the bottom ruler is a Pittsburgh brand steel rule marked with fine fractional inch increments.}{}{MachinistScales}
+        \end{column}        
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Reference Material}
+
+    \shadowpic[]{0.625\linewidth}{The reverse side of two stainless steel machinist rules displaying conversion tables, resting on a dark wooden surface. The top rule shows metric equivalents converting 64ths of an inch to millimeters. The bottom rule displays decimal equivalents for fractional inch measurements divided into 8ths, 16ths, 32nds, and 64ths.}{}{MachinistScales_Reference}
+
+    \centering
+    \vspace{0.25em}
+    {\footnotesize The scale is usually only on one side of the machinist scale. The other side typically has some sort of reference material--fraction to decimal is common, but it can also have unit conversion, etc.\par}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Height/Depth Gauge}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item{Includes pocket clip}
+                \item{One end is rounded -- keeps corners from stabbing you}
+                \item{BUT -- the clip also makes a quick height/depth gauge}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.75\linewidth}{A hand holding a steel rule vertically against the edge of an object using a pocket clip attachment. The clip acts as a flat shoulder against the upper surface while the rule extends downward to measure height or depth.}{}{MachinistScales_Height}
+        \end{column}        
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Steel Rule Video}
+    \centering
+    \href{https://www.yout-ube.com/watch?v=0KXPuBUdDtw}{The Steel Rule}
+\end{frame}
+
+\begin{frame}
+    \centering
+    {\Huge \textbf{\textcolor{BakerADARed}{Questions?}}}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Copyright Notice}
+
+    % \begin{figure}
+    %     \centering
+    %     \includegraphics[width=0.25\linewidth, alt={Creative Commons Attribution NonCommercial ShareAlike logo displaying four circular icons arranged horizontally over a black banner. From left to right, the icons feature the CC logo, a person pictogram for Attribution labeled BY below, a slashed dollar sign for NonCommercial labeled NC below, and a counterclockwise circular arrow for ShareAlike labeled SA below.}]{by-nc-sa.png}
+    % \end{figure}
+    
+    {\footnotesize
+    \PresTitle \textcopyright 2026 by Brad Peirson is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). To view a copy of the official license, visit \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{https://creativecommons.org/licenses/by-nc-sa/4.0/}.
+
+    \vspace{0.5em}
+
+    \textbf{Exceptions and Exclusions}
+
+    \begin{itemize}
+        \item[Baker College Branding \& Trademarks:]All Baker College logos, trademarks, wordmarks, seals, slide design templates, and proprietary branding elements contained in these materials are \textbf{EXCLUDED} from the CC BY-NC-SA 4.0 license. All rights are reserved by Baker College. Express written permission from Baker College is required for any use, copying, or redistribution of these elements.
+        \item[Third-Party Media \& Content:] Any third-party images, graphics, diagrams, or external media incorporated in these materials are included under their respective original licenses or permissions and are individually attributed at their point of use. 
+        \item[Original Author Content:] All unattributed figures, diagrams, text, code snippets, and media are original works created by the author and are licensed under the CC BY-NC-SA 4.0 license.
+    \end{itemize}
+    \par}
+\end{frame}
+
+\end{document}
+
+% \begin{frame}
+%     \frametitle{Test Todo}
+
+%     % Usage: \tikztodo[width]{height}{description/notes}
+%     \tikztodo[0.7\textwidth]{4cm}{Convert block diagram of feedback loop}
+% \end{frame}
