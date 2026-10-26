@@ -1,0 +1,761 @@
+% ============================================================================
+% Accessibility
+% ============================================================================
+\DocumentMetadata{
+  lang = en-US, 
+  pdfstandard = ua-2, 
+  tagging = on, 
+  tagging-setup = {math/setup=mathml-SE}
+}
+
+% ============================================================================
+% Document Properties - used on title slide and PDF metadata fields
+% ============================================================================
+\def\PresTitle{Screw Threads and Thread Gauges}  % Required - top line of title slide
+\def\PresSubtitle{Baker College Engineering}         % Optional - second line
+\def\PresAuthor{Brad Peirson}               % Required - below dividing line
+\def\PresInstitute{College of Information Technology and Engineering}       % Optional
+\def\PresDate{}                             % Optional
+\def\PresKeywords{}                         % Optional - used for hyperref
+
+% Presentation Formatting
+% ============================================================================
+\input{../ltxtalk_preamble.tex}
+
+% ============================================================================
+% Document Content
+% ============================================================================
+\begin{document}
+
+\maketitle              % Redefined in the preamble to generate a full frame
+
+\begin{frame}
+    \frametitle{Agenda}
+    \begingroup
+        % Tighten the spacing between paragraphs/TOC lines
+        \setlength{\parskip}{0.3em} 
+        
+        % Optionally tighten the line spacing within an entry
+        %\baselineskip=1.2em 
+        
+        \setcounter{tocdepth}{1} % Show only sections
+    \tableofcontents
+    \setcounter{tocdepth}{2} % Reset back to default so subsections are tracked
+    \endgroup
+\end{frame}
+
+\begin{frame}
+    \frametitle{Simple Machines}
+
+    \shadowpic[]{0.375\linewidth}{A line art illustration grid displaying the six simple machines in separate panels with text labels below each. The top row shows a person using a lever to pry a large rock, a water well with a crank representing a wheel and axle, and a pulley hoisting a heavy box. The bottom row shows a person rolling a barrel up an inclined plane, a wedge driven into a tree stump, and screw jacks lifting a heavy beam.}{\textbf{Attribution:} Foster, Ellsworth D., ed; Hughes, James L. (James Laughlin), Public domain, via \href{https://commons.wikimedia.org/wiki/File:Six_simple_machines.png}{Wikimedia Commons}}{Six_simple_machines}
+
+    \vspace{0.5em}
+    \centering
+    {\footnotesize The screw is one of six \emph{simple machines}--the basic machines on which all other machines are based.\par}
+\end{frame}
+
+\begin{frame}
+	\frametitle{The Archimedes Screw}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item One of the oldest and simplest machines 
+                \item Dates back to at least Archimedes ($\sim$220 B.C.) who used it to pump water
+                \item Some historians believe the Egyptians were using it earlier
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.625\linewidth}{An Archimedes screw water pump mechanism installed along stone steps at a outdoor park playground, leading down into a small pond of murky green water with wooden play structures including a pirate ship visible in the background.}{\textbf{Attribution:} Cavaliere grande, \href{https://creativecommons.org/licenses/by-sa/4.0}{CC BY-SA 4.0}, via \href{https://commons.wikimedia.org/wiki/File:Archimedes\%27_screw_Pleinfeld.jpg}{Wikimedia Commons}}{Archimedes'_screw_Pleinfeld}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Further Development}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Screw press used for squeezing grapes and olives
+                \item DaVinci used screws in many inventions--invented the buttress thread
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \hexpic[]{0.875\linewidth}{A close-up view of a traditional wooden basket wine press featuring vertical wooden staves bound by a dark metal band with locking pins. Atop the basket rests a stacked wooden pressing block assembly driven downward by a heavy central threaded metal screw with a horizontal turning lever.}{\textbf{Attribution:} Alexander Baxevanis, \href{https://creativecommons.org/licenses/by/2.0}{CC BY 2.0}, via \href{https://commons.wikimedia.org/wiki/File:Grape_Press_At_Blandy\%27s_Wine_Lodge,_Funchal,_Madeira.jpg}{Wikimedia Commons}, cropped from original}{Grape_Press_At_Blandy's_Wine_Lodge,_Funchal,_Madeira}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\section{Thread Types}
+
+\begin{frame}
+    \frametitle{The Wild West of Screw Threads}
+
+    \shadowpic[]{0.375\linewidth}{}{\textbf{Attribution:} The Portable Antiquities Scheme, \href{https://creativecommons.org/licenses/by/2.0}{CC BY 2.0}, via \href{https://commons.wikimedia.org/wiki/File:Post_Medieval_copper_alloy_rein_guide_or_check_rein_hook_(FindID_502856).jpg}{Wikimedia Commons}}{Post_Medieval_copper_alloy_rein_guide_or_check_rein_hook_(FindID_502856)}
+
+    \vspace{0.5em}
+    \centering
+    {\footnotesize For a \emph{very} long time craftsmen would use whatever thread shape suited them--as on these post medieval hooks.\par}
+\end{frame}
+
+\begin{frame}
+    \frametitle{The Whitworth Thread}
+
+    \shadowpic[]{0.875\linewidth}{}{\textbf{Attribution:} Cccefalon, \href{https://creativecommons.org/licenses/by-sa/3.0}{CC BY-SA 3.0}, via \href{https://commons.wikimedia.org/wiki/File:Thread_pitch_gauge_Whitworth_and_metric.jpg}{Wikimedia Commons}}{Thread_pitch_gauge_Whitworth_and_metric}
+
+    \vspace{0.5em}
+    \centering
+    {\footnotesize In 1841 Sir Joseph Whitworth created the first standard \emph{thread form}.\par}
+\end{frame}
+
+% \begin{frame}
+% 	\frametitle{Standardization of Screw Threads}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item Today -- The metric world is on ISO, the rest on Unified Standard
+%                     \begin{itemize}
+%                         \item Book still talks about Unified supplementing American Standard
+%                         \item American standard officially obsoleted in 1949...
+%                     \end{itemize}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{Different_Thread_Types_Update}
+% {\footnotesize M12, 40mm LH -- M12, 40 mm -- M12x1.5, 40mm -- M12x1.25, 40mm -- UNF 1/2-20x1.5 -- UNC 1/2-13x1.5 -- BSW 1/2-12x1.5 -- BSF 1/2-16x1.5 \par}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Types of Threads}
+%     \begin{figure}
+%         \centering
+%         \includegraphics[width=\columnwidth]{Screw_thread_forms}
+% {\footnotesize V-thread -- American National Thread -- Whitworth -- Square -- Acme -- Buttress -- Knuckle \par}
+%     \end{figure}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Types of Threads}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{block}{V-Threads}
+%                 \begin{itemize}[<+- | alert@+>]
+%                     \item Early attempt at a standardized form
+%                 \end{itemize}
+%             \end{block}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{Screw_thread_forms}
+% {\footnotesize V-thread -- American National Thread -- Whitworth -- Square -- Acme -- Buttress -- Knuckle \par}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Types of Threads}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{block}{American National}
+%                 \begin{itemize}[<+- | alert@+>]
+%                     \item Standard US thread before Unified
+%                     \item Same basic standard
+%                     \item General fastening
+%                 \end{itemize}
+%             \end{block}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{Screw_thread_forms}
+% {\footnotesize V-thread -- American National Thread -- Whitworth -- Square -- Acme -- Buttress -- Knuckle \par}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Types of Threads}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{block}{Whitworth}
+%                 \begin{itemize}[<+- | alert@+>]
+%                     \item Standard British thread before Unified
+%                     \item Different pitch angle
+%                     \item General fastening
+%                 \end{itemize}
+%             \end{block}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{Screw_thread_forms}
+% {\footnotesize V-thread -- American National Thread -- Whitworth -- Square -- Acme -- Buttress -- Knuckle \par}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Types of Threads}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{block}{Acme Threads}
+%                 \begin{itemize}[<+- | alert@+>]
+%                     \item Thicker threads than most other designs
+%                     \item Used strictly for linear motion
+%                 \end{itemize}
+%             \end{block}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{640px-Acme_thread}
+% {\footnotesize  \par}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Types of Threads}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{block}{British Standard Pipe Thread}
+%                 \begin{itemize}[<+- | alert@+>]
+%                     \item Sides are not parallel -- taper inward
+%                     \item Gap between male and female gets smaller when tightened
+%                     \item Designed to seal air/water
+%                 \end{itemize}
+%             \end{block}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{Brass_NPT_threaded_Pipe_Plug_in_a_Caliper}
+% {\footnotesize  \par}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \section{Thread Forms}
+
+% \begin{frame}
+% 	\frametitle{Thread Forms}
+%     \begin{figure}
+%         \centering
+%         \includegraphics[width=0.75\linewidth]{ISO_and_UTS_Thread_Dimensions}
+%         [0.5em]
+%         {\footnotesize ISO (metric) Thread Dimensions\par}
+%     \end{figure}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Thread Forms}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item A \textbf{thread form is a technical drawing defining the shape of the threads}
+%                 \item Thread forms in modern standards are generic -- dimensions are formulas
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\linewidth]{ISO_and_UTS_Thread_Dimensions}
+%                 \vspace[0.5em]
+%                 {\footnotesize\par}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Thread Forms}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item Basic dimensions based on \textbf{standard sizes}
+%                 \item Other dimensions use the standard sizes in their forumlas
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=0.95\linewidth]{ISO_and_UTS_Thread_Dimensions}
+% {\footnotesize #1 \par}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Thread Definitions}
+%     \begin{figure}
+%         \centering
+%         \includegraphics[width=\columnwidth]{640px-Screw_Threads_2}
+% {\footnotesize #1 \par}
+%     \end{figure}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Thread Definitions}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{block}{Screw Thread}
+%                 A ridge of uniform section in the form of a helix on the external or internal surface of a cylinder, or in the form of a conical spiral on the external or internal surface of a cone.
+%             \end{block}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{640px-Screw_Threads_2}
+% {\footnotesize #1 \par}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Thread Definitions}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{block}{Internal Thread}
+%                 Thread on the inside of a member (nut)
+%             \end{block}
+%             \begin{block}{External Thread}
+%                 Thread on the outside of a member (screw)
+%             \end{block}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{640px-Screw_Threads_2}
+% {\footnotesize #1 \par}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Male and Female}
+%     \begin{itemize}[<+- | alert@+>]
+%         \item We really shouldn't use male and female to describe internal and external threads
+%         \item And not just out of fear of getting cancelled...
+%         \item Depending on the standard, the ``male" may have internal threads
+%     \end{itemize}
+%     \begin{figure}
+%         \centering
+%         \includegraphics[width=\columnwidth]{Syringe_and_hypodermic}
+% {\footnotesize #1 \par}
+%     \end{figure}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Thread Definitions}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{block}{Major Diameter}
+%                 The largest diameter of the thread (screw OR nut)
+%             \end{block}
+%             \begin{block}{Minor Diameter}
+%                 The smallest diameter of the thread (screw OR nut)
+%             \end{block}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{640px-Screw_Threads_2}
+% {\footnotesize #1 \par}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Thread Definitions}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{block}{Pitch Diameter}
+%                 On a straight screw thread, the diameter of an imaginary cylinder, the width of which would pass through the threads at such points as to make equal the width of the threads and the width of the spaces cut by the surface of the cylinder
+%             \end{block}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{640px-Screw_Threads_2}
+% {\footnotesize #1 \par}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Thread Definitions}
+%     \begin{figure}
+%         \centering
+%         \includegraphics[width=\columnwidth]{640px-Screw_Threads_2}
+% {\footnotesize #1 \par}
+%     \end{figure}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Thread Definitions}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{block}{Pitch}
+%                 The distance from a point on the screw thread to a corresponding point on the next screw thread
+%                 \[Pitch=\dfrac{1 unit}{Threads/unit}\]
+%             \end{block}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{640px-Screw_Threads_2}
+% {\footnotesize #1 \par}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Thread Definitions}
+%     \begin{figure}
+%         \centering
+%         \includegraphics[width=\columnwidth]{Screw_thread_forms}
+% {\footnotesize V-thread -- American National Thread -- Whitworth -- Square -- Acme -- Buttress -- Knuckle \par}
+%     \end{figure}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Thread Definitions}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{block}{Lead}
+%                 \begin{itemize}[<+- | alert@+>]
+%                     \item The distance a screw thread advances axially in one turn
+%                     \begin{itemize}
+%                         \item Single thread:\\ Lead = Pitch
+%                         \item Double thread:\\ Lead = 2 $\times$ Pitch
+%                         \item Triple thread:\\ Lead = 3 $\times$ Pitch
+%                     \end{itemize}
+%                 \end{itemize}                
+%             \end{block}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{640px-Helical_screw_2_double_start}
+% {\footnotesize  \par}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% %\begin{frame}
+% 	\frametitle{Screw Lead}
+% %    \begin{figure}
+% %        \centering
+% %        \animategraphics[autoplay,loop,width=0.75\columnwidth]{5}{ScrewGif/ScrewGif-}{0}{8}
+% %    \end{figure}
+% %\end{frame}
+
+% \begin{frame}
+% 	\frametitle{Thread Definitions}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{block}{Angle of Thread}
+%                 The angle included between the sides of the thread measured in an axial plane               
+%             \end{block}
+%             \begin{block}{Half Angle of Thread}
+%                 The angle included between a side of the thread and the normal to the axis, measured in an axial plane               
+%             \end{block}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{ISO_and_UTS_Thread_Dimensions}
+% {\footnotesize #1 \par}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Thread Definitions}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{block}{Angle of Thread}
+%                 The angle included between the sides of the thread measured in an axial plane               
+%             \end{block}
+%             \begin{block}{Half Angle of Thread}
+%                 The angle included between a side of the thread and the normal to the axis, measured in an axial plane               
+%             \end{block}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{ISO_and_UTS_Thread_Dimensions}
+% {\footnotesize #1 \par}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+
+% \begin{frame}
+% 	\frametitle{Unified Thread Form Tolerances}
+%     \begin{table}
+%         \centering
+%         \resizebox{\linewidth}{!}{
+%         \begin{tabular}{c|cccccccc|cccccc}
+%             \toprule
+%                 \multirow{3}{*}{Nominal Size}   &   \multicolumn{8}{|c|}{External}    &   \multicolumn{6}{|c}{Internal}\\
+%                 &   \multirow{2}{*}{Class}  & \multirow{2}{*}{Allowance}    &   \multicolumn{3}{c}{Major Diameter}  &   \multicolumn{2}{c}{Pitch Diameter}          &  \multirow{2}{*}{UNR Minor}  &   \multirow{2}{*}{Class}   &   \multicolumn{2}{c}{Minor Diameter}  &   \multicolumn{2}{c}{Pitch Diameter}  & Major Diameter\\
+%                 &                           &                               &   Max &   Min &   Min                 &   Max &   Min &     &      &   Min &   Max &   Min &   Max &   Min\\
+%                 \midrule
+%                 \multirow{3}{*}{1/2-13 UNC} &   1A  &   0.0015  &   0.4985  &   0.4822  &   --      &   0.4485  &   0.4411  &   0.4069  &   1B  &   0.417   &   0.434       &   0.4500  &   0.4597  &   0.5000\\
+%                                             &   2A  &   0.0015  &   0.4985  &   0.4876  &   0.4822  &   0.4485  &   0.4435  &   0.4069  &   2B  &   0.417   &   0.434       &   0.4500  &   0.4565  &   0.5000\\
+%                                             &   3A  &   0.0000  &   0.5000  &   0.4891  &   --      &   0.4500  &   0.4463  &   0.4084  &   3B  &   0.4170  &   0.4284      &   0.4500  &   0.4548  &   0.5000\\
+%                 \multirow{3}{*}{1/2-20 UNF} &   1A  &   0.0013  &   0.4987  &   0.4865  &   --      &   0.4662  &   0.4598  &   0.4392  &   1B  &   0.446   &   0.457       &   0.4675  &   0.4759  &   0.5000\\
+%                                             &   2A  &   0.0013  &   0.4987  &   0.4906  &   --      &   0.4662  &   0.4619  &   0.4392  &   2B  &   0.446   &   0.457       &   0.4675  &   0.4731  &   0.5000\\
+%                                             &   3A  &   0.0000  &   0.5000  &   0.4919  &   --      &   0.4675  &   0.4643  &   0.4405  &   3B  &   0.4460  &   0.4537      &   0.4675  &   0.4717  &   0.5625\\
+%             \bottomrule
+%         \end{tabular}
+%         }
+%     \end{table}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Machining Threads}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{block}{Lathe}
+%                 Single point threading tool advanced by the lead screw          
+%             \end{block}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{640px-thumbnail}
+% {\footnotesize  \par}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Machining Threads}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{block}{Screw Machine}
+%                 Stock is fed into a threading die or collapsible tap           
+%             \end{block}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{640px-Pipe_Threading_Machine_Die_Head&Dies&Reamer}
+% {\footnotesize  \par}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Machining Threads}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{block}{Rolling}
+%                 Blank stock is rolled (pressed) between dies\\
+%                 Screw manufacturers use this method -- speed and strength
+%             \end{block}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{images/Die_Head_for_Thread_Rolling.jpg}
+% {\footnotesize  \par}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Machining Threads}
+%     \begin{figure}
+%         \centering
+%         \includegraphics[width=\linewidth]{images/Thread_forming_and_rolling_concept.png}
+% {\footnotesize  \par}
+%     \end{figure}
+% \end{frame}
+
+% \section{Thread Gauges}
+
+% \begin{frame}
+% 	\frametitle{Go/No-Go Gauges}
+%     \begin{figure}
+%         \centering
+%         \includegraphics[width=\columnwidth]{640px-GaugePlugThreadGoNoGo}
+% {\footnotesize  \par}
+%     \end{figure}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Go/No-Go Gauges}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{block}{Go Gauge}
+%                 \begin{itemize}[<+- | alert@+>]
+%                     \item Checks minor, pitch, major diameters
+%                     \item OD ground to minimum minor diameter -- if gauge bottoms out thread is too shallow
+%                     \item Other dims being off will cause binding
+%                     \item \textbf{Should not bind at any point}
+%                 \end{itemize}
+%             \end{block}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{640px-GaugePlugThreadGoNoGo}
+% {\footnotesize  \par}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Go/No-Go Gauges}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{block}{No-Go Gauge}
+%                 \begin{itemize}[<+- | alert@+>]
+%                     \item OD ground to 2/3 major diameter -- checks only pitch diameter
+%                     \item Relieved in bottom of gauge to clear major diameter
+%                     \item Clears everywhere \textbf{but pitch diameter}
+%                     \item It \textbf{should bind which means pitch diameter is at least at minimum}
+%                 \end{itemize}
+%             \end{block}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{640px-GaugePlugThreadGoNoGo}
+% {\footnotesize  \par}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Thread Snap Gauges}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item Includes go and no-go jaws
+%                 \item Can be fixed or adjustable for multiple screw sizes
+%                 \item Jaws roll to minimize wear
+%                 \item Measures more thread dimensions than standard plug go/no-go gauge
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{GaugeGapThreadGoNoGo}
+% {\footnotesize  \par}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Thread Snap Gauges}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item Screw slid from front (go) jaws to rear (no-go) jaws
+%                 \item Should freely pass go jaw, bind on no-go jaws
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{GaugeGapThreadGoNoGo}
+% {\footnotesize  \par}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Thread Pitch Gauges}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item Measure thread profile only
+%                 \item Really, can only reliably measure pitch
+%                 \item May catch gross angle problems
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=0.5\columnwidth]{244px-Gewindeschablone}
+% {\footnotesize  \par}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Thread Pitch Gauges}
+%     \begin{figure}
+%         \centering
+%         \includegraphics[width=0.5\linewidth]{080cal}
+% {\footnotesize  \par}
+%     \end{figure}
+% \end{frame}
+
+\begin{frame}
+    \centering
+    {\Huge \textbf{\textcolor{BakerADARed}{Questions?}}}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Copyright Notice}
+
+    % \begin{figure}
+    %     \centering
+    %     \includegraphics[width=0.25\linewidth, alt={Creative Commons Attribution NonCommercial ShareAlike logo displaying four circular icons arranged horizontally over a black banner. From left to right, the icons feature the CC logo, a person pictogram for Attribution labeled BY below, a slashed dollar sign for NonCommercial labeled NC below, and a counterclockwise circular arrow for ShareAlike labeled SA below.}]{by-nc-sa.png}
+    % \end{figure}
+    
+    {\footnotesize
+    \PresTitle \textcopyright 2026 by Brad Peirson is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). To view a copy of the official license, visit \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{https://creativecommons.org/licenses/by-nc-sa/4.0/}.
+
+    \vspace{0.5em}
+
+    \textbf{Exceptions and Exclusions}
+
+    \begin{itemize}
+        \item[Baker College Branding \& Trademarks:]All Baker College logos, trademarks, wordmarks, seals, slide design templates, and proprietary branding elements contained in these materials are \textbf{EXCLUDED} from the CC BY-NC-SA 4.0 license. All rights are reserved by Baker College. Express written permission from Baker College is required for any use, copying, or redistribution of these elements.
+        \item[Third-Party Media \& Content:] Any third-party images, graphics, diagrams, or external media incorporated in these materials are included under their respective original licenses or permissions and are individually attributed at their point of use. 
+        \item[Original Author Content:] All unattributed figures, diagrams, text, code snippets, and media are original works created by the author and are licensed under the CC BY-NC-SA 4.0 license.
+    \end{itemize}
+    \par}
+\end{frame}
+
+\end{document}
+
+% \begin{frame}
+%     \frametitle{Test Todo}
+
+%     % Usage: \tikztodo[width]{height}{description/notes}
+%     \tikztodo[0.7\textwidth]{4cm}{Convert block diagram of feedback loop}
+% \end{frame}
