@@ -1,0 +1,116 @@
+\begin{circuitikz}[
+        american, 
+        >={Latex[length=5mm, width=2mm]},
+        alt={}
+    ]
+
+    \draw[
+        BakerBlack,
+        ultra thick
+    ]
+    (0,0)
+    coordinate(O)
+    -- (60:2)
+    coordinate(p1)
+    -- ++(-60:2)
+    -- ++(60:2)
+    coordinate(p2)
+    -- ++(-60:2)
+    -- ++(60:2)
+    coordinate(p3)
+    -- ++(-60:2)
+    coordinate(b3)
+    -- ++(60:2)
+    coordinate(p4)
+    -- ++(-60:2)
+    -- ++(0,-1)
+    coordinate(bot)
+    -- (bot -| O)
+    -- (0,0);
+
+    \draw[
+        BakerADARed,
+        shorten <=0.25cm
+    ]
+    (p1)
+    -- ++(0,1)
+    coordinate[midway](pd1);
+
+    \draw[
+        BakerADARed,
+        shorten <=0.25cm
+    ]
+    (p2)
+    -- ++(0,1)
+    coordinate[midway](pd2);
+
+    \draw[
+        BakerADARed,
+        <->
+    ]
+    (pd1)
+    -- (pd2)
+    node[
+        midway,
+        above
+    ]{P};
+
+    \draw[
+        BakerADARed,
+        shorten <=0.25cm
+    ]
+    (p3)
+    -- ++(120:1)
+    coordinate[midway](a1);
+
+    \draw[
+        BakerADARed,
+        shorten <=0.25cm
+    ]
+    (p4)
+    -- ++(60:1)
+    coordinate[midway](a2);
+
+    \draw[
+        BakerADARed,
+        <->
+    ]
+    (a1)
+    arc(120:60:2.5)
+    node[
+        midway,
+        above
+    ]{60\textdegree};
+
+    \draw[
+        BakerADARed,
+        shorten <=0.25cm
+    ]
+    (b3)
+    -- ++(2.5,0)
+    coordinate(h1)
+    -- ++(1,0);
+
+    \draw[
+        BakerADARed,
+        shorten <=0.25cm
+    ]
+    (p4)
+    -- (p4 -| h1)
+    coordinate(h2)
+    -- ++(1,0);
+
+    \draw[
+        BakerADARed,
+        <->
+    ]
+    (h1)
+    -- (h2)
+    node[
+        midway,
+        right
+    ]
+    {$H=0.866P$};
+
+
+\end{circuitikz}

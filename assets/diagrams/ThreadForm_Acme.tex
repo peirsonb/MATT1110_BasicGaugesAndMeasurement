@@ -1,0 +1,199 @@
+\begin{circuitikz}[
+        american, 
+        >={Latex[length=5mm, width=2mm]},
+        alt={A technical geometric diagram of an Acme screw thread profile showing trapezoidal thread teeth drawn with a solid thick outline over a dashed reference grid. Horizontal dimension lines mark the pitch labeled P between crests and the thread height labeled 0.5P, while an arc measurement indicates a 29 degree included angle between adjacent thread flanks.}
+    ]
+
+    \draw[
+        LakeBlue,
+        thin,
+        dashed
+    ]
+    (0,0)
+    coordinate(O)
+    -- (75.5:4)
+    coordinate(p1)
+    coordinate[pos=0.625](p11)
+    -- ++(-75.5:4)
+    coordinate(b1)
+    coordinate[pos=0.375](p12)
+    coordinate[pos=0.625](b11)
+    -- ++(75.5:4)
+    coordinate[pos=0.375](b12)
+    coordinate[pos=0.625](p21)
+    coordinate(p2)
+    -- ++(-75.5:4)
+    coordinate(b2)
+    coordinate[pos=0.375](p22)
+    coordinate[pos=0.625](b21)
+    -- ++(75.5:4)
+    coordinate(p3)
+    coordinate[pos=0.375](b22)
+    coordinate[pos=0.625](p31)
+    -- ++(-75.5:4)
+    coordinate[pos=0.375](p32)
+    coordinate[pos=0.625](b31)
+    coordinate(b3)
+    -- ++(75.5:4)
+    coordinate[pos=0.375](b32)
+    coordinate[pos=0.625](p41)
+    coordinate(p4)
+    -- ++(-75.5:4)
+    coordinate[pos=0.375](p42)
+    coordinate[pos=0.625](b41);
+
+    \draw[
+        BakerBlack,
+        ultra thick
+    ]
+    (O)
+    -- (p11)
+    -- (p12)
+    -- (b11)
+    -- (b12)
+    -- (p21)
+    -- (p22)
+    -- (b21)
+    -- (b22)
+    -- (p31)
+    -- (p32)
+    -- (b31)
+    -- (b32)
+    -- (p41)
+    -- (p42)
+    -- (b41)
+    -- (b41 |- O)
+    % coordinate(bot)
+    % -- (bot -| O)
+    -- (0,0);
+
+    \draw[
+        BakerADARed,
+        shorten <=0.25cm
+    ]
+    (p1)
+    -- ++(0,1)
+    coordinate[midway](pd1);
+
+    \draw[
+        BakerADARed,
+        shorten <=0.25cm
+    ]
+    (p2)
+    -- ++(0,1)
+    coordinate[midway](pd2);
+
+    \draw[
+        BakerADARed,
+        <->
+    ]
+    (pd1)
+    -- (pd2)
+    node[
+        midway,
+        above
+    ]{P};
+
+    \draw[
+        BakerADARed,
+        shorten <=0.25cm
+    ]
+    (p3)
+    -- ++(104.5:1)
+    coordinate[midway](a1);
+
+    \draw[
+        BakerADARed,
+        shorten <=0.25cm
+    ]
+    (p4)
+    -- ++(75.5:1)
+    coordinate[midway](a2);
+
+    \draw[
+        BakerADARed,
+        <->
+    ]
+    (a1)
+    arc(104.5:75.5:4.5)
+    node[
+        midway,
+        above
+    ]{29\textdegree};
+
+    \draw[
+        BakerADARed,
+        shorten <=0.25cm
+    ]
+    (p42)
+    -- ++(1,0)
+    coordinate(h1)
+    -- ++(0.5,0);
+
+    \draw[
+        BakerADARed,
+        shorten <=0.25cm
+    ]
+    (b32)
+    -- (b32 -| h1)
+    coordinate(h2)
+    -- ++(0.5,0);
+
+    \draw[
+        BakerADARed,
+        <-
+    ]
+    (h1)
+    -- ++(0,1);
+
+    \draw[
+        BakerADARed,
+        <-
+    ]
+    (h2)
+    -- ++(0,-1)
+    node[
+        right
+    ]
+    {$0.5P$};
+
+    % \draw[
+    %     BakerADARed,
+    %     shorten <=0.25cm
+    % ]
+    % (b12)
+    % -- ++(1,0)
+    % coordinate(root1)
+    % -- ++(0.5,0)
+    % coordinate(rootRef);
+
+    % \draw[
+    %     BakerADARed,
+    %     shorten <=0.25cm
+    % ]
+    % (b1)
+    % -- (b1 -| root1)
+    % coordinate(root2)
+    % -- (b1 -| rootRef);
+
+    % \draw[
+    %     BakerADARed,
+    %     <-
+    % ]
+    % (root1)
+    % -- ++(0,1);
+
+    % \draw[
+    %     BakerADARed,
+    %     <-
+    % ]
+    % (root2)
+    % -- ++(0,-1.5)
+    % node[
+    %     right
+    % ]
+    % {$\frac{P}{8}$};
+
+
+
+\end{circuitikz}
