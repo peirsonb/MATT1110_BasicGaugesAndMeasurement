@@ -1,0 +1,1068 @@
+% ============================================================================
+% Accessibility
+% ============================================================================
+\DocumentMetadata{
+  lang = en-US, 
+  pdfstandard = ua-2, 
+  tagging = on, 
+  tagging-setup = {math/setup=mathml-SE}
+}
+
+% ============================================================================
+% Document Properties - used on title slide and PDF metadata fields
+% ============================================================================
+\def\PresTitle{Precision Hand Tools}  % Required - top line of title slide
+\def\PresSubtitle{Baker College Engineering}         % Optional - second line
+\def\PresAuthor{Brad Peirson}               % Required - below dividing line
+\def\PresInstitute{College of Information Technology and Engineering}       % Optional
+\def\PresDate{}                             % Optional
+\def\PresKeywords{}                         % Optional - used for hyperref
+
+% Presentation Formatting
+% ============================================================================
+\input{../ltxtalk_preamble.tex}
+
+% ============================================================================
+% Document Content
+% ============================================================================
+\begin{document}
+
+\maketitle              % Redefined in the preamble to generate a full frame
+
+\begin{frame}
+    \frametitle{Agenda}
+    \begingroup
+        % Tighten the spacing between paragraphs/TOC lines
+        \setlength{\parskip}{0.3em} 
+        
+        % Optionally tighten the line spacing within an entry
+        %\baselineskip=1.2em 
+        
+        \setcounter{tocdepth}{1} % Show only sections
+    \tableofcontents
+    \setcounter{tocdepth}{2} % Reset back to default so subsections are tracked
+    \endgroup
+\end{frame}
+
+\section{Vernier Instruments}
+
+\begin{frame}
+	\frametitle{Vernier Instruments Applications}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item{Vernier is a type of scale}
+                \item{Used on \textbf{many} different measurement devices}
+                    \begin{itemize}
+                        \item{Including some micrometers}
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \hexpic[]{0.875\linewidth}{A close-up view of a metal vernier caliper positioned against a red textured background, showing lower external measuring jaws, upper internal measuring jaws, a top locking thumbscrew, and a vernier scale labeled 0.02 mm aligned with main beam millimeter graduations.}{\textbf{Attibution:} ArtMechanic, \href{https://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via \href{https://commons.wikimedia.org/wiki/File:Messschieber.jpg}{Wikimedia Commons}}{Messschieber}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Transition to Dial Tools}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            Most vernier instruments were replaced by dial instruments \emph{LONG} ago...
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A stainless steel dial caliper lying horizontally on a dark wood surface, featuring a large circular analog dial face, upper internal measurement jaws, lower external measurement jaws, a fine-adjustment thumb wheel, and a long linear beam scale.}{}{DialCaliper}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Shift to Digital Calipers}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            ...so long ago that most dial instruments have been replaced by digital instruments.
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A digital electronic caliper lying against a plain white background with its LCD display showing a measurement reading of 11.58 mm. The tool features a stainless steel main beam marked with yellow millimeter graduations up to 150 mm, upper internal jaws, lower external jaws, control buttons for unit switching and zeroing, and a depth measuring rod extending from the right tip.}{\textbf{Attibution:} Jacek Halicki, \href{https://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0}, via \href{https://commons.wikimedia.org/wiki/File:2020_Suwmiarka_cyfrowa.jpg}{Wikimedia Commons}}{2020_Suwmiarka_cyfrowa}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Why Use Dial Instruments?}
+
+    When possible, you should still shoot for dial instruments\dots why?
+\end{frame}
+
+\begin{frame}
+	\frametitle{Reliability of Dial Calipers}
+
+    \shadowpic[]{0.25\linewidth}{A close-up view of the flat positive surface of a round metallic maxell CR2032 H 3 V coin cell battery. Text on the face reads maxell CR2032 H, 3 V, a large positive plus symbol in the center, and Hitachi Maxell, Ltd. Japan along the bottom curve.}{\textbf{Attibution:} \textcopyright Raymond Spekking, \href{https://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0}, via \href{https://commons.wikimedia.org/wiki/File:Coin_cell_CR2032_H_by_Hitachi_Maxell-7730.jpg}{Wikimedia Commons}}{Coin_cell_CR2032_H_by_Hitachi_Maxell-7730}
+
+    \vspace{0.5em}
+    \centering
+    {\footnotesize Batteries die--dial calipers will always be ready to use when you need them.\par}
+\end{frame}
+
+\subsection{Reading a Vernier Scale}
+
+\begin{frame}
+	\frametitle{Scale Subdivisions Concept}
+    
+    \begin{itemize}[<+- | alert@+>]
+        \item A \textbf{vernier scale} is a way to subdivide a larger scale
+        \item The vernier scale works by measuring a percentage of the larger scale
+        \item A distance on the vernier scale is one unit less than the same distance on the larger scale
+        \item Huh?
+    \end{itemize}    
+\end{frame}
+
+\begin{frame}
+	\frametitle{5-Division Scale (1 of 6)}
+
+    \begin{figure}
+        \centering
+        \resizebox{0.5\columnwidth}{!}{
+            \input{../assets/diagrams/Vernier1.tex}
+            }
+    \end{figure}  
+\end{frame}
+
+\begin{frame}
+	\frametitle{5-Division Scale (2 of 6)}
+
+    \begin{figure}
+        \centering
+        \resizebox{0.5\columnwidth}{!}{
+            \input{../assets/diagrams/Vernier2.tex}
+            }
+        
+        \vspace{0.5em}
+        {\footnotesize If the main scale has 5 divisions, the Vernier scale \emph{also} have 5 divisions but will \emph{fit them} in the space of 4 divisions of the main scale.\par}
+    \end{figure}  
+\end{frame}
+
+\begin{frame}
+	\frametitle{5-Division Scale (3 of 6)}
+
+    \begin{figure}
+        \centering
+        \resizebox{0.5\columnwidth}{!}{
+            \input{../assets/diagrams/Vernier3.tex}
+            }
+        
+        \vspace{0.5em}
+        {\footnotesize Imagine the same scale \emph{really} zoomed in so we are looking at just the first marks--the first Vernier mark is \emph{still} 1/5 short of the first main mark.\par}
+    \end{figure}  
+\end{frame}
+
+\begin{frame}
+	\frametitle{5-Division Scale (4 of 6)}
+
+    \begin{figure}
+        \centering
+        \resizebox{0.5\columnwidth}{!}{
+            \input{../assets/diagrams/Vernier4.tex}
+            }
+        
+        \vspace{0.5em}
+        {\footnotesize As we start to slide the scale the percent difference is what we're measuring. In this example, when we slide the Vernier so the 0 lines up with the first main division the measurement is 1/5.\par}
+    \end{figure}  
+\end{frame}
+
+\begin{frame}
+	\frametitle{5-Division Scale (5 of 6)}
+
+    \begin{figure}
+        \centering
+        \resizebox{0.5\columnwidth}{!}{
+            \input{../assets/diagrams/Vernier5.tex}
+            }
+        
+        \vspace{0.5em}
+        {\footnotesize When we line up the Vernier zero with the \emph{second} main mark the difference is 2/5.\par}
+    \end{figure}  
+\end{frame}
+
+\begin{frame}
+	\frametitle{5-Division Scale (6 of 6)}
+
+    \begin{figure}
+        \centering
+        \resizebox{0.75\columnwidth}{!}{
+            \input{../assets/diagrams/Vernier6.tex}
+            }
+        
+        \vspace{0.5em}
+        {\footnotesize When the Vernier fully lines up with the major division, the difference is 5/5 or 1.\par}
+    \end{figure}  
+\end{frame}
+
+\begin{frame}
+	\frametitle{Reading Alignments (1 of 3)}
+
+    \begin{figure}
+        \centering
+        \resizebox{0.5\columnwidth}{!}{
+            \input{../assets/diagrams/Vernier7.tex}
+            }
+        
+        \vspace{0.5em}
+        {\footnotesize Let's zoom back out--when we move the Vernier to make a measurement one Vernier mark will line up with one mark on the main scale. We read the scale by looking at which mark lines up.\par}
+    \end{figure}   
+\end{frame}
+
+\begin{frame}
+	\frametitle{Reading Alignments (2 of 3)}
+    
+    \begin{figure}
+        \centering
+        \resizebox{0.5\columnwidth}{!}{
+            \input{../assets/diagrams/Vernier8.tex}
+            }
+        
+        \vspace{0.5em}
+        {\footnotesize The mark that lines up tells us the fraction--mark 1 lines up in this diagram, the fraction is 1/5.\par}
+    \end{figure}   
+\end{frame}
+
+% \begin{frame}
+% 	\frametitle{Reading a Vernier Scale}
+%     \begin{figure}
+%         \centering
+%         \resizebox{\columnwidth}{!}{
+%             \input{tikz/vernier9.tikz}
+%             }
+%     \end{figure}  
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Reading a Vernier Scale}
+%     \begin{figure}
+%         \centering
+%         \resizebox{\columnwidth}{!}{
+%             \input{tikz/vernier10.tikz}
+%             }
+%     \end{figure}  
+% \end{frame}
+
+\begin{frame}
+	\frametitle{Reading Alignments (3 of 3)}
+    
+    \begin{figure}
+        \centering
+        \resizebox{0.5\columnwidth}{!}{
+            \input{../assets/diagrams/Vernier11.tex}
+            }
+        
+        \vspace{0.5em}
+        {\footnotesize When the scale moves far enough to line up the second mark, the measurement is 2/5.\par}
+    \end{figure} 
+\end{frame}
+
+\begin{frame}
+	\frametitle{Offset Main Scale (1 of 2)}
+    
+    \begin{figure}
+        \centering
+        \resizebox{0.75\columnwidth}{!}{
+            \input{../assets/diagrams/Vernier12.tex}
+            }
+        
+        \vspace{0.5em}
+        {\footnotesize If the Vernier 0 hasn't passed a main mark we ignore the main scale. But if it \emph{passes} a main mark we need to count that main mark first.\par}
+    \end{figure} 
+\end{frame}
+
+\begin{frame}
+	\frametitle{Offset Main Scale (2 of 2)}
+    
+    \begin{figure}
+        \centering
+        \resizebox{0.75\columnwidth}{!}{
+            \input{../assets/diagrams/Vernier13.tex}
+            }
+        
+        \vspace{0.5em}
+        {\footnotesize After counting the number on the main scale, \emph{then} we look for the Vernier mark that lines up to get the total measurement.\par}
+    \end{figure} 
+\end{frame}
+
+\begin{frame}
+	\frametitle{Scale Division Variations}
+
+    \begin{itemize}[<+- | alert@+>]
+        \item All vernier scales behave the same way
+        \item Not all vernier scales have the same number of divisions
+        \item Different divisions means different values--almost no real world Vernier uses 1/5
+    \end{itemize}    
+\end{frame}
+
+\begin{frame}
+	\frametitle{Vernier Fractions}
+
+    \begin{itemize}[<+- | alert@+>]
+        \item A Vernier scale is reading a fraction
+        \item The denominator is the number of vernier divisions
+        \item The numerator is the vernier mark that aligns with the main scale
+        \item 10, 25, 50 vernier divisions are common--each of these scales uses a different denominator
+    \end{itemize}    
+\end{frame}
+
+\begin{frame}
+	\frametitle{25-Division Inch Vernier}
+
+    \begin{figure}
+        \centering
+        \resizebox{0.75\columnwidth}{!}{
+            \input{../assets/diagrams/Vernier14.tex}
+            }
+        
+        \vspace{0.5em}
+        {\footnotesize A Vernier that measures in inches typically has 25 divisions.\par}
+    \end{figure}  
+\end{frame}
+
+\begin{frame}
+	\frametitle{Inch Scale Precision}
+
+    \begin{figure}
+        \centering
+        \resizebox{0.625\columnwidth}{!}{
+            \input{../assets/diagrams/Vernier15.tex}
+            }
+        
+        \vspace{0.5em}
+        {\footnotesize There are 10 major divisions per inch, which means each major division is 0.1 inches. There are 4 parts per major division, which means each part is 0.025 inches. And there are 25 divisions on the Vernier, which means each Vernier division is 0.001 inches.\par}
+    \end{figure} 
+\end{frame}
+
+\begin{frame}
+	\frametitle{Example Reading (1 of 4)}
+
+    \begin{figure}
+        \centering
+        \resizebox{0.75\columnwidth}{!}{
+            \input{../assets/diagrams/Vernier16.tex}
+            }
+        
+        \vspace{0.5em}
+        {\footnotesize What is the measurement shown in this Vernier?\par}
+    \end{figure}  
+\end{frame}
+
+\begin{frame}
+	\frametitle{Example Reading (2 of 4)}
+
+    \begin{figure}
+        \centering
+        \resizebox{0.75\columnwidth}{!}{
+            \input{../assets/diagrams/Vernier17.tex}
+            }
+        
+        \vspace{0.5em}
+        {\footnotesize Find the first major division that the 0 on the Vernier passes, then multiply by the fraction that division represents: $3 \times 0.1=0.3$\par}
+    \end{figure}  
+\end{frame}
+
+\begin{frame}
+	\frametitle{Example Reading (3 of 4)}
+    
+    \begin{figure}
+        \centering
+        \resizebox{0.75\columnwidth}{!}{
+            \input{../assets/diagrams/Vernier18.tex}
+            }
+        
+        \vspace{0.5em}
+        {\footnotesize Find the first part that the 0 on the Vernier passes, multiply by the fraction that part represents, and add it to the major division: $1 \times 0.025=0.025$, $0.3+0.025=0.325$\par}
+    \end{figure} 
+\end{frame}
+
+\begin{frame}
+	\frametitle{Example Reading (4 of 4)}
+    
+    \begin{figure}
+        \centering
+        \resizebox{0.75\columnwidth}{!}{
+            \input{../assets/diagrams/Vernier19.tex}
+            }
+        
+        \vspace{0.5em}
+        {\footnotesize Find the Vernier mark that lines up with \emph{any} mark on the main scale, multiply it by the Vernier fraction, and add it to the total: $17 \times 0.001=0.017$, $0.325+0.017=0.342$\par}
+    \end{figure} 
+\end{frame}
+
+\begin{frame}
+	\frametitle{Line Alignment Challenge}
+
+    \begin{itemize}[<+- | alert@+>]
+        \item \emph{I} know the 0.017 mark aligns - I drew the picture
+        \item How do \emph{you} know that the 0.017 mark aligns?
+    \end{itemize}    
+\end{frame}
+
+\begin{frame}
+	\frametitle{Alignment Parallax Error}
+
+    \begin{figure}
+        \centering
+        \resizebox{0.5\columnwidth}{!}{
+            \input{../assets/diagrams/Vernier20.tex}
+            }
+        
+        \vspace{0.5em}
+        {\footnotesize There will \emph{almost always} be several lines that look like they line up--that's one source of \emph{error} in a Vernier scale.\par}
+    \end{figure}   
+\end{frame}
+
+\begin{frame}
+	\frametitle{Best Alignment Practice}
+
+    \begin{itemize}[<+- | alert@+>]
+        \item It is always a bit of a guess
+        \item There will usually be 3 marks obviously closer than the others
+        \item Pick the middle one
+    \end{itemize}    
+\end{frame}
+
+\begin{frame}
+	\frametitle{Video: Metric Calipers}
+    \centering
+    \href{https://www.youtube.com/watch?v=vkPlzmalvN4}{How to Read a Metric Vernier Caliper}
+
+    \vspace{0.5em}
+    {\footnotesize \href{https://www.youtube.com/watch?v=vkPlzmalvN4}{https://www.youtube.com/watch?v=vkPlzmalvN4}\par}
+
+    \vspace{0.25em}
+    {\tiny Video \textcopyright WeldNotes via YouTube.com\par}
+\end{frame}
+
+\section{Micrometers}
+
+\begin{frame}
+	\frametitle{Common Micrometer Tools}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            One of the most common measurement tools in machining
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A Mitutoyo outside micrometer set against a light background, featuring a green C-shaped frame labeled 0-25 0.01mm, a fixed anvil, a movable spindle, a locking lever, and a sleeve and knurled thimble with graduated measuring scales.}{\textbf{Attibution:} Mauro Cateb, \href{https://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via \href{https://commons.wikimedia.org/wiki/File:Micrometer_.jpg}{Wikimedia Commons}}{Micrometer}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Micrometer Advantages}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{enumerate}[<+- | alert@+>]
+                \item Small, portable, rugged
+                \item Good measurement range
+                \item Retains accuracy/wear adjustment
+                \item Easy to handle/read
+                \item Inexpensive
+            \end{enumerate}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A Mitutoyo outside micrometer set against a light background, featuring a green C-shaped frame labeled 0-25 0.01mm, a fixed anvil, a movable spindle, a locking lever, and a sleeve and knurled thimble with graduated measuring scales.}{\textbf{Attibution:} Mauro Cateb, \href{https://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via \href{https://commons.wikimedia.org/wiki/File:Micrometer_.jpg}{Wikimedia Commons}}{Micrometer}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Imperial and Metric Types}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Available in imperial and metric 
+                \item Uses the idea of screw \emph{lead} for accurate measurement 
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A Mitutoyo outside micrometer set against a light background, featuring a green C-shaped frame labeled 0-25 0.01mm, a fixed anvil, a movable spindle, a locking lever, and a sleeve and knurled thimble with graduated measuring scales.}{\textbf{Attibution:} Mauro Cateb, \href{https://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via \href{https://commons.wikimedia.org/wiki/File:Micrometer_.jpg}{Wikimedia Commons}}{Micrometer}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\subsection{Micrometer Construction}
+
+\begin{frame}
+	\frametitle{Micrometer Construction}
+
+    \shadowpic[]{0.75\linewidth}{A monochrome labeled diagram of an outside micrometer caliper with black arrows identifying its primary components. Arrows point to the C-shaped frame stamped with decimal equivalents, the fixed anvil, the sliding spindle, the lock nut, the graduated sleeve, and the knurled thimble. Text annotations note alternative names such as barrel or stock for the sleeve, lock-ring or lock lever for the lock nut, and state that the internal screw and optional ratchet stop are not pictured.}{\textbf{Attibution:} Three-quarter-ten, \href{https://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0}, via \href{https://commons.wikimedia.org/wiki/File:Micrometer_caliper_parts_0001.png}{Wikimedia Commons}}{Micrometer_caliper_parts_0001}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Frame and Anvil}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item U-shaped frame
+                \item One end: fixed anvil
+                    \begin{itemize}
+                        \item Hardened steel 
+                        \item Pressed or screwed into frame 
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A monochrome labeled diagram of an outside micrometer caliper with black arrows identifying its primary components. Arrows point to the C-shaped frame stamped with decimal equivalents, the fixed anvil, the sliding spindle, the lock nut, the graduated sleeve, and the knurled thimble. Text annotations note alternative names such as barrel or stock for the sleeve, lock-ring or lock lever for the lock nut, and state that the internal screw and optional ratchet stop are not pictured.}{\textbf{Attibution:} Three-quarter-ten, \href{https://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0}, via \href{https://commons.wikimedia.org/wiki/File:Micrometer_caliper_parts_0001.png}{Wikimedia Commons}}{Micrometer_caliper_parts_0001}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Barrel}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Fixed relative to frame
+                \item Houses the nut that the screw rides in
+                \item Includes a \emph{linear} scale with 0.025" divisions for quick reading
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A extreme close-up view of a micrometer barrel and thimble scale resting on a wooden background. The stationary sleeve features a central datum line with millimeter and half-millimeter graduations numbered 0 through 9, while the rotating thimble on the right displays aligned circumferential scale divisions marked 15 and 20.}{}{BarrelScale}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Thimble}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Used to turn the screw
+                \item Usually knurled for grip
+                \item Includes a scale divided \emph{radially} into 25 equal spaces
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A close-up view focusing on the thimble collar and vernier lines of a micrometer resting on a wooden surface. The edge of the bevel shows fine graduations aligned with sleeve markings, with numbers 0 and 20 visible on the silver sleeve body.}{}{ThimbleScale}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Screw}
+
+    \begin{figure}
+        \centering
+        \input{../assets/diagrams/MicrometerScrew.tex}
+
+        \vspace{0.5em}
+        {\footnotesize The screw in a micrometer uses custom thread with a \emph{very} precise pitch--the accuracy of the micrometer depends almost entirely on this screw.\par}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{The Thimble Scale}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}            
+            \begin{figure}
+                \centering
+                \resizebox{\linewidth}{!}{
+                    \input{../assets/diagrams/MicrometerBarrelScale.tex}
+                    }
+            \end{figure} 
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A close-up view focusing on the thimble collar and vernier lines of a micrometer resting on a wooden surface. The edge of the bevel shows fine graduations aligned with sleeve markings, with numbers 0 and 20 visible on the silver sleeve body.}{}{ThimbleScale}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Thread Lead Principle}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item{Internal nut is stationary}
+                \item{Precision screw -- 40 threads per inch}
+                    \begin{itemize}
+                        \item{Lead = 1/40" = 0.025"}
+                    \end{itemize}
+                \item{One revolution = 0.025" axial movement}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=\linewidth, trim={0 16cm 0 0},clip, alt={An technical line drawing from 1911 displaying cross-sectional and exterior views of an outside micrometer caliper with lettered components. The top sectional view reveals the internal threaded spindle mechanism a, locking ring b, main barrel sleeve C, and outer thimble sleeve E attached to frame A between anvil B and spindle D. A detailed cross-section inset labeled c depicts the internal ratchet stop mechanism on the right, while the bottom exterior view shows the assembled micrometer with printed fraction conversion tables along the C-frame face.}]{EB1911_-_Tool_-_Fig_72}
+
+                \vspace{0.5em}
+                {\tiny \textbf{Attibution:} Encyclopædia Britannica, Public domain, via \href{https://commons.wikimedia.org/wiki/File:EB1911_-_Tool_-_Fig_72.png}{Wikimedia Commons}, cropped from original\par}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Screw Revolution Reading}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Barrel scale reads full revolutions of the screw
+                \item Thimble scale reads partial revolutions of the screw
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A extreme close-up view of a micrometer barrel and thimble scale resting on a wooden background. The stationary sleeve features a central datum line with millimeter and half-millimeter graduations numbered 0 through 9, while the rotating thimble on the right displays aligned circumferential scale divisions marked 15 and 20.}{}{BarrelScale}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Spindle}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Unthreaded part of the screw
+                \item Advances/retracts in the frame
+                \item Supported by a plain bearing in the barrel
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A monochrome labeled diagram of an outside micrometer caliper with black arrows identifying its primary components. Arrows point to the C-shaped frame stamped with decimal equivalents, the fixed anvil, the sliding spindle, the lock nut, the graduated sleeve, and the knurled thimble. Text annotations note alternative names such as barrel or stock for the sleeve, lock-ring or lock lever for the lock nut, and state that the internal screw and optional ratchet stop are not pictured.}{\textbf{Attibution:} Three-quarter-ten, \href{https://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0}, via \href{https://commons.wikimedia.org/wiki/File:Micrometer_caliper_parts_0001.png}{Wikimedia Commons}}{Micrometer_caliper_parts_0001}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Large Micrometer Offset}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item \emph{ALL} imperial micrometers are 1" micrometers
+                    \begin{itemize}
+                        \item A 2" micrometer is still a 1" micrometer
+                        \item Spindle only closes to within 1" of anvil
+                        \item You need to automatically add 1" to all measurements
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.625\linewidth}{A vintage 1908 illustration showing two machinist operators in bowler hats using an extremely large, heavy-duty outside micrometer to measure a massive circular machine component suspended from a heavy rope hoist. The curved micrometer frame features weight-reducing circular cutouts along its entire length, spanning across the top and bottom outer diameter of the workpiece.}{\textbf{Attibution:} Unknown author, Public domain, via \href{https://commons.wikimedia.org/wiki/File:Micrometer--large--Woodworth_1908_p204.png}{Wikimedia Commons}}{Micrometer--large--Woodworth_1908_p204}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Barrel Vernier Scale}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Some barrels include a \emph{Vernier} scale for 0.0001" resolution
+                \item Top of barrel will be divided into 10 equal spaces
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A detailed macro shot showing a vernier scale on the sleeve of a micrometer barrel. Eleven parallel longitudinal lines run horizontally along the sleeve, numbered 0 through 9 on the left end, intersecting perpendicular graduations on the adjacent thimble collar on the right.}{}{VernierScale}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ratchet}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Measurement pressure is absolutely critical to precision with micrometers
+                \item Many micrometers include a ratchet
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A Mitutoyo outside micrometer set against a light background, featuring a green C-shaped frame labeled 0-25 0.01mm, a fixed anvil, a movable spindle, a locking lever, and a sleeve and knurled thimble with graduated measuring scales.}{\textbf{Attibution:} Mauro Cateb, \href{https://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via \href{https://commons.wikimedia.org/wiki/File:Micrometer_.jpg}{Wikimedia Commons}}{Micrometer}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Measuring Pressure}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Thimble used for gross adjustment
+                \item Ratchet used for fine adjustment -- slips at correct pressure
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A Mitutoyo outside micrometer set against a light background, featuring a green C-shaped frame labeled 0-25 0.01mm, a fixed anvil, a movable spindle, a locking lever, and a sleeve and knurled thimble with graduated measuring scales.}{\textbf{Attibution:} Mauro Cateb, \href{https://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via \href{https://commons.wikimedia.org/wiki/File:Micrometer_.jpg}{Wikimedia Commons}}{Micrometer}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Integrated Ratchet}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item May be included as an extension on the back of the thimble
+                \item May be integrated into the thimble itself
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A Mitutoyo outside micrometer set against a light background, featuring a green C-shaped frame labeled 0-25 0.01mm, a fixed anvil, a movable spindle, a locking lever, and a sleeve and knurled thimble with graduated measuring scales.}{\textbf{Attibution:} Mauro Cateb, \href{https://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via \href{https://commons.wikimedia.org/wiki/File:Micrometer_.jpg}{Wikimedia Commons}}{Micrometer}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Lock Nut Mechanism}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A monochrome labeled diagram of an outside micrometer caliper with black arrows identifying its primary components. Arrows point to the C-shaped frame stamped with decimal equivalents, the fixed anvil, the sliding spindle, the lock nut, the graduated sleeve, and the knurled thimble. Text annotations note alternative names such as barrel or stock for the sleeve, lock-ring or lock lever for the lock nut, and state that the internal screw and optional ratchet stop are not pictured.}{\textbf{Attibution:} Three-quarter-ten, \href{https://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0}, via \href{https://commons.wikimedia.org/wiki/File:Micrometer_caliper_parts_0001.png}{Wikimedia Commons}}{Micrometer_caliper_parts_0001}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A Mitutoyo outside micrometer set against a light background, featuring a green C-shaped frame labeled 0-25 0.01mm, a fixed anvil, a movable spindle, a locking lever, and a sleeve and knurled thimble with graduated measuring scales.}{\textbf{Attibution:} Mauro Cateb, \href{https://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via \href{https://commons.wikimedia.org/wiki/File:Micrometer_.jpg}{Wikimedia Commons}}{Micrometer}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\subsection{Reading Micrometers}
+
+\begin{frame}
+	\frametitle{Barrel Scale Divisions}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item The barrel includes a linear scale
+                \item Linear scale is divided into 10 major divisions
+                \item Major divisions = 0.1"
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A extreme close-up view of a micrometer barrel and thimble scale resting on a wooden background. The stationary sleeve features a central datum line with millimeter and half-millimeter graduations numbered 0 through 9, while the rotating thimble on the right displays aligned circumferential scale divisions marked 15 and 20.}{}{BarrelScale}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Minor Barrel Divisions}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Each major division is divided into 4 equal spaces
+                \item 0.1" / 4 = 0.025" per minor division
+                    \begin{itemize}
+                        \item One full revolution of thimble = one minor division
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A extreme close-up view of a micrometer barrel and thimble scale resting on a wooden background. The stationary sleeve features a central datum line with millimeter and half-millimeter graduations numbered 0 through 9, while the rotating thimble on the right displays aligned circumferential scale divisions marked 15 and 20.}{}{BarrelScale}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Thimble Divisions}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Split into 25 equal divisions, 0.001" apiece
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A close-up view focusing on the thimble collar and vernier lines of a micrometer resting on a wooden surface. The edge of the bevel shows fine graduations aligned with sleeve markings, with numbers 0 and 20 visible on the silver sleeve body.}{}{ThimbleScale}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Vernier Resolution}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item On top of barrel 
+                \item 10 equal division = 0.0001" apiece
+                \item Read like a vernier scale
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A detailed macro shot showing a vernier scale on the sleeve of a micrometer barrel. Eleven parallel longitudinal lines run horizontally along the sleeve, numbered 0 through 9 on the left end, intersecting perpendicular graduations on the adjacent thimble collar on the right.}{}{VernierScale}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Part Placement}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Close the part to be measured between the spindle and anvil
+                    \begin{itemize}
+                        \item Remember--pressure matters
+                        \item Use the ratchet if available
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A close-up view of a metal micrometer measuring the blade of a small flathead screwdriver held between its anvil and spindle faces. A hand supports the frame while the barrel and thimble scale extend to the right.}{}{MicAndScrewdriver2}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Reading the Barrel Scale}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item The last visible line is the barrel scale measurement
+                    \begin{itemize}
+                        \item 2 = 0.2"
+                        \item One more visible line = 0.025"
+                        \item Barrel measurement = 0.225"
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A close-up view of the sleeve and thimble scales on a micrometer taking a measurement. The sleeve displays main graduations exposing up to the 0.200 inch mark along with top vernier lines numbered 1 through 4, while the thimble alignment line points precisely to 10 on the thimble scale.}{}{MicAndScrewdriver3}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Reading the Thimble Scale}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item The Price is Right--the closest without going over is the thimble measurement
+                    \begin{itemize}
+                        \item 10 is closest to the barrel line
+                        \item 10 = 0.010"
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A close-up view of the sleeve and thimble scales on a micrometer taking a measurement. The sleeve displays main graduations exposing up to the 0.200 inch mark along with top vernier lines numbered 1 through 4, while the thimble alignment line points precisely to 10 on the thimble scale.}{}{MicAndScrewdriver3}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{The Total Measurement}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Total measurement = barrel measurement + thimble measurement
+                    \begin{itemize}
+                        \item 0.225" + 0.010" = 0.235"
+                    \end{itemize}
+                \item{If the micrometer doesn't include a vernier scale, this is the best that can be measured}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A close-up view of the sleeve and thimble scales on a micrometer taking a measurement. The sleeve displays main graduations exposing up to the 0.200 inch mark along with top vernier lines numbered 1 through 4, while the thimble alignment line points precisely to 10 on the thimble scale.}{}{MicAndScrewdriver3}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Reading the Vernier Scale (1 of 2)}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Notice the measurement is \emph{almost} to 11 on the thimble
+                \item Without a vernier, though, 10 \emph{has} to be the measurement
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A close-up view of the sleeve and thimble scales on a micrometer taking a measurement. The sleeve displays main graduations exposing up to the 0.200 inch mark along with top vernier lines numbered 1 through 4, while the thimble alignment line points precisely to 10 on the thimble scale.}{}{MicAndScrewdriver3}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Reading the Vernier Scale (2 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item 7 has the best alignment
+                    \begin{itemize}
+                        \item Which barrel line it matches doesn't matter 
+                    \end{itemize}
+                \item 7 = 0.0007"
+                \item 0.235" + 0.0007" = 0.2357"
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A macro close-up view of a micrometer barrel showing vernier lines on the sleeve aligned with circumferential graduations on the thimble. The sleeve displays horizontal vernier markings numbered 0 through 9 on the left, while the thimble bevel on the right shows scale divisions near the 15 and 20 marks.}{}{MicAndScrewdriver5}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Video: Metric Micrometer}
+
+    \centering
+    \href{https://www.youtube.com/watch?v=StBc56ZifMs}{How to Read a Metric Micrometer by WeldNotes.com}
+
+    \vspace{0.5em}
+    {\footnotesize \href{https://www.youtube.com/watch?v=StBc56ZifMs}{https://www.youtube.com/watch?v=StBc56ZifMs}\par}
+
+    \vspace{0.5em}
+    {\tiny Video \textcopyright WeldNotes via YouTube.com\par}
+\end{frame}
+
+\subsection{Types of Micrometers}
+
+\begin{frame}
+	\frametitle{Specialized Micrometers}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Many sizes and styles of micrometers
+                \item Some specialized for specific measurement tasks
+                \item All use the same basic function to perform the measurement
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.875\linewidth}{Three metallic micrometer tools shown against a white background, including an outside micrometer at the top with printed decimal equivalent charts on its C-shaped frame, an inside or depth micrometer spindle in the middle, and a depth micrometer with a flat base plate at the bottom.}{\textbf{Attribution:} Splarka at English Wikipedia, Public domain, via \href{https://commons.wikimedia.org/wiki/File:Micrometers.jpg}{Wikimedia Commons}}{Micrometers}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Outside Micrometers}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item The micrometers we've been looking at
+                \item Used to measure outside dimensions of parts
+                \item Available in different sizes
+                    \begin{itemize}
+                        \item Remember: bigger micrometers still only have 1" of stroke
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A Mitutoyo outside micrometer set against a light background, featuring a green C-shaped frame labeled 0-25 0.01mm, a fixed anvil, a movable spindle, a locking lever, and a sleeve and knurled thimble with graduated measuring scales.}{\textbf{Attibution:} Mauro Cateb, \href{https://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via \href{https://commons.wikimedia.org/wiki/File:Micrometer_.jpg}{Wikimedia Commons}}{Micrometer}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Telescoping Gauges}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item{Not a mircometer -- commonly used with outside micrometers}
+                \item{Two expanding rods}
+                \item{Screw in handle extends/retracts rods}
+                \item{Gauge expanded to walls of part -- transferred to outside micrometer for measurement}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A set of six metallic Starrett telescoping gauges arranged in individual pockets inside a bright red protective vinyl case. Each T-shaped gauge consists of a knurled handle with a knurled locking screw and spring-loaded telescoping plungers of varying widths, with labeled size ranges printed on the pockets below ranging from 5/16 inch to 6 inches, or 8 mm to 152 mm.}{\textbf{Attibution:} Nathanael Burton, \href{https://creativecommons.org/licenses/by-sa/2.0/}{CC BY-SA 2.0}, via \href{https://commons.wikimedia.org/wiki/File:Set_of_Six_Starrett_Telescoping_Gages_No.S579H.jpg}{Wikimedia Commons}}{Set_of_Six_Starrett_Telescoping_Gages_No.S579H}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Thread Micrometer}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Special outside micrometer
+                \item Measures screw minor diameter
+                \item Anvil and spindle are pointed to get between screw threads
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A close-up view of a specialized screw thread micrometer with a blue speckled frame measuring the pitch diameter of a threaded steel shaft. The v-shaped anvil on the left cradles a single thread crest while the pointed cone spindle tip on the right seats directly into an opposing thread groove. The black frame plate indicates a range of 25 to 50 mm with 0.01 mm graduations rated at 20 degrees Celsius.}{\textbf{Attibution:} Christoph Baumgartinger, \href{https://creativecommons.org/licenses/by-sa/2.5/}{CC BY-SA 2.5}, via \href{https://commons.wikimedia.org/wiki/File:Thread_Micrometer_Detail.jpg}{Wikimedia Commons}}{Thread_Micrometer_Detail}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Inside Micrometers}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Used to measure inside dimensions of parts
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{Two Mitutoyo caliper-type inside micrometers displayed horizontally against a plain gray background. The top unit features outward-facing measuring nibs with a labeled range of 5 to 30 mm, while the bottom unit features offset hooked jaws with a range of 25 to 50 mm, both equipped with graduated thimbles and knurled adjustment ratchets.}{\textbf{Attibution:} Glenn McKechnie, \href{https://creativecommons.org/licenses/by-sa/2.0/}{CC BY-SA 2.0}, via \href{https://commons.wikimedia.org/wiki/File:MicrometerInside5-30_25-50.jpg}{Wikimedia Commons}}{MicrometerInside5-30_25-50}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Depth Micrometer}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Used to measure the depth of holes/pockets
+                \item Frame is a single, flat surface to rest on part
+                \item No fixed anvil
+                \item Spindle is usually interchangeable for different starting depths
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.75\linewidth}{A Mitutoyo depth micrometer with a flat ground base resting vertically alongside an interchangeable measuring rod on a gray surface. The main body features a wide base plate labeled Mitutoyo 0.01mm, model number 916947, Made in Japan, surmounted by a graduated vertical sleeve and knurled thimble. The separate measuring rod on the left has a capped end collar designed for insertion through the central spindle sleeve.}{\textbf{Attibution:} Glenn McKechnie, \href{https://creativecommons.org/licenses/by-sa/2.0/}{CC BY-SA 2.0}, via \href{https://commons.wikimedia.org/wiki/File:MicrometerDepth916947.jpg}{Wikimedia Commons}}{MicrometerDepth916947}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \centering
+    {\Huge \textbf{\textcolor{BakerADARed}{Questions?}}}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Copyright Notice}
+
+    % \begin{figure}
+    %     \centering
+    %     \includegraphics[width=0.25\linewidth, alt={Creative Commons Attribution NonCommercial ShareAlike logo displaying four circular icons arranged horizontally over a black banner. From left to right, the icons feature the CC logo, a person pictogram for Attribution labeled BY below, a slashed dollar sign for NonCommercial labeled NC below, and a counterclockwise circular arrow for ShareAlike labeled SA below.}]{by-nc-sa.png}
+    % \end{figure}
+    
+    {\footnotesize
+    \PresTitle \textcopyright 2026 by Brad Peirson is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). To view a copy of the official license, visit \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{https://creativecommons.org/licenses/by-nc-sa/4.0/}.
+
+    \vspace{0.5em}
+
+    \textbf{Exceptions and Exclusions}
+
+    \begin{itemize}
+        \item[Baker College Branding \& Trademarks:]All Baker College logos, trademarks, wordmarks, seals, slide design templates, and proprietary branding elements contained in these materials are \textbf{EXCLUDED} from the CC BY-NC-SA 4.0 license. All rights are reserved by Baker College. Express written permission from Baker College is required for any use, copying, or redistribution of these elements.
+        \item[Third-Party Media \& Content:] Any third-party images, graphics, diagrams, or external media incorporated in these materials are included under their respective original licenses or permissions and are individually attributed at their point of use. 
+        \item[Original Author Content:] All unattributed figures, diagrams, text, code snippets, and media are original works created by the author and are licensed under the CC BY-NC-SA 4.0 license.
+    \end{itemize}
+    \par}
+\end{frame}
+
+\end{document}
+
+% \begin{frame}
+%     \frametitle{Test Todo}
+
+%     % Usage: \tikztodo[width]{height}{description/notes}
+%     \tikztodo[0.7\textwidth]{4cm}{Convert block diagram of feedback loop}
+% \end{frame}

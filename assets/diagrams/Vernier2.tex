@@ -1,0 +1,34 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={Main scale above and vernier scale below showing four divisions on the main scale equal in total length to five divisions on the vernier scale. Double-headed arrows highlight four main scale units versus five vernier scale units.}
+    ]
+
+    \draw[BakerBlack] (0,0) -- (5,0);
+    
+    \foreach \x in {0,...,5}
+        \draw[BakerBlack] (\x,0) -- (\x,0.5) node[text=BakerBlack, anchor=south, align=center]{\x};
+
+    \draw[UpNorthGreen, ultra thick, shorten <=0.25cm] (0,1) -- (0,2);
+    \draw[UpNorthGreen, ultra thick, shorten <=0.25cm] (4,1) -- (4,2);
+    \draw[UpNorthGreen, ultra thick, <->] (0,1.5) -- node[midway, text=BakerBlack, anchor=south, align=center]{4 Divisions} (4,1.5);
+
+    \draw[BakerADARed, ultra thick, shorten <=0.25cm] (0,-1) -- (0,-2);
+    \draw[BakerADARed, ultra thick, shorten <=0.25cm] (4,-1) -- (4,-2);
+    \draw[BakerADARed, ultra thick, <->] (0,-1.5) -- node[midway, text=BakerBlack, anchor=north, align=center]{5 Divisions} (4,-1.5);
+
+    \begin{scope}
+        \draw[BakerBlack] (0,-0.1) -- (4,-0.1);
+        
+        \foreach \x in {0,0.8,1.6,2.4,3.2,4}
+            \draw[BakerBlack] (\x,-0.1) -- (\x,-0.5);
+
+        \node[text=BakerBlack, anchor=north, align=center] at (0,-0.5){0};
+        \node[text=BakerBlack, anchor=north, align=center] at (0.8,-0.5){1};
+        \node[text=BakerBlack, anchor=north, align=center] at (1.6,-0.5){2};
+        \node[text=BakerBlack, anchor=north, align=center] at (2.4,-0.5){3};
+        \node[text=BakerBlack, anchor=north, align=center] at (3.2,-0.5){4};
+        \node[text=BakerBlack, anchor=north, align=center] at (4,-0.5){5};                    
+    \end{scope}
+    
+\end{circuitikz}

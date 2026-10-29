@@ -1,0 +1,111 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={Detailed main scale and shifted vernier scale with bold red lines highlighting main scale marks at 3 and 3.25, alongside a highlighted line on the 17th mark of the vernier scale where it aligns with the main scale.}
+    ]
+
+    \draw[BakerBlack] (0,0) -- (10,0);
+
+    \draw[BakerBlack] (0,0) -- (0,0.75);
+    \draw[BakerBlack] (10,0) -- (10,0.75);
+    
+    \foreach \x in {1,...,9}
+        \draw[BakerBlack] (\x,0) -- (\x,0.5) node[BakerBlack, anchor=south, align=center]{\scriptsize \x};
+
+    \node[BakerBlack, anchor=south, align=center] at (0,0.75){0};
+    \node[BakerBlack, anchor=south, align=center] at (10,0.75){1};
+
+    \foreach \x in {0.25,0.5,0.75}
+        \draw[BakerBlack] (\x,0) -- (\x,0.375);
+
+    \begin{scope}[xshift=1cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+
+    \begin{scope}[xshift=2cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+
+    \begin{scope}[xshift=3cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+
+    \begin{scope}[xshift=4cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+
+    \begin{scope}[xshift=5cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+
+    \begin{scope}[xshift=6cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+
+    \begin{scope}[xshift=7cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+
+    \begin{scope}[xshift=8cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+
+    \begin{scope}[xshift=9cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+    
+    %Vernier Scale
+    \begin{scope}[xshift=3.42cm]
+        \draw[BakerBlack] (0,-0.1) -- (6,-0.1);
+        
+        \foreach \x in {0,1.2,2.4,3.6,4.8,6}
+            \draw[BakerBlack] (\x,-0.1) -- (\x,-0.75);
+
+        \begin{scope}[]
+            \foreach \x in {0.24,0.48,0.72,0.96}
+                \draw[BakerBlack] (\x,-0.1) -- (\x,-0.5);
+        \end{scope}
+
+        \begin{scope}[xshift=1.2cm]
+            \foreach \x in {0.24,0.48,0.72,0.96}
+                \draw[BakerBlack] (\x,-0.1) -- (\x,-0.5);
+        \end{scope}
+
+        \begin{scope}[xshift=2.4cm]
+            \foreach \x in {0.24,0.48,0.72,0.96}
+                \draw[BakerBlack] (\x,-0.1) -- (\x,-0.5);
+        \end{scope}
+
+        \begin{scope}[xshift=3.6cm]
+            \foreach \x in {0.24,0.48,0.72,0.96}
+                \draw[BakerBlack] (\x,-0.1) -- (\x,-0.5);
+        \end{scope}
+
+        \begin{scope}[xshift=4.8cm]
+            \foreach \x in {0.24,0.48,0.72,0.96}
+                \draw[BakerBlack] (\x,-0.1) -- (\x,-0.5);
+        \end{scope}
+
+        \node[text=BakerBlack, anchor=north, align=center] at (0,-0.75){0};
+        \node[text=BakerBlack, anchor=north, align=center] at (1.2,-0.75){5};
+        \node[text=BakerBlack, anchor=north, align=center] at (2.4,-0.75){10};
+        \node[text=BakerBlack, anchor=north, align=center] at (3.6,-0.75){15};
+        \node[text=BakerBlack, anchor=north, align=center] at (4.8,-0.75){20};
+        \node[text=BakerBlack, anchor=north, align=center] at (6,-0.75){25};
+
+        \draw[BakerADARed, ultra thick] (4.08,-0.1) -- (4.08,-0.5);
+    \end{scope}
+
+    \draw[BakerADARed, ultra thick] (3,0) -- (3,0.5);
+    \draw[BakerADARed, ultra thick] (3.25,0) -- (3.25,0.375);
+    
+\end{circuitikz}

@@ -1,0 +1,33 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={Main scale labeled 0 and 1 with the vernier scale shifted right by two units. An arrow points to the alignment point on the main scale, and a bracket below indicates a shift distance of two fifths.}
+    ]
+
+    \draw[BakerBlack] (0,0) -- (6,0);
+    
+    \foreach \x in {0,5}
+        \draw[BakerBlack] (\x,0) -- (\x,0.5);
+
+    \foreach \x in {1,2,3,4,6}
+        \draw[BakerADARed] (\x,0) -- (\x,0.5);
+
+    \node[text=BakerBlack, anchor=south, align=center] at (0,0.5){0};
+    \node[text=BakerBlack, anchor=south, align=center] at (5,0.5){1};
+
+    \begin{scope}[xshift=2cm]
+        \draw[BakerBlack] (0,-0.1) -- (4,-0.1);
+        
+        \foreach \x in {0,4}
+            \draw[BakerBlack] (\x,-0.1) -- (\x,-0.5);
+
+        \node[text=BakerBlack, anchor=north, align=center] at (0,-0.5){0};
+        \node[text=BakerBlack, anchor=north, align=center] at (4,-0.5){1};                    
+    \end{scope}
+
+    \draw[BakerADARed, ultra thick, ->] (6.5,0.5) -- (6,-0.05);
+    
+    \draw[UpNorthGreen] (0,-0.1) -- (0,-0.5);
+    \draw[UpNorthGreen, decorate, decoration={brace}] (2,-0.55) -- node[midway, text=BakerBlack, anchor=north, align=center]{$\frac{2}{5}$} (0,-0.55);
+    
+\end{circuitikz}

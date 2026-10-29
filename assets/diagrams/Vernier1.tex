@@ -1,0 +1,29 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={Main scale above labeled 0 through 5 aligned directly over a vernier scale below labeled 0 through 5. The zero mark of the vernier scale aligns perfectly with the zero mark of the main scale, and the 5 mark of the vernier scale aligns with the 4 mark of the main scale.}
+    ]
+
+    \draw[BakerBlack] (0,0) -- (5,0);
+    
+    \foreach \x in {0,...,5}
+        \draw[BakerBlack] (\x,0) -- (\x,0.5) node[text=BakerBlack, anchor=south, align=center]{\x};
+
+    \node[text=UpNorthGreen, anchor=south, align=center] at (2.5,1){Main Scale};
+    \node[text=BakerADARed, anchor=north, align=center] at (2,-1){Vernier Scale};
+
+    \begin{scope}
+        \draw[BakerBlack] (0,-0.1) -- (4,-0.1);
+        
+        \foreach \x in {0,0.8,1.6,2.4,3.2,4}
+            \draw[BakerBlack] (\x,-0.1) -- (\x,-0.5);
+
+        \node[text=BakerBlack, anchor=north, align=center] at (0,-0.5){0};
+        \node[text=BakerBlack, anchor=north, align=center] at (0.8,-0.5){1};
+        \node[text=BakerBlack, anchor=north, align=center] at (1.6,-0.5){2};
+        \node[text=BakerBlack, anchor=north, align=center] at (2.4,-0.5){3};
+        \node[text=BakerBlack, anchor=north, align=center] at (3.2,-0.5){4};
+        \node[text=BakerBlack, anchor=north, align=center] at (4,-0.5){5};                    
+    \end{scope}
+    
+\end{circuitikz}

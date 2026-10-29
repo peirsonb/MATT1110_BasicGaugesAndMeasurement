@@ -1,0 +1,17 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=3mm, width=1.2mm]},
+    alt={A technical diagram depicting a one-inch threaded rod segment with 40 zigzag crests per inch. A top dimension line spans the full length labeled 1 inch, 40 threads, while a bottom callout identifies the single thread pitch width as 0.025 inches or 1/40th of an inch.}
+    ]
+
+    \draw[BakerBlack, decorate, decoration={zigzag, segment length=0.025in, amplitude=0.01in}] (0,0) -- (1in,0);
+
+    \draw[BakerADARed] (0,0.02in) -- (0,0.25);
+    \draw[BakerADARed] (1in,0.02in) -- (1in,0.25);
+    \draw[BakerADARed, <->] (0,0.1875) -- node[midway, text=BakerBlack, anchor=south, align=center]{\tiny 1 inch, 40 threads}(1in,0.1875);
+    
+    \draw[BakerADARed] (0.01875in,-0.02in) -- (0.01875in,-0.25);
+    \draw[BakerADARed] (0.04375in,-0.02in) -- (0.04375in,-0.25);
+    \draw[BakerADARed, <-] (0.04375in,-0.25) to[out=0, in=180] (0.25in, -0.3in) node[text=BakerBlack, anchor=west, align=left]{\tiny 1 thread=$\frac{1}{40}in=0.025in$};
+    
+\end{circuitikz}

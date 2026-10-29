@@ -1,0 +1,21 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=3mm, width=1.2mm]},
+    alt={A circular dial diagram showing 25 radial tick marks spaced around a central disc, labeled with major units 0, 5, 10, 15, and 20 at equal intervals around the perimeter.}
+    ]
+
+    \foreach \a in {0,14.4,28.8,...,360}
+        \draw[BakerBlack] (0,0) -- (\a:2.5);
+
+    \foreach \a in {0,72,144,216,288}
+        \draw[BakerBlack] (0,0) -- (\a:3);
+
+    \draw[BakerWhite, fill=BakerWhite] (0,0) circle (2);
+
+    \node[text=BakerBlack, anchor=west, align=left] at (0:3){0};
+    \node[text=BakerBlack, anchor=south west, align=left] at (72:3){5};
+    \node[text=BakerBlack, anchor=south east, align=right] at (144:3){10};
+    \node[text=BakerBlack, anchor=north east, align=right] at (216:3){15};
+    \node[text=BakerBlack, anchor=north west, align=left] at (288:3){20};
+    
+\end{circuitikz}

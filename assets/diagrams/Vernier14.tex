@@ -1,0 +1,110 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={Detailed main scale labeled 0 to 1 with ten numbered major divisions, each subdivided into four parts. Directly below, a vernier scale spans twenty-four main scale divisions and contains twenty-five total divisions labeled 0, 5, 10, 15, 20, and 25. Braces indicate 24 main scale divisions equal 25 vernier scale divisions.}
+    ]
+
+    \draw[BakerBlack] (0,0) -- (10,0);
+
+    \draw[BakerBlack] (0,0) -- (0,0.75);
+    \draw[BakerBlack] (10,0) -- (10,0.75);
+    
+    \foreach \x in {1,...,9}
+        \draw[BakerBlack] (\x,0) -- (\x,0.5) node[BakerBlack, anchor=south, align=center]{\scriptsize \x};
+
+    \node[BakerBlack, anchor=south, align=center] at (0,0.75){0};
+    \node[BakerBlack, anchor=south, align=center] at (10,0.75){1};
+
+    \foreach \x in {0.25,0.5,0.75}
+        \draw[BakerBlack] (\x,0) -- (\x,0.375);
+
+    \begin{scope}[xshift=1cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+
+    \begin{scope}[xshift=2cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+
+    \begin{scope}[xshift=3cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+
+    \begin{scope}[xshift=4cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+
+    \begin{scope}[xshift=5cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+
+    \begin{scope}[xshift=6cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+
+    \begin{scope}[xshift=7cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+
+    \begin{scope}[xshift=8cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+
+    \begin{scope}[xshift=9cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+    
+    %Vernier Scale
+    \begin{scope}[]
+        \draw[BakerBlack] (0,-0.1) -- (6,-0.1);
+        
+        \foreach \x in {0,1.2,2.4,3.6,4.8,6}
+            \draw[BakerBlack] (\x,-0.1) -- (\x,-0.75);
+
+        \begin{scope}[]
+            \foreach \x in {0.24,0.48,0.72,0.96}
+                \draw[BakerBlack] (\x,-0.1) -- (\x,-0.5);
+        \end{scope}
+
+        \begin{scope}[xshift=1.2cm]
+            \foreach \x in {0.24,0.48,0.72,0.96}
+                \draw[BakerBlack] (\x,-0.1) -- (\x,-0.5);
+        \end{scope}
+
+        \begin{scope}[xshift=2.4cm]
+            \foreach \x in {0.24,0.48,0.72,0.96}
+                \draw[BakerBlack] (\x,-0.1) -- (\x,-0.5);
+        \end{scope}
+
+        \begin{scope}[xshift=3.6cm]
+            \foreach \x in {0.24,0.48,0.72,0.96}
+                \draw[BakerBlack] (\x,-0.1) -- (\x,-0.5);
+        \end{scope}
+
+        \begin{scope}[xshift=4.8cm]
+            \foreach \x in {0.24,0.48,0.72,0.96}
+                \draw[BakerBlack] (\x,-0.1) -- (\x,-0.5);
+        \end{scope}
+
+        \node[text=BakerBlack, anchor=north, align=center] at (0,-0.75){0};
+        \node[text=BakerBlack, anchor=north, align=center] at (1.2,-0.75){5};
+        \node[text=BakerBlack, anchor=north, align=center] at (2.4,-0.75){10};
+        \node[text=BakerBlack, anchor=north, align=center] at (3.6,-0.75){15};
+        \node[text=BakerBlack, anchor=north, align=center] at (4.8,-0.75){20};
+        \node[text=BakerBlack, anchor=north, align=center] at (6,-0.75){25};
+
+        \draw[UpNorthGreen, decorate, decoration={brace}] (0,1.5) -- node[midway, text=BakerBlack, anchor=south, align=center]{24 Divisions} (6,1.5);
+
+        \draw[BakerADARed, decorate, decoration={brace}] (6,-1.5) -- node[midway, text=BakerBlack, anchor=north, align=center]{25 Divisions} (0,-1.5);
+    \end{scope}
+    
+\end{circuitikz}

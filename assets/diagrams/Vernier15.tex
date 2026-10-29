@@ -1,0 +1,112 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={Detailed main scale and vernier scale setup with annotations showing the precision breakdown. Arrows point to the 10 major divisions equaling 0.1 each, 4 subdivisions per major division equaling 0.025 each, and 25 vernier divisions providing a total precision of 0.001.}
+    ]
+
+    \draw[BakerBlack] (0,0) -- (10,0);
+
+    \draw[BakerBlack] (0,0) -- (0,0.75);
+    \draw[BakerBlack] (10,0) -- (10,0.75);
+    
+    \foreach \x in {1,...,9}
+        \draw[BakerBlack] (\x,0) -- (\x,0.5) node[BakerBlack, anchor=south, align=center]{\scriptsize \x};
+
+    \node[BakerBlack, anchor=south, align=center] at (0,0.75){0};
+    \node[BakerBlack, anchor=south, align=center] at (10,0.75){1};
+
+    \foreach \x in {0.25,0.5,0.75}
+        \draw[BakerBlack] (\x,0) -- (\x,0.375);
+
+    \begin{scope}[xshift=1cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+
+    \begin{scope}[xshift=2cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+
+    \begin{scope}[xshift=3cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+
+    \begin{scope}[xshift=4cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+
+    \begin{scope}[xshift=5cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+
+    \begin{scope}[xshift=6cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+
+    \begin{scope}[xshift=7cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+
+    \begin{scope}[xshift=8cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+
+    \begin{scope}[xshift=9cm]
+        \foreach \x in {0.25,0.5,0.75}
+            \draw[BakerBlack] (\x,0) -- (\x,0.375);
+    \end{scope}
+    
+    %Vernier Scale
+    \begin{scope}[]
+        \draw[BakerBlack] (0,-0.1) -- (6,-0.1);
+        
+        \foreach \x in {0,1.2,2.4,3.6,4.8,6}
+            \draw[BakerBlack] (\x,-0.1) -- (\x,-0.75);
+
+        \begin{scope}[]
+            \foreach \x in {0.24,0.48,0.72,0.96}
+                \draw[BakerBlack] (\x,-0.1) -- (\x,-0.5);
+        \end{scope}
+
+        \begin{scope}[xshift=1.2cm]
+            \foreach \x in {0.24,0.48,0.72,0.96}
+                \draw[BakerBlack] (\x,-0.1) -- (\x,-0.5);
+        \end{scope}
+
+        \begin{scope}[xshift=2.4cm]
+            \foreach \x in {0.24,0.48,0.72,0.96}
+                \draw[BakerBlack] (\x,-0.1) -- (\x,-0.5);
+        \end{scope}
+
+        \begin{scope}[xshift=3.6cm]
+            \foreach \x in {0.24,0.48,0.72,0.96}
+                \draw[BakerBlack] (\x,-0.1) -- (\x,-0.5);
+        \end{scope}
+
+        \begin{scope}[xshift=4.8cm]
+            \foreach \x in {0.24,0.48,0.72,0.96}
+                \draw[BakerBlack] (\x,-0.1) -- (\x,-0.5);
+        \end{scope}
+
+        \node[text=BakerBlack, anchor=north, align=center] at (0,-0.75){0};
+        \node[text=BakerBlack, anchor=north, align=center] at (1.2,-0.75){5};
+        \node[text=BakerBlack, anchor=north, align=center] at (2.4,-0.75){10};
+        \node[text=BakerBlack, anchor=north, align=center] at (3.6,-0.75){15};
+        \node[text=BakerBlack, anchor=north, align=center] at (4.8,-0.75){20};
+        \node[text=BakerBlack, anchor=north, align=center] at (6,-0.75){25};
+
+        \draw[UpNorthGreen, <-] (1,0.9) to[out=90,in=180] (3,3) node[text=BakerBlack, anchor=west, align=left]{10 major divisions\\$\frac{1}{10}=0.1$};
+        
+        \draw[UpNorthGreen, <-] (2.5,0.4) to[out=90,in=180] (4,2) node[text=BakerBlack, anchor=west, align=left]{4 parts per major division\\$\frac{1}{4} \times \frac{1}{10}=\frac{1}{40}=0.025$};
+
+        \draw[UpNorthGreen, <-] (3,-0.75) to[out=270,in=180] (4.5,-2) node[text=BakerBlack, anchor=west, align=left]{25 divisions\\$\frac{1}{40} \times \frac{1}{25} = \frac{1}{1000}=0.001$};
+    \end{scope}
+    
+\end{circuitikz}

@@ -1,0 +1,31 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={Main scale labeled 0 through 8 with a vernier scale positioned below. Red highlighted lines mark the major division at 2 on the main scale and the aligning mark at 6 on the vernier scale. Below the diagram, an equation adds 2 and 0.8 to give a total reading of 2.8.}
+    ]
+
+    \draw[BakerBlack] (0,0) -- (8,0);
+    
+    \foreach \x in {0,...,8}
+        \draw[BakerBlack] (\x,0) -- (\x,0.5) node[text=BakerBlack, anchor=south, align=center]{\x};
+
+    \begin{scope}[xshift=2.8cm]
+        \draw[BakerBlack] (0,-0.1) -- (4,-0.1);
+        
+        \foreach \x in {0,0.8,1.6,2.4,3.2,4}
+            \draw[BakerBlack] (\x,-0.1) -- (\x,-0.5);
+
+        \node[text=BakerBlack, anchor=north, align=center] at (0,-0.5){0};
+        \node[text=BakerBlack, anchor=north, align=center] at (0.8,-0.5){1};
+        \node[text=BakerBlack, anchor=north, align=center] at (1.6,-0.5){2};
+        \node[text=BakerBlack, anchor=north, align=center] at (2.4,-0.5){3};
+        \node[text=BakerBlack, anchor=north, align=center] at (3.2,-0.5){4};
+        \node[text=BakerBlack, anchor=north, align=center] at (4,-0.5){5};                    
+    \end{scope}
+
+    \draw[UpNorthGreen, thick, ->] (5.5,-1.5) node[text=BakerBlack, anchor=east, align=left]{$\frac{4}{5}=0.8$} to[out=0,in=180] (6,-0.25);
+    \draw[BakerADARed, ultra thick] (2,0) -- (2,0.5);
+    \draw[BakerADARed, ultra thick] (6,-0.1) -- (6,-0.5);
+    \node[text=BakerADARed] at (4,-2.5){$2+0.8=2.8$};
+    
+\end{circuitikz}
