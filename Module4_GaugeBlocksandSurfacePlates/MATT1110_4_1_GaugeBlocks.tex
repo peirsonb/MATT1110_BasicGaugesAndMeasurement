@@ -1,0 +1,651 @@
+% ============================================================================
+% Accessibility
+% ============================================================================
+\DocumentMetadata{
+  lang = en-US, 
+  pdfstandard = ua-2, 
+  tagging = on, 
+  tagging-setup = {math/setup=mathml-SE}
+}
+
+% ============================================================================
+% Document Properties - used on title slide and PDF metadata fields
+% ============================================================================
+\def\PresTitle{Gauge Blocks}  % Required - top line of title slide
+\def\PresSubtitle{Gauges and Measurement}         % Optional - second line
+\def\PresAuthor{Brad Peirson}               % Required - below dividing line
+\def\PresInstitute{College of Information Technology and Engineering}       % Optional
+\def\PresDate{}                             % Optional
+\def\PresKeywords{}                         % Optional - used for hyperref
+
+% Presentation Formatting
+% ============================================================================
+\input{../ltxtalk_preamble.tex}
+
+% ============================================================================
+% Document Content
+% ============================================================================
+\begin{document}
+
+\maketitle              % Redefined in the preamble to generate a full frame
+
+\begin{frame}
+    \frametitle{Agenda}
+    \begingroup
+        % Tighten the spacing between paragraphs/TOC lines
+        \setlength{\parskip}{0.3em} 
+        
+        % Optionally tighten the line spacing within an entry
+        %\baselineskip=1.2em 
+        
+        \setcounter{tocdepth}{1} % Show only sections
+    \tableofcontents
+    \setcounter{tocdepth}{2} % Reset back to default so subsections are tracked
+    \endgroup
+\end{frame}
+
+\section{Gage Block Basics}
+
+\begin{frame}
+	\frametitle{Gage Blocks}
+    
+    \begin{itemize}[<+- | alert@+>]
+        \item Hardened alloy steel, either rectangular or square, with a measuring surface on each end
+        \item Measuring surface lapped and polished to \emph{optically flat} surface
+        \item Distance between surfaces is the size of the block/measuring dimension
+        \item Individual blocks from 0.010"-20"
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Gage Block Material (1 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Most commonly hardened steel
+                \item Chrome plated
+                    \begin{itemize}
+                        \item Replacement for worn blocks
+                        \item Used for working sets--more wear resistant
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.75\linewidth}{A monochrome photograph showing various sizes of rectangular metal gauge blocks arranged on a white surface. The blocks feature polished measurement faces stamped with dimension markings such as 0.55 inch, 4 IN Pratt and Whitney, 0.450 IN CEJ, and 2 inch P and W, including tall rectangular blocks with central mounting holes and thin precision flat blocks resting on edge or laying flat.}{\textbf{Attribution:} National Institute of Standards and Technology, Public domain, via \href{https://commons.wikimedia.org/wiki/File:GageBlocks_003.jpg}{Wikimedia Commons}}{GageBlocks_003}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Gage Block Material (2 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Solid carbide
+                    \begin{itemize}
+                        \item Available as full set
+                        \item Mostly used as wear blocks at the end of a stack
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.75\linewidth}{A monochrome photograph showing various sizes of rectangular metal gauge blocks arranged on a white surface. The blocks feature polished measurement faces stamped with dimension markings such as 0.55 inch, 4 IN Pratt and Whitney, 0.450 IN CEJ, and 2 inch P and W, including tall rectangular blocks with central mounting holes and thin precision flat blocks resting on edge or laying flat.}{\textbf{Attribution:} National Institute of Standards and Technology, Public domain, via \href{https://commons.wikimedia.org/wiki/File:GageBlocks_003.jpg}{Wikimedia Commons}}{GageBlocks_003}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Gage Block Uses}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Gage blocks are not standard measurement tools
+                \item Only used in industries where precision is critical
+                \item Used to master other gauges
+                \item Used in highly precise machine setups
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.75\linewidth}{A monochrome photograph showing various sizes of rectangular metal gauge blocks arranged on a white surface. The blocks feature polished measurement faces stamped with dimension markings such as 0.55 inch, 4 IN Pratt and Whitney, 0.450 IN CEJ, and 2 inch P and W, including tall rectangular blocks with central mounting holes and thin precision flat blocks resting on edge or laying flat.}{\textbf{Attribution:} National Institute of Standards and Technology, Public domain, via \href{https://commons.wikimedia.org/wiki/File:GageBlocks_003.jpg}{Wikimedia Commons}}{GageBlocks_003}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\subsection{Gage Block Sets}
+
+\begin{frame}
+	\frametitle{Gage Block Sets}
+    
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Typical sets from 5-85 blocks
+                \item Blocks can be combined
+                    \begin{itemize}
+                        \item Large set can measure 120,000 different lengths in 0.0001" increments
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A black-and-white photograph showing an open dark case containing a comprehensive set of DoALL metric gauge blocks arranged neatly in fitted wooden slots. A white label on the inside lid reads DoALL Metric Gage Blocks, positioned above rows of individual precision steel blocks ranging from small thin plates standing vertically to long rectangular block bars laid horizontally across the bottom.}{\textbf{Attribution:} National Institute of Standards and Technology, Public domain, via \href{https://commons.wikimedia.org/wiki/File:GageBlocks_011.jpg}{Wikimedia Commons}}{GageBlocks_011}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Gage Block Master Set (1 of 3)}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Only used to check the accuracy of other blocks
+                \item Check wear, distortion, growth of working blocks
+                \item Large operations may have many masters--controlled by grand master set
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A black-and-white photograph showing an open dark case containing a comprehensive set of DoALL metric gauge blocks arranged neatly in fitted wooden slots. A white label on the inside lid reads DoALL Metric Gage Blocks, positioned above rows of individual precision steel blocks ranging from small thin plates standing vertically to long rectangular block bars laid horizontally across the bottom.}{\textbf{Attribution:} National Institute of Standards and Technology, Public domain, via \href{https://commons.wikimedia.org/wiki/File:GageBlocks_011.jpg}{Wikimedia Commons}}{GageBlocks_011}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Gage Block Master Set (2 of 3)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Master set calibrated every 6 months
+                \item Must be sent to NIST for calibration
+                \item NIST certifies each block
+                    \begin{itemize}
+                        \item Flatness
+                        \item Parallelism
+                        \item Length
+                    \end{itemize}
+                \item Variation is certified to 0.000001"
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A black-and-white photograph showing an open dark case containing a comprehensive set of DoALL metric gauge blocks arranged neatly in fitted wooden slots. A white label on the inside lid reads DoALL Metric Gage Blocks, positioned above rows of individual precision steel blocks ranging from small thin plates standing vertically to long rectangular block bars laid horizontally across the bottom.}{\textbf{Attribution:} National Institute of Standards and Technology, Public domain, via \href{https://commons.wikimedia.org/wiki/File:GageBlocks_011.jpg}{Wikimedia Commons}}{GageBlocks_011}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Gage Block Master Set (3 of 3)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Master sets are rarely replaced
+                    \begin{itemize}
+                        \item They're constantly recertified
+                        \item Even if they're worn, the accuracy is known
+                        \item If the accuracy is known accurate measurements can still be made
+                    \end{itemize}
+                \item Working sets may be replaced as they get worn
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A black-and-white photograph showing an open dark case containing a comprehensive set of DoALL metric gauge blocks arranged neatly in fitted wooden slots. A white label on the inside lid reads DoALL Metric Gage Blocks, positioned above rows of individual precision steel blocks ranging from small thin plates standing vertically to long rectangular block bars laid horizontally across the bottom.}{\textbf{Attribution:} National Institute of Standards and Technology, Public domain, via \href{https://commons.wikimedia.org/wiki/File:GageBlocks_011.jpg}{Wikimedia Commons}}{GageBlocks_011}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\subsection{Gage Block Grades}
+
+\begin{frame}
+	\frametitle{Gage Block Standards}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Japan: JIS B 7506-1997
+                \item Germany: DIN 861-1980
+                \item US: ANSI/ASME B89.1.9M
+                \item UK: BS 4311: Part 1: 1993
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.75\linewidth}{A monochrome photograph showing various sizes of rectangular metal gauge blocks arranged on a white surface. The blocks feature polished measurement faces stamped with dimension markings such as 0.55 inch, 4 IN Pratt and Whitney, 0.450 IN CEJ, and 2 inch P and W, including tall rectangular blocks with central mounting holes and thin precision flat blocks resting on edge or laying flat.}{\textbf{Attribution:} National Institute of Standards and Technology, Public domain, via \href{https://commons.wikimedia.org/wiki/File:GageBlocks_003.jpg}{Wikimedia Commons}}{GageBlocks_003}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Gage Block Tolerance}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Standard tolerances are stated in ``length per length" 
+                    \begin{itemize}
+                        \item Inches per inch
+                        \item Millimeters per millimeter
+                    \end{itemize}
+                \item This means actual tolerance varies depending on the size of the block
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.75\linewidth}{A monochrome photograph showing various sizes of rectangular metal gauge blocks arranged on a white surface. The blocks feature polished measurement faces stamped with dimension markings such as 0.55 inch, 4 IN Pratt and Whitney, 0.450 IN CEJ, and 2 inch P and W, including tall rectangular blocks with central mounting holes and thin precision flat blocks resting on edge or laying flat.}{\textbf{Attribution:} National Institute of Standards and Technology, Public domain, via \href{https://commons.wikimedia.org/wiki/File:GageBlocks_003.jpg}{Wikimedia Commons}}{GageBlocks_003}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{ANSI Tolerance Grades}
+
+    \begin{itemize}[<+- | alert@+>]
+        \item[00] +0.000004/-0.000002
+            \begin{itemize}
+                \item Setting standards
+            \end{itemize}
+        \item[0] +0.000006/-0.000002
+            \begin{itemize}
+                \item Calibrate inspection blocks
+            \end{itemize}
+        \item[AS-1] +0.000008/-0.000004
+            \begin{itemize}
+                \item Toolroom standard--setting other gauges
+            \end{itemize}
+        \item[AS-2] +0.00001/-0.000006
+            \begin{itemize}
+                \item Shop standard--actually measure stuff
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Gauge Block Tolerance Example}
+
+    \begin{itemize}[<+- | alert@+>]
+        \item Consider class AS-2 blocks
+            \begin{itemize}
+                \item +0.00001/-0.000006 inches per inch
+            \end{itemize}
+        \item 1" block: +0.00001/-0.000006
+        \item 2" block: +0.00002/-0.000012
+        \item Tolerance doesn't divide--smaller blocks held to 1" tolerance
+    \end{itemize}
+\end{frame}
+
+\subsection{Manufacture of Gage Blocks}
+
+\begin{frame}
+	\frametitle{Manufacture of Gage Blocks}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Special steel alloy 
+                \item Hardened 
+                \item Ground
+                \item Stabilized
+                    \begin{itemize}
+                        \item Special heat treat
+                        \item Changes internal structure to minimize temperature growth/changes
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.75\linewidth}{A monochrome photograph showing various sizes of rectangular metal gauge blocks arranged on a white surface. The blocks feature polished measurement faces stamped with dimension markings such as 0.55 inch, 4 IN Pratt and Whitney, 0.450 IN CEJ, and 2 inch P and W, including tall rectangular blocks with central mounting holes and thin precision flat blocks resting on edge or laying flat.}{\textbf{Attribution:} National Institute of Standards and Technology, Public domain, via \href{https://commons.wikimedia.org/wiki/File:GageBlocks_003.jpg}{Wikimedia Commons}}{GageBlocks_003}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Manufacture of Gage Blocks}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item After stabilization--lapped on special precision machines
+                \item Not manufactured to a standard, inspected \emph{after} manufacture to determine standard
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.75\linewidth}{A monochrome photograph showing various sizes of rectangular metal gauge blocks arranged on a white surface. The blocks feature polished measurement faces stamped with dimension markings such as 0.55 inch, 4 IN Pratt and Whitney, 0.450 IN CEJ, and 2 inch P and W, including tall rectangular blocks with central mounting holes and thin precision flat blocks resting on edge or laying flat.}{\textbf{Attribution:} National Institute of Standards and Technology, Public domain, via \href{https://commons.wikimedia.org/wiki/File:GageBlocks_003.jpg}{Wikimedia Commons}}{GageBlocks_003}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Video: Mitutoyo Ceramic Gauge Blocks}
+
+    \centering
+    \href{https://www.youtube.com/watch?v=hKrUuFH-Ulc}{Inside the Miyazaki Factory | Pioneering Pure White Ceramic Gauge Blocks}\\
+
+    \vspace{0.5em}
+    {\footnotesize \href{https://www.youtube.com/watch?v=hKrUuFH-Ulc}{https://www.youtube.com/watch?v=hKrUuFH-Ulc}\par}
+
+    \vspace{0.5em}
+    {\tiny Video \textcopyright Mitutoyo Europe via YouTube.com\par}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Flatness and Parallelism of Gage Blocks}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Measured with \emph{optical flat} (special lens)
+                \item Light rays on the surface create light and dark bands
+                \item Straight lines = flat within 0.000001" or less
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.75\linewidth}{A monochromatic optical interferometry photograph showing light fringe patterns across a rectangular gauge block surface under test. Alternating light and dark vertical interference bands pass across the rectangular central block and its circular central aperture, demonstrating slight phase shifts relative to the background surface.}{\textbf{Attribution:} National Institute of Standards and Technology, Public domain, via \href{https://commons.wikimedia.org/wiki/File:GageBlocks_003.jpg}{Wikimedia Commons}}{GageBlocks_008}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Height of Gage Blocks}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Also checked using light
+                \item Special device -- \emph{interferometer}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A vintage black-and-white photograph showing a lab technician in a suit looking through an optical comparator microscope at a workstation. In the foreground, an open wooden storage case displays a large organized set of rectangular gauge blocks standing vertically in slotted rows.}{\textbf{Attribution:} National Institute of Standards and Technology, Public domain, via \href{https://commons.wikimedia.org/wiki/File:GageBlocks_003.jpg}{Wikimedia Commons}}{GageBlocks_001}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\section{Using Gage Blocks}
+
+\subsection{Procedure for Use}
+
+\begin{frame}
+	\frametitle{Before Use}
+
+    \begin{itemize}[<+- | alert@+>]
+        \item Blocks need to be absolutely clean before use
+        \item Will have rust preventative coating from manufacturer (oil, cosmoline, etc.)
+        \item Clean blocks thoroughly with a solvent (95\% alcohol, book is old enough to recommend kerosene)
+            \begin{itemize}
+                \item \textbf{Do not} use any cleaner that leaves a film behind
+                \item Brake and carb cleaner are good cleaners, leave a film
+            \end{itemize}
+        \item Any surface plates/other accessories used with blocks must also be absolutely clean
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Keep Things Clean!}
+
+    \centering
+    Remember, we're talking \textbf{millionths} of an inch\dots \\
+    \dots even dust can cause enough damage to change the precision.
+\end{frame}
+
+\begin{frame}
+	\frametitle{During Use}
+    \begin{itemize}[<+- | alert@+>]
+        \item{Don't touch measurement surfaces any more than necessary}
+            \begin{itemize}
+                \item{Skin oils are corrosive and at this point we have absolutely bare steel}
+            \end{itemize}
+        \item{Immediately wipe off any fingerprints with a clean, dry, \textbf{soft} cloth}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{After Use}
+
+    \begin{itemize}[<+- | alert@+>]
+        \item Re-clean with 95\% alcohol
+        \item Coat block completely with acid free oil
+        \item Immediately return blocks to the case
+            \begin{itemize}
+                \item \textbf{Make sure the case stays clean!}
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\subsection{Wringing Gage Blocks}
+
+\begin{frame}
+	\frametitle{The Trick to Gage Blocks}
+
+    \begin{itemize}[<+- | alert@+>]
+        \item Gage blocks are most often used with stacks of more than one block
+        \item We're talking blocks that are almost perfectly flat and smooth--they can stick themselves together
+        \item The process is called \emph{wringing}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Wringing Diagram}
+
+    \begin{figure}
+        \centering
+        \resizebox{\linewidth}{!}{
+            \input{../assets/diagrams/GageBlockWringing.tex}
+        }
+
+        \vspace{0.5em}
+        {\tiny Wizard191, \href{http://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via \href{https://commons.wikimedia.org/wiki/File:Gauge_block_wringing.svg}{Wikimedia Commons}, converted to TikZ format\par}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Wringing Gage Blocks (1 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item[1.] Slowly slide blocks together
+                    \begin{itemize}
+                        \item \textbf{Light} pressure
+                        \item Oscillate slightly--feeling for any dust
+                    \end{itemize}
+                \item[2.] Twist blocks together
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{figure}
+                \centering
+                \resizebox{\linewidth}{!}{
+                    \input{../assets/diagrams/GageBlockWringing.tex}
+                }
+
+                \vspace{0.5em}
+                {\tiny Wizard191, \href{http://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via \href{https://commons.wikimedia.org/wiki/File:Gauge_block_wringing.svg}{Wikimedia Commons}, converted to TikZ format\par}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Wringing Gage Blocks (2 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item[3.] Slide blocks out of alignment (light pressure)
+                \item[4.] Fully align blocks (light pressure)
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{figure}
+                \centering
+                \resizebox{\linewidth}{!}{
+                    \input{../assets/diagrams/GageBlockWringing.tex}
+                }
+
+                \vspace{0.5em}
+                {\tiny Wizard191, \href{http://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via \href{https://commons.wikimedia.org/wiki/File:Gauge_block_wringing.svg}{Wikimedia Commons}, converted to TikZ format\par}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Proper Gage Block Wringing}
+
+    \shadowpic[]{0.875\linewidth}{A monochrome photograph demonstrating gauge block wringing adhesion, showing a hand holding a single end of a long, self-supporting horizontal stack of wrung steel gauge blocks. The individual rectangular blocks, stamped with fractional inch sizes such as 0.100, 0.450, 0.700, and 1 inch, adhere together in a continuous horizontal line extending outward without mechanical support.}{\textbf{Attribution:} Clarence Leon Goodrich and Frank Arthur Stanley, Public domain, via \href{https://commons.wikimedia.org/wiki/File:Gauge_block_adhesion.jpg}{Wikimedia Commons}}{Gauge_block_adhesion}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Video: How to Use and Calibrate Gage Blocks}
+
+    \frametitle{Video: Mitutoyo Ceramic Gauge Blocks}
+
+    \centering
+    \href{https://www.youtube.com/watch?v=Bup30r-n43Q}{Gage Block Introduction - How To Use and Calibrate Gage Blocks}\\
+
+    \vspace{0.5em}
+    {\footnotesize \href{https://www.youtube.com/watch?v=Bup30r-n43Q}{https://www.youtube.com/watch?v=Bup30r-n43Q}\par}
+
+    \vspace{0.5em}
+    {\tiny Video \textcopyright Mitutoyo America Corporation via YouTube.com\par}
+\end{frame}
+
+\subsection{Measurement Variables}
+
+\begin{frame}
+	\frametitle{Thermal Expansion}
+
+    \begin{itemize}[<+- | alert@+>]
+        \item \emph{Everything} changes size with temperature
+        \item We're dealing with \emph{millionths} of an inch
+        \item Any growth or shrinkage will exponentially increase error
+        \item Standard measurement temperature is especially important with gage blocks
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Coefficient of Linear Expansion}
+
+    \begin{table}
+        \centering
+        \tagpdfsetup{table/header-rows={1}}
+        \begin{tabular}{lc}
+            \hline
+                Material    &   Millionths of an inch per inch per \textdegree F\\
+                \hline
+                Steel   &   5.5-7.2\\
+                Iron    &   5.5-6.7\\
+                Phosphor bronze &   9.3\\
+                Aluminum    &   12.8\\
+                Copper  &   9.4\\
+                Gage blocks &   6.36-7.0\\
+            \hline                
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Effect of Temperature}
+
+    \begin{itemize}[<+- | alert@+>]
+        \item 2-1/2" diameter aluminum casting at 90\textdegree F
+        \item Temperature Error = Difference in coefficients of expansion $\times$ Difference between temperature and standard measurement temperature $\times$ Dimension
+        \item Temperature Error = $(12.8-7.0)\times (90-68) \times 2.5 = 319$
+        \item 319 millionths of an inch = 0.000319"
+    \end{itemize}
+\end{frame}
+
+\section{Gage Block Applications}
+            
+\begin{frame}
+	\frametitle{Gage Block Accessories}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Inside caliper jaws
+                \item Outside caliper jaws
+                \item Scribes 
+                \item Center points
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A top-down view of a wooden case containing a precision gauge block accessory set. The fitted compartments hold various steel attachment components, including clamping holders with knurled adjustment screws, scriber points, center points, straight jaws, and a large foot block stamped with 1 INCH and P.V.E..}{\textbf{Attribution:} Glenn McKechnie, \href{http://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via \href{https://commons.wikimedia.org/wiki/File:GaugeBlockAccessorySet.jpg}{Wikimedia Commons}}{GaugeBlockAccessorySet}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Gage Block Pliers}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Used for calibrating internal measurement devices
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A precision gauge block holder clamp securing a stacked combination of gauge blocks and measuring jaw accessories. The heavy-duty rectangular metal frame houses a long clamping screw on the left, which compresses the stack of rectangular gauge blocks and a half-round measuring nib stamped with the number 5 against the fixed end block.}{\textbf{Attribution:} Solaris2006, \href{http://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via \href{https://commons.wikimedia.org/wiki/File:Endma\%C3\%9F_Zange.jpg}{Wikimedia Commons}}{Endmaß_Zange}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Optical Flat (1 of 2)}
+
+    \shadowpic[]{0.75\linewidth}{A side-by-side comparison illustrating optical flats in use to measure components via light interference. The left image shows an optical flat placed over a gauge block and a spherical ball bearing, producing visible straight parallel interference bands across the gauge block. The right image shows an optical flat placed over a flat circular disk and a cylindrical plug gauge, revealing curved circular interference rings on the disk and straight vertical bands on the cylinder.}{\textbf{Attribution:} Unknown author, Public domain, via \href{https://commons.wikimedia.org/wiki/File:Optical_flats_in_use.jpg}{Wikimedia Commons}}{Optical_flats_in_use}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Optical Flat (2 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Perfectly flat lens
+                \item Placed on top of block and item to be measured
+                \item If same height, no angle = no optical interference
+                \item If angle = interference lines can be used to calculate height difference
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A side-by-side comparison illustrating optical flats in use to measure components via light interference. The left image shows an optical flat placed over a gauge block and a spherical ball bearing, producing visible straight parallel interference bands across the gauge block. The right image shows an optical flat placed over a flat circular disk and a cylindrical plug gauge, revealing curved circular interference rings on the disk and straight vertical bands on the cylinder.}{\textbf{Attribution:} Unknown author, Public domain, via \href{https://commons.wikimedia.org/wiki/File:Optical_flats_in_use.jpg}{Wikimedia Commons}}{Optical_flats_in_use}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Gage Block Accessories}
+
+    \shadowpic[]{0.5\linewidth}{A black-and-white photograph showing precision measurement apparatus set up on a surface plate next to an open wooden storage case. The box on the left contains various cylindrical plug gauges and thread standards in fitted slots, while the metal plate on the right holds a vertical height gauge setup, a upright rectangular block, and a dial indicator assembly.}{\textbf{Attribution:} 	National Institute of Standards and Technology, Public domain, via \href{https://commons.wikimedia.org/wiki/File:GageBlocks_014.jpg}{Wikimedia Commons}}{GageBlocks_014}
+\end{frame}
+
+\begin{frame}
+    \centering
+    {\Huge \textbf{\textcolor{BakerADARed}{Questions?}}}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Copyright Notice}
+    
+    {\footnotesize
+    \PresTitle \textcopyright 2026 by Brad Peirson is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). To view a copy of the official license, visit \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{https://creativecommons.org/licenses/by-nc-sa/4.0/}.
+
+    \vspace{0.5em}
+
+    \textbf{Exceptions and Exclusions}
+
+    \begin{itemize}
+        \item[Baker College Branding \& Trademarks:]All Baker College logos, trademarks, wordmarks, seals, slide design templates, and proprietary branding elements contained in these materials are \textbf{EXCLUDED} from the CC BY-NC-SA 4.0 license. All rights are reserved by Baker College. Express written permission from Baker College is required for any use, copying, or redistribution of these elements.
+        \item[Third-Party Media \& Content:] Any third-party images, graphics, diagrams, or external media incorporated in these materials are included under their respective original licenses or permissions and are individually attributed at their point of use. 
+        \item[Original Author Content:] All unattributed figures, diagrams, text, code snippets, and media are original works created by the author and are licensed under the CC BY-NC-SA 4.0 license.
+    \end{itemize}
+    \par}
+\end{frame}
+
+\end{document}
+
+% \begin{frame}
+%     \frametitle{Test Todo}
+
+%     % Usage: \tikztodo[width]{height}{description/notes}
+%     \tikztodo[0.7\textwidth]{4cm}{Convert block diagram of feedback loop}
+% \end{frame}
