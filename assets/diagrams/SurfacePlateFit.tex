@@ -1,0 +1,146 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={A diagram illustrating Eratosthenes experimental setup to calculate the circumference of the Earth. A blue circle represents the Earth with a labeled point at the center. Two vertical rods are positioned on the Earth surface, one labeled Rod at Alexandria located at the top and one labeled Rod at Syene located to the upper right. Parallel yellow sunlight rays originate from a yellow circle labeled Sun located at the top right. At Syene, sunlight strikes directly along the vertical line of the rod resulting in no shadow. At Alexandria, the incoming sunlight strikes at an angle relative to the rod, creating a green shadow cast along the curved surface of the Earth. Dashed lines connect the rods to the center of the Earth, forming an central angle theta that matches the angle theta formed between the top of the rod at Alexandria and the incoming sunlight ray.}
+    ]
+
+    \fill[
+        draw=BakerBlack,
+        fill=HitGray,
+        fill opacity=0.5,
+        ultra thick
+    ]
+    (0,0)
+    -- (0,-2)
+    coordinate(A_b_l)
+    .. controls (4,-1) and (6,-1) ..
+    (8,-2)
+    coordinate(A_b_r)
+    -- ++(0,2)
+    -- (0,0);
+
+    \fill[
+        draw=BakerADARed,
+        fill=BakerADARed!50,
+        fill opacity=0.5,
+        ultra thick
+    ]
+    (A_b_r)
+    -- ++(0,-2)
+    coordinate(B_b_r)
+    -- (B_b_r -| A_b_l)
+    coordinate(B_b_l)
+    -- (A_b_l)
+    .. controls (4,-1) and (6,-1) ..
+    (A_b_r);
+
+    \node[
+        text=BakerBlack,
+        anchor=north west
+    ]
+    at (0,0)
+    {A};
+
+    \node[
+        text=BakerBlack,
+        anchor=south west
+    ]
+    at (B_b_l)
+    {B};
+
+    \begin{scope}[xshift=9cm]
+        \fill[
+            draw=BakerBlack,
+            fill=HitGray,
+            fill opacity=0.5,
+            ultra thick
+        ]
+        (0,0)
+        -- (0,-2)
+        coordinate(A_b_l)
+        .. controls (4,-1) and (6,-1) ..
+        (8,-2)
+        coordinate(A_b_r)
+        -- ++(0,2)
+        -- (0,0);
+
+        \fill[
+            draw=LakeBlue,
+            fill=LakeBlue!50,
+            fill opacity=0.5,
+            ultra thick
+        ]
+        (A_b_r)
+        -- ++(0,-2)
+        coordinate(B_b_r)
+        -- (B_b_r -| A_b_l)
+        coordinate(B_b_l)
+        -- (A_b_l)
+        .. controls (4,-1) and (6,-1) ..
+        (A_b_r);
+
+        \node[
+            text=BakerBlack,
+            anchor=north west
+        ]
+        at (0,0)
+        {A};
+
+        \node[
+            text=BakerBlack,
+            anchor=south west
+        ]
+        at (B_b_l)
+        {C};
+    \end{scope}
+
+    \begin{scope}[xshift=4.5cm, yshift=-6.5cm]
+
+        \fill[
+            draw=BakerADARed,
+            fill=BakerADARed!50,
+            fill opacity=0.5,
+            ultra thick
+        ]
+        (0,-0.5)
+        -- (0,1.5)
+        coordinate(B_t_l)
+        -- (8,1.5)
+        -- (8,-0.5)
+        .. controls (4,-1.5) and (2,-1.5) ..
+        (0,-0.5);
+        
+        \fill[
+            draw=LakeBlue,
+            fill=LakeBlue!50,
+            fill opacity=0.5,
+            ultra thick
+        ]
+        (0,-4)
+        -- (0,-2)
+        coordinate(C_t_l)
+        .. controls (4,-1) and (6,-1) ..
+        (8,-2)
+        coordinate(C_t_r)
+        -- (8,-4)
+        coordinate(C_b_r)
+        -- (0,-4)
+        coordinate(C_b_l);
+
+        \node[
+            text=BakerBlack,
+            anchor= north west
+        ]
+        at (B_t_l)
+        {B};
+
+        \node[
+            text=BakerBlack,
+            anchor=south west
+        ]
+        at (C_b_l)
+        {C};
+
+    \end{scope}
+
+\end{circuitikz}

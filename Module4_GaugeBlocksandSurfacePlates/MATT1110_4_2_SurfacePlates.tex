@@ -1,0 +1,665 @@
+% ============================================================================
+% Accessibility
+% ============================================================================
+\DocumentMetadata{
+  lang = en-US, 
+  pdfstandard = ua-2, 
+  tagging = on, 
+  tagging-setup = {math/setup=mathml-SE}
+}
+
+% ============================================================================
+% Document Properties - used on title slide and PDF metadata fields
+% ============================================================================
+\def\PresTitle{Surface Plates}  % Required - top line of title slide
+\def\PresSubtitle{Gauges and Measurement}         % Optional - second line
+\def\PresAuthor{Brad Peirson}               % Required - below dividing line
+\def\PresInstitute{College of Information Technology and Engineering}       % Optional
+\def\PresDate{}                             % Optional
+\def\PresKeywords{}                         % Optional - used for hyperref
+
+% Presentation Formatting
+% ============================================================================
+\input{../ltxtalk_preamble.tex}
+
+% ============================================================================
+% Document Content
+% ============================================================================
+\begin{document}
+
+\maketitle              % Redefined in the preamble to generate a full frame
+
+\begin{frame}
+    \frametitle{Agenda}
+    \begingroup
+        % Tighten the spacing between paragraphs/TOC lines
+        \setlength{\parskip}{0.3em} 
+        
+        % Optionally tighten the line spacing within an entry
+        %\baselineskip=1.2em 
+        
+        \setcounter{tocdepth}{1} % Show only sections
+    \tableofcontents
+    \setcounter{tocdepth}{2} % Reset back to default so subsections are tracked
+    \endgroup
+\end{frame}
+
+\section{Surface Plates}
+
+\subsection{Datums}
+
+\begin{frame}
+	\frametitle{Datums}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item A reference point, surface, or axis on an object from which measurements are made
+                \item Common drafting practice is to reference dimensions back to the datum               
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{An engineering drawing of a square plate measuring four inches by four inches, showing two through-holes located symmetrically along the horizontal centerline at two inches. The holes are 0.375 inches in diameter and positioned at 0.75 inches and 3.25 inches from the left edge.}{}{Screenshot 2023-03-30 154529}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Datums}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item In order to measure a physical part from a datum, we need a flat surface from which to base the measurement              
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{An engineering drawing of a square plate measuring four inches by four inches, showing two through-holes located symmetrically along the horizontal centerline at two inches. The holes are 0.375 inches in diameter and positioned at 0.75 inches and 3.25 inches from the left edge.}{}{Screenshot 2023-03-30 154529}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\subsection{Iron Surface Plates}
+
+\begin{frame}
+	\frametitle{Iron Surface Plates}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item The earliest surface plates were cast iron
+                \item Rigid block or table with a flat finished surface to use for measurements
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A precision metal surface plate with a smooth, scraped top reference surface and black handles attached on opposite sides.}{\textbf{Attribution:} Rrudzik, CC0, via \href{https://commons.wikimedia.org/wiki/File:Surface_plate.jpg}{Wikimedia Commons}}{Surface_plate}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Rigid and Portable}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]                
+                \item Ribs provide rigidity 
+                \item Many had feet so they could handle uneven tables/workbenches
+                    \begin{itemize}
+                        \item \emph{Level} doesn't matter, just flat
+                    \end{itemize}
+                \item Portable versions included removeable handles
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A view showing the underside of a cast iron surface plate, highlighting its ribbed cross-bracing support structure, three raised mounting feet, and handles on two sides.}{\textbf{Attribution:} Rrudzik, CC0, via \href{https://commons.wikimedia.org/wiki/File:Surface_plate_bottom.jpg}{Wikimedia Commons}}{Surface_plate_bottom}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Seasoning Iron Surface Plates}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Raw iron casting is \emph{seasoned} before machining
+                    \begin{itemize}
+                        \item Heat treat to reduce internal stress
+                    \end{itemize}
+                \item When seasoned, iron will hold flat indefinitely
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{An industrial heat-treating furnace glowing bright orange inside, filled with rows of large artillery shell casings positioned vertically on a roller conveyor.}{\textbf{Attribution:} Dori Whipple, Public domain, via \href{https://www.dvidshub.net/image/8162132/projectiles-cartridge-cases-being-heat-treated}{U.S. Department of War Digital Visual Information Distribution System}}{8162132}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% \begin{frame}
+% 	\frametitle{Surface Plates}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{Surface is planed flat}
+%                 \item{Scraped by hand}
+%                     \begin{itemize}
+%                         \item{Hand scraping is necessary}
+%                         \item{Perfectly flat metal pieces stick together -- we need to be able to get the tools off the plate}
+%                         \item{Intentional nodes (dishes) to allow tools to slide}
+%                     \end{itemize}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{640px-Surface_plate}
+%                 \caption*{\href{https://commons.wikimedia.org/wiki/File:Surface_plate.jpg}{Rrudzik}, \href{https://creativecommons.org/publicdomain/zero/1.0/deed.en}{CC0}, via Wikimedia Commons}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Surface Plates}
+%     \begin{itemize}[<+- | alert@+>]
+%         \item{Always scraped in groups of three}
+%         \item{Groups of two -- no guarantee of flatness}
+%         \item{Two plates might have mating high and low spots}
+%         \item{Using a third makes sure all three are flat}
+%         \item{Prussian blue (dykem) placed on surface to check for contact}
+%     \end{itemize}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Surface Plates}
+%     \begin{figure}
+%         \centering
+%         \includegraphics[width=\columnwidth]{SurfacePlateMating}
+%     \end{figure}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Surface Plates}
+%     \begin{itemize}[<+- | alert@+>]
+%         \item{Overall flatness compared to master plate}
+%         \item{Looking for small, numerous nodes}
+%         \item{Nodes are close together -- tools cover more than one and are able to slide}
+%     \end{itemize}
+% \end{frame}
+
+% \subsection{Granite Surface Plates}
+
+% \begin{frame}
+% 	\frametitle{Granite Surface Plates}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{Introduced in 1942}
+%                 \item{Almost completely replaced iron plates within a decade}
+%                 \item{Several advantages over iron}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{Mejagranit}
+%                 \caption*{\href{https://commons.wikimedia.org/wiki/File:Mejagranit.jpg}{Blue tooth7}, \href{https://creativecommons.org/licenses/by-sa/3.0}{CC BY-SA 3.0}, via Wikimedia Commons}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Granite Surface Plates}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{Granite is a mix of minerals -- hard quarts, softer mica and feldspar}
+%                 \item{Lapping cuts out soft parts, leaves hard projections}
+%                 \item{Naturally prevents tools from sticking}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{Mejagranit}
+%                 \caption*{\href{https://commons.wikimedia.org/wiki/File:Mejagranit.jpg}{Blue tooth7}, \href{https://creativecommons.org/licenses/by-sa/3.0}{CC BY-SA 3.0}, via Wikimedia Commons}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Granite Surface Plates}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{Harder than iron}
+%                 \item{Shock resistant -- dropping tools won't change shape}
+%                 \item{Metal bulges/burrs when scratched -- stone doesn't}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{Mejagranit}
+%                 \caption*{\href{https://commons.wikimedia.org/wiki/File:Mejagranit.jpg}{Blue tooth7}, \href{https://creativecommons.org/licenses/by-sa/3.0}{CC BY-SA 3.0}, via Wikimedia Commons}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Granite Surface Plates}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{Doesn't conduct heat}
+%                 \item{Doesn't change size as much as iron with temp changes}
+%                 \item{No rust, no corrosion}
+%                 \item{Non magnetic}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{Mejagranit}
+%                 \caption*{\href{https://commons.wikimedia.org/wiki/File:Mejagranit.jpg}{Blue tooth7}, \href{https://creativecommons.org/licenses/by-sa/3.0}{CC BY-SA 3.0}, via Wikimedia Commons}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \section{Surface Plate Accessories}
+
+% \begin{frame}
+% 	\frametitle{Surface Plate Accessories}
+%     \tableofcontents[currentsection,
+%         hideothersubsections
+%         ]
+% \end{frame}
+
+% \subsection{Parallels}
+
+% \begin{frame}
+% 	\frametitle{Parallels}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{Rectangular bars of steel ground so that the sides are flat and parallel}
+%                     \begin{itemize}
+%                         \item{Parallel \textbf{not} square!}
+%                     \end{itemize}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{8642a11p1-a06a-digital@halfx_636880868468773228}
+%                 \caption*{\href{https://www.mcmaster.com/}{McMaster-Carr}}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Parallels}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{Can be used to make sure flatness of part being measured}
+%                     \begin{itemize}
+%                         \item{Top of parallels matches flatness of plate}
+%                         \item{If parallels move = no contact = not flat}
+%                     \end{itemize}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{8642a11p1-a06a-digital@halfx_636880868468773228}
+%                 \caption*{\href{https://www.mcmaster.com/}{McMaster-Carr}}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Parallels}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{Used when the part being measured would extend below surface plate}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{8642a11p1-a06a-digital@halfx_636880868468773228}
+%                 \caption*{\href{https://www.mcmaster.com/}{McMaster-Carr}}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Parallels}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{Used to protect the surface plate from particularly nasty parts}
+%                     \begin{itemize}
+%                         \item{Cheaper to replace parallels than surface plate}
+%                     \end{itemize}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{8642a11p1-a06a-digital@halfx_636880868468773228}
+%                 \caption*{\href{https://www.mcmaster.com/}{McMaster-Carr}}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Adjustable Parallels}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{Two wedges connected together}
+%                 \item{Maintain parallel through range of sizes}
+%                 \item{No need for a complete set like above}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{2211a13p1-a06a-digital@1x_636880859410361516}
+%                 \caption*{\href{https://www.mcmaster.com/}{McMaster-Carr}}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}            
+            
+% \subsection{Angle Irons}
+
+% \begin{frame}
+% 	\frametitle{Angle Irons}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{Originally iron -- modern are steel}
+%                     \begin{itemize}
+%                         \item{Still called ``angle iron" out of tradition}
+%                     \end{itemize}
+%                 \item{Surfaces ground flat and at 90$^\circ$ to one another}
+%                 \item{Parts can be clamped for measurement at ``perfect" right angle to surface plate}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{23525a67c1-upA01-1626438971-p9@1x_637620177740046486}
+%                 \caption*{\href{https://www.mcmaster.com/}{McMaster-Carr}}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Angle Irons}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{Sides are also ground parallel/square}
+%                 \item{Center rib allows it to be clamped down sideways}
+%                 \item{Some include bolt holes to mount directly to machines for setup}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{23525a67c1-upA01-1626438971-p9@1x_637620177740046486}
+%                 \caption*{\href{https://www.mcmaster.com/}{McMaster-Carr}}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \subsection{V-Blocks}
+
+% \begin{frame}
+% 	\frametitle{V-Blocks}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{Precision ground on all sides with a V shape on one}
+%                 \item{Used to hold round parts}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{2227a8p1-a01c1585312915-p9@1x_637208917870334506}
+%                 \caption*{\href{https://www.mcmaster.com/}{McMaster-Carr}}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{V-Blocks}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{Precision ground on all sides with a V shape on one}
+%                 \item{Used to hold round parts}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{2227a8p1-a01c1585312915-p9@1x_637208917870334506}
+%                 \caption*{\href{https://www.mcmaster.com/}{McMaster-Carr}}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{V-Blocks}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{Many different sizes and styles}
+%                 \item{Many include a clamp to hold part in place}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=0.9\columnwidth]{382px-V-block_steel}
+%                 \caption*{\href{https://commons.wikimedia.org/wiki/File:Surface_plate.jpg}{Rrudzik}, \href{https://creativecommons.org/publicdomain/zero/1.0/deed.en}{CC0}, via Wikimedia Commons}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{V-Blocks}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{3117n11p2-a06-digital@1x_636969731756947034}
+%                 \caption*{\href{https://www.mcmaster.com/}{McMaster-Carr}}
+%             \end{figure}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{3073n11c1-digital1563462350-p9@halfx_636990411728839357}
+%                 \caption*{\href{https://www.mcmaster.com/}{McMaster-Carr}}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \subsection{Squares}
+
+% \begin{frame}
+% 	\frametitle{Squares}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{Two pieces, ground to 90$^\circ$ both inside and outside}
+%                 \item{\textbf{Beam} -- narrow piece, meant to do the measuring}
+%                 \item{\textbf{Base} -- wider piece, meant to go against surface plate}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{640px-SquareEngineersMachinist}
+%                 \caption*{\href{https://commons.wikimedia.org/wiki/File:SquareEngineersMachinist.jpg}{Graibeard}, \href{https://creativecommons.org/licenses/by-sa/2.0}{CC BY-SA 2.0}, via Wikimedia Commons}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Squares}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{Many different sizes available}
+%                 \item{Angle irons are meant to fixture parts square, squares are simply meant to measure square}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{640px-SquareEngineersMachinist}
+%                 \caption*{\href{https://commons.wikimedia.org/wiki/File:SquareEngineersMachinist.jpg}{Graibeard}, \href{https://creativecommons.org/licenses/by-sa/2.0}{CC BY-SA 2.0}, via Wikimedia Commons}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Using a Square}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{Look for light}
+%                 \item{Use a feeler gauge}
+%                 \item{Use a piece of paper}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{640px-SquareEngineersMachinist}
+%                 \caption*{\href{https://commons.wikimedia.org/wiki/File:SquareEngineersMachinist.jpg}{Graibeard}, \href{https://creativecommons.org/licenses/by-sa/2.0}{CC BY-SA 2.0}, via Wikimedia Commons}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame} 
+
+\begin{frame}
+    \frametitle{Image Frame}
+
+    \begin{figure}
+        \centering
+        \shadowpic[]{0.25\linewidth}{A vintage black and white photograph depicting a woman in profile examining an open manual or book while using a precision mechanical height gauge and dial indicator setup mounted on a surface plate.}{\textbf{Attribution:} Marjory Collins, Public domain, via Library of Congress (\href{https://www.loc.gov/pictures/resource/fsa.8d14582/}{LC-USW3-018540-D})}{service-pnp-fsa-8d14000-8d14500-8d14582v}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Image Frame}
+
+    \begin{figure}
+        \centering
+        \shadowpic[]{0.25\linewidth}{A vintage black and white photograph showing a woman looking down intently as she operates a precision height gauge with a dial test indicator attached to a metal fixture on a surface plate.}{\textbf{Attribution:} Marjory Collins, Public domain, via Library of Congress (\href{https://www.loc.gov/pictures/resource/fsa.8d14583/}{LC-USW3-018541-D})}{service-pnp-fsa-8d14000-8d14500-8d14583v}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Image Frame}
+
+    \begin{figure}
+        \centering
+        \shadowpic[]{0.25\linewidth}{A close-up photograph of a metal machine vise holding a small cylindrical metal part using a V-block setup and parallel bars between the vise jaws.}{\textbf{Attribution:} Cdang, \href{https://creativecommons.org/licenses/by-sa/3.0}{CC BY-SA 3.0}, via \href{https://commons.wikimedia.org/wiki/File:Montage_usinage_cylindre_ve_etau.jpg}{Wikimedia Commons}}{Montage_usinage_cylindre_ve_etau}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Image Frame}
+
+    \begin{figure}
+        \centering
+        \shadowpic[]{0.25\linewidth}{A cast iron V-block standing upright on a blue background, featuring V-shaped grooves on its sides and a blue painted recessed center stamped with the letters R and G.}{\textbf{Attribution:} Romary, \href{https://creativecommons.org/licenses/by-sa/2.5}{CC BY-SA 2.5}, via \href{https://commons.wikimedia.org/wiki/File:Ve_fonte.JPG}{Wikimedia Commons}}{Ve_fonte}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Image Frame}
+
+    \begin{figure}
+        \centering
+        \shadowpic[]{0.25\linewidth}{A metal V-block clamping a smooth cylindrical metal bar in place with a black top clamp and vertical screw.}{\textbf{Attribution:} Rrudzik, CC0, via \href{https://commons.wikimedia.org/wiki/File:V-block_steel.jpg}{Wikimedia Commons}}{V-block_steel}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Image Frame}
+
+    \begin{figure}
+        \centering
+        \shadowpic[]{0.25\linewidth}{A pair of metal sine bars of different sizes, each featuring precision cylinders at both ends and weight-reducing relief holes along their bodies, displayed against a light gray background.}{\textbf{Attribution:} Glenn McKechnie, \href{https://creativecommons.org/licenses/by-sa/2.0}{CC BY-SA 2.0}, via \href{https://commons.wikimedia.org/wiki/File:SineBarStyles.jpg}{Wikimedia Commons}}{SineBarStyles}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Tikz Frame}
+
+    \begin{figure}
+        \centering
+        \resizebox{0.5\linewidth}{!}{
+            \input{../assets/diagrams/SurfacePlateFit.tex}
+        }
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \centering
+    {\Huge \textbf{\textcolor{BakerADARed}{Questions?}}}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Copyright Notice}
+    
+    {\scriptsize
+    \PresTitle \textcopyright 2026 by Brad Peirson is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). To view a copy of the official license, visit \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{https://creativecommons.org/licenses/by-nc-sa/4.0/}.
+
+    \vspace{0.5em}
+
+    \textbf{Exceptions and Exclusions}
+
+    \begin{itemize}
+        \item[Baker College Branding \& Trademarks:]All Baker College logos, trademarks, wordmarks, seals, slide design templates, and proprietary branding elements contained in these materials are \textbf{EXCLUDED} from the CC BY-NC-SA 4.0 license. All rights are reserved by Baker College. Express written permission from Baker College is required for any use, copying, or redistribution of these elements.
+        \item[Third-Party Media \& Content:] Any third-party images, graphics, diagrams, or external media incorporated in these materials are included under their respective original licenses or permissions and are individually attributed at their point of use. 
+        \item[Original Author Content:] All unattributed figures, diagrams, text, code snippets, and media are original works created by the author and are licensed under the CC BY-NC-SA 4.0 license.
+    \end{itemize}
+
+    The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.
+    \par}
+\end{frame}
+
+\end{document}
+
+% \begin{frame}
+%     \frametitle{Test Todo}
+
+%     % Usage: \tikztodo[width]{height}{description/notes}
+%     \tikztodo[0.7\textwidth]{4cm}{Convert block diagram of feedback loop}
+% \end{frame}
