@@ -1,0 +1,30 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={A diagram featuring a semi-transparent blue shape bounded by a wavy top edge, a straight sloping right side, and straight bottom and left edges, with a thick red dashed line running horizontally just above the wavy top boundary.}
+    ]
+
+    \fill[
+        draw=BakerBlack,
+        fill=LakeBlue,
+        fill opacity=0.5,
+        decoration={
+            snake,
+            amplitude=0.5cm,
+            segment length=2cm
+        }
+    ]
+    decorate { (0,0) -- (10,0) }  % Only this segment is wavy
+    -- (10,-2)                    % Straight line down
+    -- (0,-2)                     % Straight line across bottom
+    -- cycle;                     % Straight line back to start
+
+    \draw[
+        BakerADARed,
+        ultra thick,
+        dashed
+    ]
+    (0,0.5)
+    -- (10,0.5);
+    
+\end{circuitikz}

@@ -1,0 +1,71 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={A 2D schematic diagram illustrating precision parallels used to elevate an irregular workpiece off a surface plate. A wide gray rectangular block at the base represents the surface plate. Resting vertically on top of the plate are two red rectangular precision parallels positioned near the left and right sides. Spanning across the top of both parallels is a blue u-shaped or stepped workpiece, supported entirely by the parallels so its lower central protrusion remains elevated and suspended above the surface plate without contacting it.}
+    ]
+
+    \node[
+        draw=BakerBlack,
+        thick,
+        fill = HitGray,
+        fill opacity=0.5,
+        text = BakerBlack,
+        text opacity=1,
+        anchor=south west,
+        minimum height=3cm,
+        minimum width=10cm
+    ](block)
+    at (0,0)
+    {Surface Plate};
+
+    \node[
+        draw=BakerADARed,
+        ultra thick,
+        fill=BakerADARed!50,
+        fill opacity=0.5,
+        anchor=south,
+        minimum width=1cm,
+        minimum height=3cm,
+        label=left:{\textcolor{BakerBlack}{Parallel}}
+    ](p1)
+    at ($(block.north west) + (2cm,0)$)
+    {};
+
+    \node[
+        draw=BakerADARed,
+        ultra thick,
+        fill=BakerADARed!50,
+        fill opacity=0.5,
+        anchor=south,
+        minimum width=1cm,
+        minimum height=3cm,
+        label=right:{\textcolor{BakerBlack}{Parallel}}
+    ](p2)
+    at ($(block.north east) - (2cm,0)$)
+    {};
+
+    \fill[
+        draw=LakeBlue,
+        fill=LakeBlue!50,
+        fill opacity=0.5
+    ]
+    ($(p1.north west)-(1cm,0)$)
+    coordinate(part_origin)
+    -- ++(3,0)
+    -- ++(0,-2)
+    -- ++(3,0)
+    -- ++(0,2)
+    -- ($(p2.north east)+(1cm,0)$)
+    -- ++(0,2)
+    coordinate(part_end)
+    -- (part_end -| part_origin)
+    coordinate[pos=0.5](label)
+    -- cycle;
+
+    \node[
+        text=BakerBlack
+    ]
+    at ($(label)-(0,1cm)$)
+    {Part};
+    
+\end{circuitikz}
