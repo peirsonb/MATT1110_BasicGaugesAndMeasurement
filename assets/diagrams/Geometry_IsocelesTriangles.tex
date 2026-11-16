@@ -1,0 +1,151 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={Three triangles arranged from left to right, each with its apex pointing straight up and interior angles labeled in black text: on the left, a red-outlined and semi-transparent red-filled equilateral triangle with three 60-degree angles; in the middle and shifted upward, a tall, narrow blue-outlined and semi-transparent blue-filled isosceles triangle with a 30-degree top angle and two 75-degree base angles; and on the right, a wide, short green-outlined and semi-transparent green-filled isosceles triangle with a 120-degree top angle and two 30-degree base angles.}
+    ]
+
+    \begin{pgfonlayer}{main}
+
+        \node[
+            draw=BakerADARed,
+            ultra thick,
+            fill=BakerADARed!50,
+            fill opacity=0.5,
+            isosceles triangle,
+            isosceles triangle apex angle=60,
+            minimum size=4cm,
+            rotate=90
+        ](T60)
+        at (0,0)
+        {};
+
+    \end{pgfonlayer}
+
+    \begin{pgfonlayer}{ft}
+
+        \node[
+            text=BakerBlack,
+            anchor=north,
+            below=0.75cm
+        ]
+        at(T60.apex)
+        {60\textdegree{}};
+
+        \node[
+            text=BakerBlack,
+            anchor=south west,
+            xshift=0.5cm,
+            yshift=0.25cm
+        ]
+        at(T60.left corner)
+        {60\textdegree{}};
+
+        \node[
+            text=BakerBlack,
+            anchor=south east,
+            xshift=-0.5cm,
+            yshift=0.25cm
+        ]
+        at(T60.right corner)
+        {60\textdegree{}};
+    
+    \end{pgfonlayer}    
+    
+    \begin{scope}[xshift=4cm, yshift=2cm]
+        \begin{pgfonlayer}{main}
+
+            \node[
+                draw=LakeBlue,
+                ultra thick,
+                fill=LakeBlue!50,
+                fill opacity=0.5,
+                isosceles triangle,
+                isosceles triangle apex angle=30,
+                minimum size=3cm,
+                rotate=90
+            ](T30)
+            at (0,0)
+            {};
+
+        \end{pgfonlayer}
+
+        \begin{pgfonlayer}{ft}
+
+            \node[
+                text=BakerBlack,
+                anchor=north,
+                below=1.5cm
+            ]
+            at(T30.apex)
+            {30\textdegree{}};
+
+            \node[
+                text=BakerBlack,
+                anchor=south west,
+                xshift=0.25cm,
+                yshift=0.25cm
+            ]
+            at(T30.left corner)
+            {75\textdegree{}};
+
+            \node[
+                text=BakerBlack,
+                anchor=south east,
+                xshift=-0.25cm,
+                yshift=0.25cm
+            ]
+            at(T30.right corner)
+            {75\textdegree{}};
+        
+        \end{pgfonlayer}    
+    \end{scope}
+
+    \begin{scope}[xshift=9cm]
+        \begin{pgfonlayer}{main}
+
+            \node[
+                draw=UpNorthGreen,
+                ultra thick,
+                fill=UpNorthGreen!50,
+                fill opacity=0.5,
+                isosceles triangle,
+                isosceles triangle apex angle=120,
+                minimum size=3cm,
+                rotate=90
+            ](T120)
+            at (0,0)
+            {};
+
+        \end{pgfonlayer}
+
+        \begin{pgfonlayer}{ft}
+
+            \node[
+                text=BakerBlack,
+                anchor=north,
+                below=0.5cm
+            ]
+            at(T120.apex)
+            {120\textdegree{}};
+
+            \node[
+                text=BakerBlack,
+                anchor=south west,
+                xshift=1cm,
+                yshift=0.1cm
+            ]
+            at(T120.left corner)
+            {30\textdegree{}};
+
+            \node[
+                text=BakerBlack,
+                anchor=south east,
+                xshift=-1cm,
+                yshift=0.1cm
+            ]
+            at(T120.right corner)
+            {30\textdegree{}};
+        
+        \end{pgfonlayer}    
+    \end{scope}
+\end{circuitikz}

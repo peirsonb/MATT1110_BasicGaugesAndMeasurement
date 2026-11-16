@@ -1,0 +1,89 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={A circular sector filled with semi-transparent light red, bounded by a thick black horizontal bottom radius labeled l, a thick blue upper radius labeled l angled at one radian, and a thick dashed red curved outer arc labeled l with an arrow pointing counterclockwise from the bottom edge to the top edge, with a thin green inner arc between the two radii labeled 1 radian.}
+    ]
+
+    \pgfmathsetmacro{\myangle}{deg(pi)}
+
+    \begin{pgfonlayer}{ft}
+    
+        % \node[
+        %     draw=BakerBlack,
+        %     fill=BakerBlack,
+        %     circle,
+        %     inner sep=0,
+        %     minimum size=0.25cm
+        % ]
+        % at (0,0)
+        % {};
+
+    \end{pgfonlayer}
+
+    \begin{pgfonlayer}{main}
+
+        \draw[
+            BakerBlack,
+            ultra thick
+        ]
+        (0,0)
+        -- (6,0)
+        node[
+            text=BakerBlack,
+            midway,
+            below
+        ]{$l$};
+
+        \draw[
+            LakeBlue,
+            ultra thick
+        ]
+        (0,0)
+        -- (1r:6cm)
+        node[
+            text=BakerBlack,
+            midway,
+            anchor=south east
+        ]{$l$};
+
+        \draw[
+            BakerADARed,
+            ultra thick,
+            dashed,
+            ->
+        ]
+        (6,0)
+        arc[start angle=0, end angle=1r, radius=6cm]
+        node[
+            text=BakerBlack,
+            midway,
+            right
+        ]{$l$};
+
+        \draw[
+            UpNorthGreen,
+            thick
+        ]
+        (2,0)
+        arc[start angle=0, end angle=1r, radius=2cm]
+        node[
+            text=BakerBlack,
+            midway,
+            right
+        ]{$\qty{1}{\radian}$};
+
+    \end{pgfonlayer}
+    
+    \begin{pgfonlayer}{bg}
+
+        \fill[
+            fill=BakerADARed!50,
+            fill opacity=0.5
+        ]
+        (0,0)
+        -- (6,0)
+        arc[start angle=0, end angle=1r, radius=6cm]
+        -- cycle;
+
+    \end{pgfonlayer}
+\end{circuitikz}

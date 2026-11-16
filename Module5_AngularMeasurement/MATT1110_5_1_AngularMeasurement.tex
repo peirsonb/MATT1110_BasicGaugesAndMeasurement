@@ -1,0 +1,1239 @@
+% ============================================================================
+% Accessibility
+% ============================================================================
+\DocumentMetadata{
+  lang = en-US, 
+  pdfstandard = ua-2, 
+  tagging = on, 
+  tagging-setup = {math/setup=mathml-SE}
+}
+
+% ============================================================================
+% Document Properties - used on title slide and PDF metadata fields
+% ============================================================================
+\def\PresTitle{Angular Measurement}  % Required - top line of title slide
+\def\PresSubtitle{Gauges and Measurement}         % Optional - second line
+\def\PresAuthor{Brad Peirson}               % Required - below dividing line
+\def\PresInstitute{College of Information Technology and Engineering}       % Optional
+\def\PresDate{}                             % Optional
+\def\PresKeywords{}                         % Optional - used for hyperref
+
+% Presentation Formatting
+% ============================================================================
+\input{../ltxtalk_preamble.tex}
+
+% ============================================================================
+% Document Content
+% ============================================================================
+\begin{document}
+
+\maketitle              % Redefined in the preamble to generate a full frame
+
+\begin{frame}
+    \frametitle{Agenda}
+    \begingroup
+        % Tighten the spacing between paragraphs/TOC lines
+        \setlength{\parskip}{0.3em} 
+        
+        % Optionally tighten the line spacing within an entry
+        %\baselineskip=1.2em 
+        
+        \setcounter{tocdepth}{1} % Show only sections
+    \tableofcontents
+    \setcounter{tocdepth}{2} % Reset back to default so subsections are tracked
+    \endgroup
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}
+	\frametitle{Angular Measurement}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{An antique brass sextant displayed flat against a pale gray fabric background, with a small rectangular label numbered 6 near the bottom right corner.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Sextante_(1805)._Museo_Naval_de_Madrid.jpg}{Jerónimo Roure Pérez}, \href{http://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0}, via Wikimedia Commons}{Sextante_(1805)._Museo_Naval_de_Madrid}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.5\linewidth}{A land surveying pole supported by a black and neon green bipod stands over a metal survey marker in a field of tall dry grass, with a yellow handheld data collector mounted to the pole and a red metal fence post tied with pink flagging tape standing just to the left under a blue sky with distant mountains and white clouds.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Land_Survey_(14000483127).jpg}{Bureau of Land Management Oregon and Washington}, Public domain, via Wikimedia Commons}{Land_Survey_(14000483127)}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{The Protractor}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Many angular measurement techniques available in mechatronics
+                \item Protractor is the most basic
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A metal universal bevel protractor with a circular graduated dial, locking knobs, and a long beveled straightedge resting on a solid blue background.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Universal_bevel_protractor_against_blue_background.jpg}{Connie Posites}, \href{https://creativecommons.org/licenses/by-sa/2.0}{CC BY-SA 2.0}, via Wikimedia Commons}{Universal_bevel_protractor_against_blue_background}
+        \end{column}
+    \end{columns}
+\end{frame}            
+
+\begin{frame}
+	\frametitle{Digital Protractors}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Like other measurement methods, digital has taken over
+                \item Remember: batteries die
+                \item Still important to know the fundamentals
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A stainless steel digital protractor ruler with two hinged arms marked in metric and imperial graduations, featuring a black digital display unit on the right showing an angle reading of 24.7 degrees against a plain white background.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Digital_protractor_powerfix.jpg}{wdwd}, \href{https://creativecommons.org/licenses/by-sa/4.0}{CC BY-SA 4.0}, via Wikimedia Commons}{Digital_protractor_powerfix}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\section{Trigonometry}
+
+\subsection{Basic Geometry}
+
+\begin{frame}
+	\frametitle{The Line}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item A \emph{line} is one-dimensional
+                    \begin{itemize}
+                        \item Only has a length
+                        \item Its width is infinitely small
+                    \end{itemize}                
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \centering
+            \begin{tikzpicture}[alt={A straight, red line drawn angled slightly up and to the right.}]
+                \draw[BakerADARed, ultra thick, drop shadow] (0,0) -- (6,4);
+            \end{tikzpicture}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{The Plane}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item A \emph{plane} is two dimensional
+                    \begin{itemize}
+                        \item Length and width
+                        \item Thickness is infinitely small
+                    \end{itemize}
+                \item A plane is a line swept in a single direction
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \centering
+            \resizebox{\linewidth}{!}{
+                \input{../assets/diagrams/Geometry_Plane.tex}
+            }
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Plane Flatness}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item A plane is created from a line
+                \item Lines are perfectly straight
+                \item Planes are perfectly flat
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \centering
+            \resizebox{\linewidth}{!}{
+                \input{../assets/diagrams/Geometry_Plane.tex}
+            }
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{The Angle}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Picture one end of a line pinned in place
+                \item As it rotates around that point it sweeps in an arc
+                \item An \emph{angle} is the amount of rotation the line makes around the fixed point
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \centering
+            \resizebox{\linewidth}{!}{
+                \input{../assets/diagrams/Geometry_SweepingAngle.tex}
+            }
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{The Circle}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item A \emph{circle} is the path traced by the moving end of the line when it makes a complete rotation
+                \item Every time the line sweeps it creates an angle
+                \item Circles are made up of infinite angles
+            \end{itemize} 
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \centering
+            \resizebox{\linewidth}{!}{
+                \input{../assets/diagrams/Geometry_SweepingCircle.tex}
+            }
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\subsection{Degree Measurement}
+
+\begin{frame}
+	\frametitle{Degrees}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Angles exist, we need to measure them
+                \item Angular measurement is as old as human history
+            \end{itemize} 
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.75\linewidth}{A circular translucent orange plastic protractor with a horizontal crossbar across its center and black degree markings from zero to three hundred sixty around the perimeter against a plain white background.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Protractor_katomierz.jpg}{Radomil}, \href{http://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via Wikimedia Commons}{Protractor_katomierz}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Degrees}
+
+    \begin{itemize}[<+- | alert@+>]
+        \item Ancient Sumerians, Babylonians, Mesopotamians used a base-60 number system
+            \begin{itemize}
+                \item Based around their calculation of the length of a year
+            \end{itemize}
+        \item Egyptians inherited base-60 numbers--used it to divide a circle into 360 equal divisions
+        \item Like most imperial units, handy mental calculation
+            \begin{itemize}
+                \item 360 equally divides by 2, 3, 4, 5, 6, 8, 9, 10, 12\dots
+            \end{itemize}
+        \item Each of the 360 divisions is one \emph{degree} (\textdegree{})
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Minutes and Seconds}
+
+    \begin{columns}[t]
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item A circle has an infinite number of angles in it
+                \item An angle can be smaller than 1\textdegree{}
+                \item Each degree is further divided by 60
+                \item Not included on measurement devices--would be too small to read
+            \end{itemize} 
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item 1 degree divided by 60 equals 1 minute
+                    \begin{itemize}
+                        \item $\ang{1} / 60 = \ang{;1}$
+                    \end{itemize}
+                \item 1 minute divided by 60 equals 1 second
+                    \begin{itemize}
+                        \item $\ang{;1} / 60 = \ang{;;1}$
+                    \end{itemize}
+            \end{itemize} 
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ex 1: Degrees, Minutes, Seconds}
+
+    Consider an angle that takes up one fourteenth of a circle:
+
+    \begin{align*}
+        \ang{360} / 14 &= \ang{25.7143}\\
+        \ang{0.7143} \times 60 &= \ang{;42.858}\\
+        \ang{0.858} \times 60 &= \ang{;;51.48}\\
+        \ang{360} / 14 &= \ang{25;42;51}
+    \end{align*}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ex 2: Degrees, Minutes, Seconds (1 of 2)}
+
+    Convert $\ang{129.37}$ to degrees, minutes, and seconds:
+
+    % \begin{align*}
+    %     \ang{0.37} \times 60 &= \ang{;22.2}\\
+    %     \ang{0.2} \times 60 &= \ang{;;12}\\
+    %     \ang{129.37} &= \ang{129;22;12}
+    % \end{align*}
+    
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ex 2: Degrees, Minutes, Seconds (2 of 2)}
+
+    Convert $\ang{129.37}$ to degrees, minutes, and seconds:
+
+    \begin{align*}
+        \ang{0.37} \times 60 &= \ang{;22.2}\\
+        \ang{0.2} \times 60 &= \ang{;;12}\\
+        \ang{129.37} &= \ang{129;22;12}
+    \end{align*}
+    
+\end{frame}
+
+\subsection{Radian Measurement}
+
+\begin{frame}
+	\frametitle{The Radian}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item A \emph{radian} is a an angular unit that arose in the 1400s
+                \item The angle created when the arc traced by the line is equal to the length of the line
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \centering
+            \resizebox{\linewidth}{!}{
+                \input{../assets/diagrams/Geometry_1rad.tex}
+            }
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Radian History}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item First adopted by Leonhard Euler in 1765
+                \item First mention in print in 1873
+                \item Adopted as a \emph{supplementary} unit in the SI system in 1960
+                    \begin{itemize}
+                        \item Supplementary units are dimensionless in SI
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.625\linewidth}{A painted bust portrait of Leonhard Euler looking slightly to the left, wearing a draped light gray cap, a white ruffled cravat, and a blue coat with wide dark stripes against a dark background.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Leonhard_Euler_-_edit1.jpg}{Jakob Emanuel Handmann}, Public domain, via Wikimedia Commons}{Leonhard_Euler_-_Jakob_Emanuel_Handmann_(Kunstmuseum_Basel)}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Radian Definition}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Radian is based on the length of the arc drawn by the line
+                \item One radian is the angle that occurs when the length of the arc is equal to the length of the line
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \centering
+            \resizebox{\linewidth}{!}{
+                \input{../assets/diagrams/Geometry_1rad.tex}
+            }
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Radians Around a Circle (1 of 4)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \centering
+            \resizebox{\linewidth}{!}{
+                \input{../assets/diagrams/Geometry_2rad.tex}
+            }
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \centering
+            \resizebox{\linewidth}{!}{
+                \input{../assets/diagrams/Geometry_3rad.tex}
+            }
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Radians Around a Circle (2 of 4)}
+
+    \centering
+    \resizebox{0.5\linewidth}{!}{
+        \input{../assets/diagrams/Geometry_3rad_short.tex}
+    }
+
+    \vspace{0.5em}
+    {\footnotesize $\qty{3}{\radian}$ leaves us short of half a circle ($\ang{180}$)--care to guess \emph{how short?}\par}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Radians Around a Circle (3 of 4)}
+
+    \centering
+    \resizebox{0.5\linewidth}{!}{
+        \input{../assets/diagrams/Geometry_3rad_short2.tex}
+    }
+
+    \vspace{0.5em}
+    {\footnotesize $\qty{3}{\radian}$ is $\qty[parse-numbers = false]{0.141593\dots}{\radian}$ short of $\ang{180}$\par}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Radians Around a Circle (4 of 4)}
+
+    \centering
+    \[\ang{180} = \qty[parse-numbers = false]{3.141593\dots}{\radian}\]
+
+    \vspace{0.25in}
+    {\Large \dots{}look familiar?}
+\end{frame}
+
+\begin{frame}
+	\frametitle{π History}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item 1900 B.C. Babylon: $A=3\times r^2, \pi=3$
+                    \begin{itemize}
+                        \item One tablet: $\pi=3.125$
+                    \end{itemize}
+                \item 200 B.C. Archimedes: $3-1/7 < \pi < 3-10/71$
+                \item 1737 Leonhard Euler: first used $\pi$ for the concept
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \centering
+            {\Huge π\par}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{π Definition}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item The ratio of a circle's circumference to its diameter
+                \item $\pi=\frac{C}{D}$
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \centering
+            {\Huge π\par}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{π Application}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Irrational number--cannot \emph{ever} be expressed exactly 
+                \item Because it involves a circumference and a diameter it relates to \emph{A LOT} of circular concepts
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \centering
+            {\Huge π\par}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{π and Radians}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Three radians do not quite make 180\textdegree{}
+                \item \emph{EXACTLY} π radians make a half circle
+                \item Because of this, radian measurements are commonly referenced to π
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \centering
+            \resizebox{\linewidth}{!}{
+                \input{../assets/diagrams/Geometry_3rad_short2.tex}
+            }
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{The π Circle}
+
+    \begin{figure}
+        \centering
+        \resizebox{0.5\linewidth}{!}{
+            \input{../assets/diagrams/Geometry_PiCircle.tex}
+        }
+    \end{figure}
+\end{frame}
+
+\subsection{Triangles}
+
+\begin{frame}
+	\frametitle{Triangles}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item A closed, 2-dimensional shape with 3 sides, 3 angles, and 3 vertices
+                \item The enclosed angles of a triangle always total 180\textdegree{}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{figure}
+                \centering
+                \resizebox{0.75\linewidth}{!}{
+                    \input{../assets/diagrams/Geometry_EquilateralTriangle.tex}
+                }
+
+                \vspace{0.5em}
+                {\footnotesize An \emph{equilateral triangle} is a triangle in which all sides and angles are equal.\par}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Isosceles Triangles}
+
+    \begin{figure}
+        \centering
+        \resizebox{0.75\linewidth}{!}{
+            \input{../assets/diagrams/Geometry_IsocelesTriangles.tex}
+        }
+
+        \vspace{0.5em}
+        {\footnotesize An \emph{isosceles triangle} has at least 2 equal sides (legs) which forces the two base angles to also be equal.\par}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Types of Angle}
+
+    \begin{description}[<+- | alert@+>]
+        \item[Acute] an angle less than 90\textdegree{}
+        \item[Obtuse] an angle greater than 90\textdegree{}
+        \item[Right Angle] an angle equal to 90\textdegree{}
+    \end{description}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Right Triangle}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item A triangle that includes a right angle
+                \item The other two angles in a right triangle are \emph{complementary}--their total must add up to the 90\textdegree{}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{figure}
+                \centering
+                \resizebox{0.75\linewidth}{!}{
+                    \input{../assets/diagrams/Geometry_RightTriangle.tex}
+                }
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Complementary Angles}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{figure}
+                \centering
+                \resizebox{0.75\linewidth}{!}{
+                    \input{../assets/diagrams/Geometry_RightTriangle_Complement1.tex}
+                }
+            \end{figure}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{figure}
+                \centering
+                \resizebox{0.75\linewidth}{!}{
+                    \input{../assets/diagrams/Geometry_RightTriangle_Complement2.tex}
+                }
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% \begin{frame}
+% 	\frametitle{Similar Right Triangles}
+
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item Right triangles that have the same two angles
+%                 \item All sides will be in proportion
+%                     \begin{itemize}
+%                         \item If the hypotenuse (long side) is double, all sides will be double
+%                     \end{itemize}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\linewidth]{SimilarTriangles}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+\begin{frame}
+	\frametitle{Pythagorean Theorem}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item The square of the of the length of the hypotenuse of a right triangle is equal to the sum of the squares of the lengths of the sides
+                \item $A^2+B^2=C^2$ 
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{figure}
+                \centering
+                \resizebox{0.75\linewidth}{!}{
+                    \input{../assets/diagrams/Geometry_RightTriangle_Pythagorean.tex}
+                }
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% \begin{frame}
+% 	\frametitle{Pythagorean Theorem}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \[8^2+6^2=10^2\]
+%             \[64+36=100\]
+%             \pause
+%             \[4^2+3^2=5^2\]
+%             \[16+9=25\]
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\linewidth]{SimilarTriangles}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Pythagorean Theorem}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \[A^2+B^2=C^2\]
+%             \[7^2+5^2=C^2\]
+%             \[49+25=C^2\]
+%             \[74=C^2\]
+%             \[C=\sqrt{74}\approx 8.6\]
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\linewidth]{Pythagorean1}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Pythagorean Theorem}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \[A^2+B^2=C^2\]
+%             \[2^2+B^2=12^2\]
+%             \[4+B^2=144\]
+%             \[B^2=144-4=140\]
+%             \[B=\sqrt{140}\approx 11.8\]
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\linewidth]{Pythagorean2}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+\begin{frame}
+	\frametitle{Trigonometric Functions}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item The pythagorean theorem can be used to determine the length of an unknown side
+                \item The basic trigonometric functions can be used to determine both unknown angles and unknown lengths
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{figure}
+                \centering
+                \resizebox{0.75\linewidth}{!}{
+                    \input{../assets/diagrams/Geometry_RightTriangle_Pythagorean.tex}
+                }
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Sine}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item The sine of an angle is the ratio of the opposite side's length to the hypotenuse's length
+            \end{itemize}
+            \[\sin \alpha = \dfrac{A}{C}\]
+            \[\sin \beta = \dfrac{B}{C}\]
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{figure}
+                \centering
+                \resizebox{0.75\linewidth}{!}{
+                    \input{../assets/diagrams/Geometry_RightTriangle_Pythagorean.tex}
+                }
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Cosine}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item The cosine of an angle is the ratio of the adjacent side's length to the hypotenuse's length
+            \end{itemize}
+            \[\cos \alpha = \dfrac{B}{C}\]
+            \[\cos \beta = \dfrac{A}{C}\]
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{figure}
+                \centering
+                \resizebox{0.75\linewidth}{!}{
+                    \input{../assets/diagrams/Geometry_RightTriangle_Pythagorean.tex}
+                }
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Tangent}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item The tangent of an angle is the ratio of the opposite side's length to the adjacent side's length
+            \end{itemize}
+            \[\tan \alpha = \dfrac{A}{B}\]
+            \[\tan \beta = \dfrac{B}{A}\]
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{figure}
+                \centering
+                \resizebox{0.75\linewidth}{!}{
+                    \input{../assets/diagrams/Geometry_RightTriangle_Pythagorean.tex}
+                }
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% \begin{frame}
+% 	\frametitle{SOH CAH TOA}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             What is length side B?
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\linewidth]{SohCahToa}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{SOH CAH TOA}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \[\tan 30^\circ = \dfrac{B}{6}\]
+%             \[B=6 \times \tan 30^\circ\]
+%             \[B=6 \times 0.577\]
+%             \[B=3.464\]
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\linewidth]{SohCahToa}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{SOH CAH TOA}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             What is length side C?
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\linewidth]{SohCahToa}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{SOH CAH TOA}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \[\cos 30^\circ = \dfrac{6}{C}\]
+%             \[C=\dfrac{6}{\cos 30^\circ}\]
+%             \[C=\dfrac{6}{0.866}\]
+%             \[C=6.928\]
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\linewidth]{SohCahToa}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{SOH CAH TOA}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \[A^2+B^2=C^2\]
+%             \[6^2+3.464^2=6.928^2\]
+%             \[36+12=48\]
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\linewidth]{SohCahToa}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{SOH CAH TOA}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             Calculate the missing angle (we already know it has to be $60^\circ$)
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\linewidth]{SohCahToa}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{SOH CAH TOA}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \[B=3.464\]
+%             \[C=6.928\]            
+%             \[\sin \alpha = \dfrac{6}{6.928}=0.866\]
+%             \[\alpha = \arcsin 0.866 = \sin ^{-1} 0.866\]
+%             \[\alpha = 60^\circ\]
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\linewidth]{SohCahToa}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{SOH CAH TOA}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \[B=3.464\]
+%             \[C=6.928\]            
+%             \[\cos \alpha = \dfrac{3.464}{6.928}=0.5\]
+%             \[\alpha = \arccos 0.5 = \cos ^{-1} 0.5\]
+%             \[\alpha = 60^\circ\]
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\linewidth]{SohCahToa}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{SOH CAH TOA}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \[B=3.464\]
+%             \[C=6.928\]            
+%             \[\tan \alpha = \dfrac{6}{3.464}=1.7321\]
+%             \[\alpha = \arctan 1.732 = \tan ^{-1} 1.732\]
+%             \[\alpha = 60^\circ\]
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\linewidth]{SohCahToa}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+\section{Sine Bars}
+
+\begin{frame}
+	\frametitle{Sine Bars (1 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Straight rectangular bar
+                \item Two hardened and ground cylinders
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A pair of metal sine bars of different sizes, each featuring precision cylinders at both ends and weight-reducing relief holes along their bodies, displayed against a light gray background.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:SineBarStyles.jpg}{Glenn McKechnie}, \href{https://creativecommons.org/licenses/by-sa/2.0}{CC BY-SA 2.0}, via Wikimedia Commons}{SineBarStyles}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Sine Bars (2 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Cylinder axes right angle to bar
+                \item Centers of cylinders exactly same distance from working edge/plane
+                \item Distance between cylinders set for easy math
+                    \begin{itemize}
+                        \item 5'', 10'' are common
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A pair of metal sine bars of different sizes, each featuring precision cylinders at both ends and weight-reducing relief holes along their bodies, displayed against a light gray background.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:SineBarStyles.jpg}{Glenn McKechnie}, \href{https://creativecommons.org/licenses/by-sa/2.0}{CC BY-SA 2.0}, via Wikimedia Commons}{SineBarStyles}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Sine Bar Use}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Used to set up a plane at any angle to check parts
+                \item Indicator/height gauge can be used to match angle
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A pair of metal sine bars of different sizes, each featuring precision cylinders at both ends and weight-reducing relief holes along their bodies, displayed against a light gray background.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:SineBarStyles.jpg}{Glenn McKechnie}, \href{https://creativecommons.org/licenses/by-sa/2.0}{CC BY-SA 2.0}, via Wikimedia Commons}{SineBarStyles}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Sine Bar Concept}
+
+    \shadowpic[]{0.5\linewidth}{A technical diagram of a sine bar angle measurement setup on a flat gray surface plate, showing a gray sine bar resting on two cylindrical rollers with its left roller on the surface plate and its right roller elevated on a stack of dark gray gauge blocks of height H, with the distance between the two roller centers labeled L, a tapered light blue workpiece resting on top of the sine bar so its upper surface is horizontal, and a dial indicator on a vertical stand shown in two positions labeled O1 in light gray on the right and O2 in black on the left as it moves horizontally across the top of the workpiece.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Sine_bar_scheme.png}{Rrudzik}, \href{https://creativecommons.org/licenses/by-sa/4.0}{CC BY-SA 4.0}, via Wikimedia Commons}{Sine_bar_scheme}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Sine Bar Setup}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Rest cylinder on gage block
+                \item Other cylinder raised to $L \times \sin \alpha$
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.75\linewidth}{A steel sine bar with three circular holes along its length and cylindrical rollers mounted under both ends, resting at an angle against a square wooden block with its lower left roller on a gray surface and its upper right roller supported by a stack of steel gauge blocks.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Sinuslineal.jpg}{Hans-Günter König}, \href{https://creativecommons.org/licenses/by-sa/3.0}{CC BY-SA 3.0}, via Wikimedia Commons}{Sinuslineal}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% \begin{frame}
+% 	\frametitle{Sine Bars}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             What height is needed to achieve a $30^\circ$ angle with a 5" sine bar?
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\linewidth]{SineBarExample1}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Sine Bars}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%                 \[H=L \times \sin \alpha\]
+%                 \[H=5 \times \sin 30^\circ\]
+%                 \[H=5 \times 0.5\]
+%                 \[H=2.5"\]
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\linewidth]{SineBarExample1}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Sine Bars}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             What about a 10" sine bar?
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\linewidth]{SineBarExample2}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Sine Bars}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%                 \[H=L \times \sin \alpha\]
+%                 \[H=10 \times \sin 30^\circ\]
+%                 \[H=10 \times 0.5\]
+%                 \[H=5"\]
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\linewidth]{SineBarExample2}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Sine Bars}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             What height is needed to achieve a $47^\circ$ angle with a 5" sine bar?
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\linewidth]{SineBarExample3}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Sine Bars}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%                 \[H=L \times \sin \alpha\]
+%                 \[H=5 \times \sin 47^\circ\]
+%                 \[H=5 \times 0.731\]
+%                 \[H=3.657"\]
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\linewidth]{SineBarExample3}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+\begin{frame}
+	\frametitle{Sine Bars and Complementary Angles (1 of 2)}
+
+    \begin{itemize}[<+- | alert@+>]
+        \item When the bar is nearly horizontal a small change in height produces a small change in angle
+        \item As the angle increases, the change in angle with each change in height increases
+        \item More accurate measurement (better resolution) at lower angles
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Sine Bars and Complementary Angles (2 of 2)}
+
+    \begin{itemize}[<+- | alert@+>]
+        \item Set sine bar to complement of angle to be checked
+        \item Clamp sine bar to angle iron
+        \item Turn angle iron $90^\circ$
+    \end{itemize}
+\end{frame}
+
+\section{Indexing}
+
+\begin{frame}
+	\frametitle{Indexing Head}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Fixture on which the periphery of a part can be divided into any number of equal divisions
+                \item Originally created for machining--adapted for measurement
+                    \begin{itemize}
+                        \item Angular measurement
+                        \item Radial spacing of features
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A metal indexing head on the left and a matching tailstock on the right mounted on a slotted milling machine table, with a perforated index plate and crank handle on the front of the indexing head, a Vertex brand label at the bottom left, and two conical live centers pointing toward each other across the gap.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:IndexingHead-Tailstock.jpg}{Glenn McKechnie}, \href{https://creativecommons.org/licenses/by-sa/2.5}{CC BY-SA 2.5}, via Wikimedia Commons}{IndexingHead-Tailstock}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Indexing Head Setup}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Part fixtured to face plate
+                \item Index plate contains multiple holes at specific angles
+                \item Crank detents into holes for quick setting
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.75\linewidth}{A close-up three-quarter view of a metal indexing head bolted onto a slotted milling machine table, featuring a large direct indexing plate with a single ring of holes surrounding a pointed conical center on the front, and a multi-row perforated index plate with a sector arm and knurled crank handle mounted on the left side.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:IndexingHead-SimplePlate.jpg}{Glenn McKechnie}, \href{https://creativecommons.org/licenses/by-sa/2.5}{CC BY-SA 2.5}, via Wikimedia Commons}{IndexingHead-SimplePlate}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Indexing Head Function}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item{Crank attached to worm gear}
+                \item{Usually 40:1 gear ratio}
+                    \begin{itemize}
+                        \item{1 turn of crank = 1/40 revolution of index plate}
+                    \end{itemize}
+                \item{Complex heads have full transmission -- can change ratios}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.75\linewidth}{A black-and-white cross-sectional technical drawing of an indexing head showing its internal mechanical components, including a Base Plate with two Keys at the bottom, a curved Swivel Block housing a horizontal hollow Spindle, a Worm and Worm Wheel gear mechanism beneath the spindle, and a Direct Indexing Plate on the right engaged by a Plunger Pin for Direct Indexing at the top.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Indexing_head_cross-section.png}{Henry D. Burghardt}, Public domain, via Wikimedia Commons}{Indexing_head_cross-section}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Indexing Plate}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Index plate can be swapped for different detent patterns
+                \item Spacing from hole to hole determines angle
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{Two circular metal indexing plates resting side by side on a dark textured brown fabric surface, each featuring a large central bore surrounded by three mounting holes and multiple concentric rings of small evenly spaced holes, with the plate on the left having more densely packed hole circles than the plate on the right.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:IndexingPlatesStyle1.jpg}{Glenn McKechnie}, \href{https://creativecommons.org/licenses/by-sa/2.5}{CC BY-SA 2.5}, via Wikimedia Commons}{IndexingPlatesStyle1}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \centering
+    {\Huge \textbf{\textcolor{BakerADARed}{Questions?}}}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Copyright Notice}
+    
+    {\scriptsize
+    \PresTitle \textcopyright 2026 by Brad Peirson is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). To view a copy of the official license, visit \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{https://creativecommons.org/licenses/by-nc-sa/4.0/}.
+
+    \vspace{0.5em}
+
+    \textbf{Exceptions and Exclusions}
+
+    \begin{itemize}
+        \item[Baker College Branding \& Trademarks:]All Baker College logos, trademarks, wordmarks, seals, slide design templates, and proprietary branding elements contained in these materials are \textbf{EXCLUDED} from the CC BY-NC-SA 4.0 license. All rights are reserved by Baker College. Express written permission from Baker College is required for any use, copying, or redistribution of these elements.
+        \item[Third-Party Media \& Content:] Any third-party images, graphics, diagrams, or external media incorporated in these materials are included under their respective original licenses or permissions and are individually attributed at their point of use. 
+        \item[Original Author Content:] All unattributed figures, diagrams, text, code snippets, and media are original works created by the author and are licensed under the CC BY-NC-SA 4.0 license.
+    \end{itemize}
+
+    The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.
+    \par}
+\end{frame}
+
+\end{document}
+
+% \begin{frame}
+%     \frametitle{Test Todo}
+
+%     % Usage: \tikztodo[width]{height}{description/notes}
+%     \tikztodo[0.7\textwidth]{4cm}{Convert block diagram of feedback loop}
+% \end{frame}

@@ -1,0 +1,54 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={}
+    ]
+
+    \begin{pgfonlayer}{main}
+
+        \node[
+            draw=BakerADARed,
+            ultra thick,
+            fill=BakerADARed!50,
+            fill opacity=0.5,
+            isosceles triangle,
+            isosceles triangle apex angle=90,
+            minimum size=4cm,
+            rotate=-45
+        ](T90)
+        at (0,0)
+        {};
+
+        \draw[
+            BakerADARed,
+            ultra thick
+        ]
+        (T90.apex)
+        ++(-1,0)
+        coordinate(rSym)
+        -- ++(0,1)
+        -- ++(1,0);
+
+    \end{pgfonlayer}
+
+    \begin{pgfonlayer}{ft}
+
+        \draw[
+            UpNorthGreen,
+            <-
+        ]
+        (rSym)
+        to[out=250, in=0]
+        ++(-1,-1)
+        node[
+            text=BakerBlack,
+            anchor=east,
+            align=right
+        ]{90\textdegree{} symbol};
+
+    \end{pgfonlayer}
+    
+    \begin{pgfonlayer}{bg}
+
+    \end{pgfonlayer}
+\end{circuitikz}

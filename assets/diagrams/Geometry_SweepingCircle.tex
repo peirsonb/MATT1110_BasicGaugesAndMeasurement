@@ -1,0 +1,82 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={A full circle filled with semi-transparent light red, featuring a thick black horizontal radius extending to the right edge, four closely spaced blue radii angled slightly above the horizontal at ten, twelve, fourteen, and sixteen degrees, and a thick dashed red perimeter with an arrow pointing counterclockwise around the circumference back to the right edge.}
+    ]
+
+    \begin{pgfonlayer}{ft}
+    
+        % \node[
+        %     draw=BakerBlack,
+        %     fill=BakerBlack,
+        %     circle,
+        %     inner sep=0,
+        %     minimum size=0.25cm
+        % ]
+        % at (0,0)
+        % {};
+
+    \end{pgfonlayer}
+
+    \begin{pgfonlayer}{main}
+
+        \draw[
+            BakerBlack,
+            ultra thick
+        ]
+        (0,0)
+        -- ++(3,0)
+        coordinate(right);
+
+        \draw[
+            LakeBlue,
+            thick
+        ]
+        (0,0)
+        -- (10:3cm);
+
+        \draw[
+            LakeBlue,
+            thick
+        ]
+        (0,0)
+        -- (12:3cm);
+
+        \draw[
+            LakeBlue,
+            thick
+        ]
+        (0,0)
+        -- (14:3cm);
+
+        \draw[
+            LakeBlue,
+            thick
+        ]
+        (0,0)
+        -- (16:3cm);
+
+        \draw[
+            BakerADARed,
+            ultra thick,
+            dashed,
+            ->
+        ]
+        (right)
+        arc[start angle=0, end angle=360, radius=3cm];
+    
+    \end{pgfonlayer}
+
+    \begin{pgfonlayer}{bg}
+        \node[
+            fill=BakerADARed!50,
+            fill opacity=0.5,
+            circle,
+            minimum size=6cm
+        ]
+        at (0,0)
+        {};
+
+    \end{pgfonlayer}
+
+\end{circuitikz}

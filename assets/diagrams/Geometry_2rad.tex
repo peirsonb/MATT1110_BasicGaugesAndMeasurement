@@ -1,0 +1,113 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={}
+    ]
+
+    \pgfmathsetmacro{\myangle}{deg(pi)}
+
+    \begin{pgfonlayer}{ft}
+    
+        % \node[
+        %     draw=BakerBlack,
+        %     fill=BakerBlack,
+        %     circle,
+        %     inner sep=0,
+        %     minimum size=0.25cm
+        % ]
+        % at (0,0)
+        % {};
+
+    \end{pgfonlayer}
+
+    \begin{pgfonlayer}{main}
+
+        \draw[
+            BakerBlack,
+            ultra thick
+        ]
+        (0,0)
+        -- (6,0)
+        node[
+            text=BakerBlack,
+            midway,
+            below
+        ]{$l$};
+
+        \draw[
+            UpNorthGreen,
+            ultra thick
+        ]
+        (0,0)
+        -- (1r:6cm)
+        node[
+            text=BakerBlack,
+            midway,
+            anchor=south east
+        ]{$l$};
+
+        \draw[
+            LakeBlue,
+            ultra thick
+        ]
+        (0,0)
+        -- (2r:6cm)
+        node[
+            text=BakerBlack,
+            midway,
+            anchor=north east
+        ]{$l$};
+
+        \draw[
+            BakerADARed,
+            ultra thick,
+            dashed,
+            ->
+        ]
+        (1r:6cm)
+        arc[start angle=1r, end angle=2r, radius=6cm]
+        node[
+            text=BakerBlack,
+            midway,
+            above
+        ]{$l$};
+
+        \draw[
+            UpNorthGreen,
+            thick
+        ]
+        (2,0)
+        arc[start angle=0, end angle=1r, radius=2cm]
+        node[
+            text=BakerBlack,
+            midway,
+            right
+        ]{$\qty{1}{\radian}$};
+
+        \draw[
+            UpNorthGreen,
+            thick
+        ]
+        (1r:2cm)
+        arc[start angle=1r, end angle=2r, radius=2cm]
+        node[
+            text=BakerBlack,
+            midway,
+            above
+        ]{$\qty{1}{\radian}$};
+
+    \end{pgfonlayer}
+    
+    \begin{pgfonlayer}{bg}
+
+        \fill[
+            fill=BakerADARed!50,
+            fill opacity=0.5
+        ]
+        (0,0)
+        -- (6,0)
+        arc[start angle=0, end angle=2r, radius=6cm]
+        -- cycle;
+
+    \end{pgfonlayer}
+\end{circuitikz}

@@ -1,0 +1,182 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={}
+    ]
+
+    \pgfmathsetmacro{\myangle}{deg(pi)}
+
+    \begin{pgfonlayer}{ft}
+    
+        % \node[
+        %     draw=BakerBlack,
+        %     fill=BakerBlack,
+        %     circle,
+        %     inner sep=0,
+        %     minimum size=0.25cm
+        % ]
+        % at (0,0)
+        % {};
+
+    \end{pgfonlayer}
+
+    \begin{pgfonlayer}{main}
+
+        \draw[
+            BakerBlack,
+            ultra thick
+        ]
+        (0,0)
+        -- (6,0)
+        node[
+            text=BakerBlack,
+            midway,
+            below
+        ]{$l$};
+
+        \draw[
+            UpNorthGreen,
+            ultra thick
+        ]
+        (0,0)
+        -- (1r:6cm)
+        node[
+            text=BakerBlack,
+            midway,
+            anchor=south east
+        ]{$l$};
+
+        \draw[
+            UpNorthGreen,
+            ultra thick
+        ]
+        (0,0)
+        -- (2r:6cm)
+        node[
+            text=BakerBlack,
+            midway,
+            anchor=north east
+        ]{$l$};
+
+        \draw[
+            LakeBlue,
+            ultra thick
+        ]
+        (0,0)
+        -- (3r:6cm)
+        node[
+            text=BakerBlack,
+            midway,
+            anchor=south west
+        ]{$l$};
+
+        \draw[
+            BakerADARed,
+            ultra thick,
+            dashed,
+            ->
+        ]
+        (2r:6cm)
+        arc[start angle=2r, end angle=3r, radius=6cm]
+        node[
+            text=BakerBlack,
+            midway,
+            anchor=south east
+        ]{$l$};
+
+        \draw[
+            UpNorthGreen,
+            thick
+        ]
+        (2,0)
+        arc[start angle=0, end angle=1r, radius=2cm]
+        node[
+            text=BakerBlack,
+            midway,
+            right
+        ]{$\qty{1}{\radian}$};
+
+        \draw[
+            UpNorthGreen,
+            thick
+        ]
+        (1r:2cm)
+        arc[start angle=1r, end angle=2r, radius=2cm]
+        node[
+            text=BakerBlack,
+            midway,
+            above
+        ]{$\qty{1}{\radian}$};
+
+        \draw[
+            UpNorthGreen,
+            thick
+        ]
+        (2r:2cm)
+        arc[start angle=2r, end angle=3r, radius=2cm]
+        node[
+            text=BakerBlack,
+            midway,
+            anchor=south east
+        ]{$\qty{1}{\radian}$};
+
+        %============================================================
+        % 180 degree line
+        %============================================================
+        \draw[
+            BakerBlack,
+            ultra thick,
+            dashed
+        ]
+        (0,0)
+        -- (-6,0);
+
+        \draw[
+            HoneyYellow,
+            ultra thick
+        ]
+        (-2,0)
+        arc[start angle=180, end angle=3r, radius=2cm]
+        coordinate[midway](angCenter);
+
+        \draw[
+            BakerBlack,
+            thick,
+            dashed
+        ]
+        (2,0)
+        arc[start angle=360, end angle=180, radius=2cm]
+        node[
+            text=BakerBlack,
+            midway,
+            below
+        ]{$\ang{180}$};
+
+        \draw[
+            UpNorthGreen,
+            thick,
+            <-
+        ]
+        (angCenter)
+        to[out=180, in=0]
+        ++(-2,-1)
+        node[
+            text=BakerBlack,
+            anchor=east
+        ]{?};
+
+    \end{pgfonlayer}
+    
+    \begin{pgfonlayer}{bg}
+
+        \fill[
+            fill=BakerADARed!50,
+            fill opacity=0.5
+        ]
+        (0,0)
+        -- (6,0)
+        arc[start angle=0, end angle=3r, radius=6cm]
+        -- cycle;
+
+    \end{pgfonlayer}
+\end{circuitikz}

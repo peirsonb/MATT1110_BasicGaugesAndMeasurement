@@ -1,0 +1,79 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={An isosceles right triangle outlined in thick red and filled with semi-transparent light red, with its right angle at the bottom right vertex indicated by a red square corner marker, its top angle marked with a thick black arc labeled 45 degrees, its bottom left angle marked with a thick black arc labeled alpha, and black equations positioned above and to the left of the hypotenuse showing 180 degrees equals 90 degrees plus 45 degrees plus alpha, followed by alpha equals 180 degrees minus 90 degrees minus 45 degrees, which equals 45 degrees.}
+    ]
+
+    \begin{pgfonlayer}{main}
+
+        \node[
+            draw=BakerADARed,
+            ultra thick,
+            fill=BakerADARed!50,
+            fill opacity=0.5,
+            isosceles triangle,
+            isosceles triangle apex angle=90,
+            minimum size=4cm,
+            rotate=-45
+        ](T90)
+        at (0,0)
+        {};
+
+        \draw[
+            BakerADARed,
+            ultra thick
+        ]
+        (T90.apex)
+        ++(-1,0)
+        coordinate(rSym)
+        -- ++(0,1)
+        -- ++(1,0);
+
+    \end{pgfonlayer}
+
+    \begin{pgfonlayer}{ft}
+
+        \draw[
+            BakerBlack,
+            thick
+        ]
+        (T90.right corner)
+        ++ (1,0)
+        arc[start angle=0, end angle=45, radius=1cm]
+        node[
+            text=BakerBlack,
+            midway,
+            anchor=south west
+        ]{$\alpha$};
+
+        \draw[
+            BakerBlack,
+            thick
+        ]
+        (T90.left corner)
+        ++ (0,-1)
+        arc[start angle=270, end angle=225, radius=1cm]
+        node[
+            text=BakerBlack,
+            midway,
+            anchor=north
+        ]{45\textdegree{}};
+
+        \node[
+            text=BakerBlack,
+            anchor=south east,
+            align=right
+        ]
+        at($(T90.west)+(-0.25cm,0.25cm)$)
+        {$\begin{aligned}
+            \ang{180} &= \ang{90} + \ang{45} + \alpha\\
+            \alpha &= \ang{180} - \ang{90} - \ang{45}\\
+            &= \ang{45}
+        \end{aligned}$};
+
+    \end{pgfonlayer}
+    
+    \begin{pgfonlayer}{bg}
+
+    \end{pgfonlayer}
+\end{circuitikz}

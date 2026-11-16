@@ -1,0 +1,77 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={A right triangle outlined in thick red and filled with semi-transparent light red, with its right angle at the bottom right vertex indicated by a red square corner marker, its top angle marked with a thin black arc labeled 53.13 degrees, its bottom left angle marked with a thin black arc labeled alpha, and black equations positioned above and to the left of the hypotenuse showing 180 degrees equals 90 degrees plus 53.13 degrees plus alpha, followed by alpha equals 180 degrees minus 90 degrees minus 53.13 degrees, which equals 36.87 degrees.}
+    ]
+
+    \begin{pgfonlayer}{main}
+
+        \fill[
+            draw=BakerADARed,
+            ultra thick,
+            fill=BakerADARed!50,
+            fill opacity=0.5
+        ]
+        (0,0)
+        -- ++(8,0)
+        coordinate(R1)
+        -- ++(0,6)
+        coordinate(top)
+        -- cycle
+        coordinate[midway](mid);
+
+        \draw[
+            BakerADARed,
+            ultra thick
+        ]
+        (R1)
+        ++(-1,0)
+        -- ++(0,1)
+        -- ++(1,0);        
+
+    \end{pgfonlayer}
+
+    \begin{pgfonlayer}{ft}
+
+        \draw[
+            BakerBlack,
+        ]
+        (top)
+        ++(0,-1)
+        arc[start angle=270, end angle=216.87, radius=1cm]
+        node[
+            text=BakerBlack,
+            midway,
+            anchor=north,
+            yshift=-0.25cm
+        ]{53.13\textdegree{}};
+
+        \draw[
+            BakerBlack,
+        ]
+        (1,0)
+        arc[start angle=0, end angle=36.87, radius=1cm]
+        node[
+            text=BakerBlack,
+            midway,
+            anchor=west
+        ]{$\alpha$};
+
+        \node[
+            text=BakerBlack,
+            anchor=south east,
+            align=right
+        ]
+        at($(mid)+(-0.25cm,0.25cm)$)
+        {$\begin{aligned}
+            \ang{180} &= \ang{90} + \ang{53.13} + \alpha\\
+            \alpha &= \ang{180} - \ang{90} - \ang{53.13}\\
+            &= \ang{36.87}
+        \end{aligned}$};
+
+    \end{pgfonlayer}
+    
+    \begin{pgfonlayer}{bg}
+
+    \end{pgfonlayer}
+\end{circuitikz}

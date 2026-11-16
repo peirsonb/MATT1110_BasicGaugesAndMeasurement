@@ -1,0 +1,60 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={A circular sector filled with semi-transparent light red, bounded by a thick black horizontal bottom radius, a thick blue upper radius angled at sixty degrees, and a thick dashed red curved arc with an arrow pointing counterclockwise from the bottom edge to the top edge.}
+    ]
+
+    \begin{pgfonlayer}{ft}
+    
+        % \node[
+        %     draw=BakerBlack,
+        %     fill=BakerBlack,
+        %     circle,
+        %     inner sep=0,
+        %     minimum size=0.25cm
+        % ]
+        % at (0,0)
+        % {};
+
+    \end{pgfonlayer}
+
+    \begin{pgfonlayer}{main}
+
+        \draw[
+            BakerBlack,
+            ultra thick
+        ]
+        (0,0)
+        -- ++(6,0)
+        coordinate(right);
+
+        \draw[
+            BakerADARed,
+            ultra thick,
+            dashed,
+            ->
+        ]
+        (right)
+        arc[start angle=0, end angle=60, radius=6cm];
+
+        \draw[
+            LakeBlue,
+            ultra thick
+        ]
+        (0,0)
+        -- (60:6cm);
+    
+    \end{pgfonlayer}
+
+    \begin{pgfonlayer}{bg}
+        \fill[
+            fill=BakerADARed!50,
+            fill opacity=0.5
+        ]
+        (0,0)
+        -- (6,0)
+        arc[start angle=0, end angle=60, radius=6cm]
+        -- cycle;
+    \end{pgfonlayer}
+
+\end{circuitikz}

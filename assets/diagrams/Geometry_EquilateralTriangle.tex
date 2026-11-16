@@ -1,0 +1,59 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={An equilateral triangle outlined in thick red and filled with semi-transparent light red, with its apex pointing straight up and each of the three interior angles labeled 60 degrees in black text.}
+    ]
+
+    \begin{pgfonlayer}{main}
+
+        \node[
+            draw=BakerADARed,
+            ultra thick,
+            fill=BakerADARed!50,
+            fill opacity=0.5,
+            isosceles triangle,
+            isosceles triangle apex angle=60,
+            minimum size=4cm,
+            rotate=90
+        ](T60)
+        at (0,0)
+        {};
+
+    \end{pgfonlayer}
+
+    \begin{pgfonlayer}{ft}
+
+        \node[
+            text=BakerBlack,
+            anchor=north,
+            below=0.75cm
+        ]
+        at(T60.apex)
+        {60\textdegree{}};
+
+        \node[
+            text=BakerBlack,
+            anchor=south west,
+            xshift=0.5cm,
+            yshift=0.25cm
+        ]
+        at(T60.left corner)
+        {60\textdegree{}};
+
+        \node[
+            text=BakerBlack,
+            anchor=south east,
+            xshift=-0.5cm,
+            yshift=0.25cm
+        ]
+        at(T60.right corner)
+        {60\textdegree{}};
+    
+    \end{pgfonlayer}
+
+    
+    
+    \begin{pgfonlayer}{bg}
+
+    \end{pgfonlayer}
+\end{circuitikz}

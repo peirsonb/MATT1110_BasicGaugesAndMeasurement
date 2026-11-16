@@ -1,0 +1,67 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={A right triangle outlined in thick red and filled with semi-transparent light red, with its right angle at the bottom right vertex indicated by a red square corner marker, its horizontal bottom leg labeled B, its vertical right leg labeled A, its hypotenuse labeled C, its top angle marked with a thin black arc labeled beta, and its bottom left angle marked with a thin black arc labeled alpha.}
+    ]
+
+    \begin{pgfonlayer}{main}
+
+        \fill[
+            draw=BakerADARed,
+            ultra thick,
+            fill=BakerADARed!50,
+            fill opacity=0.5
+        ]
+        (0,0)
+        -- ++(8,0)
+        coordinate(R1)
+        node[midway, below, opacity=1, text=BakerBlack] {B}
+        -- ++(0,6)
+        coordinate(top)
+        node[midway, right, opacity=1, text=BakerBlack] {A}
+        -- cycle
+        node[midway, anchor=south east, opacity=1, text=BakerBlack] {C};
+
+        \draw[
+            BakerADARed,
+            ultra thick
+        ]
+        (R1)
+        ++(-1,0)
+        -- ++(0,1)
+        -- ++(1,0);        
+
+    \end{pgfonlayer}
+
+    \begin{pgfonlayer}{ft}
+
+        \draw[
+            BakerBlack,
+        ]
+        (top)
+        ++(0,-1)
+        arc[start angle=270, end angle=216.87, radius=1cm]
+        node[
+            text=BakerBlack,
+            midway,
+            anchor=north,
+            yshift=-0.25cm
+        ]{$\beta$};
+
+        \draw[
+            BakerBlack,
+        ]
+        (1,0)
+        arc[start angle=0, end angle=36.87, radius=1cm]
+        node[
+            text=BakerBlack,
+            midway,
+            anchor=west
+        ]{$\alpha$};
+
+    \end{pgfonlayer}
+    
+    \begin{pgfonlayer}{bg}
+
+    \end{pgfonlayer}
+\end{circuitikz}
