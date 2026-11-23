@@ -1,0 +1,28 @@
+\begin{tikzpicture}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={}
+    ]
+
+    \draw[
+        LakeBlue,
+        ultra thick,
+        decorate, 
+        decoration={
+            coil,
+            aspect=0,
+            amplitude=3pt
+        }
+    ]
+    (0,0)
+    -- (5,0);
+
+    \draw[
+        BakerADARed,
+        dashed
+    ]
+    (0,0)
+    -- (5,0)
+    coordinate[midway](label);
+
+\end{tikzpicture}

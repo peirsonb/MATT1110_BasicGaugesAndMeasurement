@@ -455,3 +455,39 @@
         \coordinate(-EXPV) at ($(srcB.east)-(0,1em)$);
     }
 }
+
+\tikzset{
+    pics/roughness/.style n args={3}{
+        code={
+            \draw[
+                BakerBlack,
+                ultra thick,
+            ]
+            (-0.25, 0.5)            % Shifted start so 'base' lands at (0,0)
+            -- (0, 0) coordinate(-base)
+            -- ++(0.5, 1) coordinate[midway](-mid)
+            -- ++(2, 0)
+            node[
+                text=BakerBlack,
+                midway,
+                above
+            ](-topValue){#2};                  % Argument 2: top value (e.g., 0.005)
+
+            \node[
+                text=BakerBlack,
+                anchor=west,
+                align=left
+            ](-rightValue)
+            at (-mid)
+            {#3};           % Argument 3: right value (e.g., 0.030)
+
+            \node[
+                text=BakerBlack,
+                anchor=south east,
+                align=right
+            ](-leftValue)
+            at (-mid)
+            {#1};                   % Argument 1: left value (e.g., 16)
+        }
+    }
+}

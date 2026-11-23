@@ -1,0 +1,43 @@
+\begin{tikzpicture}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={A horizontal diagram comparing an actual rough surface profile to its ideal nominal profile. A jagged blue line runs horizontally across the center, oscillating slightly above and below a straight horizontal dashed red line. A thin red curved arrow points from the middle of the dashed red line upward and to the right to the text label Nominal Surface.}
+    ]
+
+    \draw[
+        LakeBlue,
+        ultra thick,
+        decorate, 
+        decoration={
+            random steps,
+            segment length=3pt,
+            amplitude=2pt
+        }
+    ]
+    (0,0)
+    -- (5,0);
+
+    \draw[
+        BakerADARed,
+        dashed
+    ]
+    (0,0)
+    -- (5,0)
+    coordinate[midway](label);
+
+    \draw[
+        BakerADARed,
+        thin,
+        <-
+    ]
+    (label)
+    to[out=45, in=180]
+    ++(2,1)
+    node[
+        text=BakerBlack,
+        anchor=west,
+        align=left
+    ]
+    {Nominal\\Surface};
+
+\end{tikzpicture}

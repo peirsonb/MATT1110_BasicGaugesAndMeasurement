@@ -1,0 +1,58 @@
+\begin{tikzpicture}[
+    line cap=round,
+    line join=round,
+    >=Triangle
+]
+
+    % Top jagged surface profile
+    \draw[line width=2pt] 
+        (0.0, 2.2) -- 
+        (1.3, 1.55) -- 
+        (1.85, 2.4) -- 
+        (2.65, 1.25) -- 
+        (3.85, 2.2) -- 
+        (4.9, 1.55) -- 
+        (6.1, 2.2) -- 
+        (6.95, 1.0) -- 
+        (7.45, 1.9) -- 
+        (8.6, 1.55) -- 
+        (9.75, 2.2);
+
+    % Bottom jagged surface profile
+    \draw[line width=2pt] 
+        (0.75, 0.55) -- 
+        (1.95, 1.2) -- 
+        (3.05, 0.9) -- 
+        (3.55, 1.7) -- 
+        (4.45, 0.55) -- 
+        (5.55, 1.2) -- 
+        (6.7, 0.55) -- 
+        (7.9, 1.55) -- 
+        (8.85, 0.35) -- 
+        (9.3, 1.2) -- 
+        (10.5, 0.55);
+
+    % Macroscopic motion arrows (top and bottom)
+    \draw[->, line width=2.5pt, arrows={-Triangle[length=4mm, width=4mm]}] 
+        (3.1, 2.6) -- (7.9, 2.6);
+    \draw[->, line width=2.5pt, arrows={-Triangle[length=4mm, width=4mm]}] 
+        (7.9, 0.1) -- (3.1, 0.1);
+
+    % Local resistance / force arrows between asperities
+    % 1. Left-pointing arrow (upper left)
+    \draw[->, line width=2.2pt, arrows={-Triangle[length=3.2mm, width=3.2mm]}] 
+        (3.1, 1.45) -- (1.6, 1.45);
+        
+    % 2. Right-pointing arrow (lower left-center)
+    \draw[->, line width=2.2pt, arrows={-Triangle[length=3.2mm, width=3.2mm]}] 
+        (3.35, 1.2) -- (4.85, 1.2);
+        
+    % 3. Left-pointing arrow (upper right-center)
+    \draw[->, line width=2.2pt, arrows={-Triangle[length=3.2mm, width=3.2mm]}] 
+        (7.2, 1.45) -- (5.7, 1.45);
+        
+    % 4. Right-pointing arrow (lower right)
+    \draw[->, line width=2.2pt, arrows={-Triangle[length=3.2mm, width=3.2mm]}] 
+        (7.5, 1.1) -- (9.05, 1.1);
+
+\end{tikzpicture}

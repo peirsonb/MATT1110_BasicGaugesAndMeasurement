@@ -1,0 +1,573 @@
+% ============================================================================
+% Accessibility
+% ============================================================================
+\DocumentMetadata{
+  lang = en-US, 
+  pdfstandard = ua-2, 
+  tagging = on, 
+  tagging-setup = {math/setup=mathml-SE}
+}
+
+% ============================================================================
+% Document Properties - used on title slide and PDF metadata fields
+% ============================================================================
+\def\PresTitle{Surface Roughness}  % Required - top line of title slide
+\def\PresSubtitle{Gauges and Measurement}         % Optional - second line
+\def\PresAuthor{Brad Peirson}               % Required - below dividing line
+\def\PresInstitute{College of Information Technology and Engineering}       % Optional
+\def\PresDate{}                             % Optional
+\def\PresKeywords{}                         % Optional - used for hyperref
+
+% Presentation Formatting
+% ============================================================================
+\input{../ltxtalk_preamble.tex}
+
+% ============================================================================
+% Document Content
+% ============================================================================
+\begin{document}
+
+\maketitle              % Redefined in the preamble to generate a full frame
+
+\begin{frame}
+    \frametitle{Agenda}
+    \begingroup
+        % Tighten the spacing between paragraphs/TOC lines
+        \setlength{\parskip}{0.3em} 
+        
+        % Optionally tighten the line spacing within an entry
+        %\baselineskip=1.2em 
+        
+        \setcounter{tocdepth}{1} % Show only sections
+    \tableofcontents
+    \setcounter{tocdepth}{2} % Reset back to default so subsections are tracked
+    \endgroup
+\end{frame}
+
+\section{Surface Roughness}
+
+\begin{frame}
+	\frametitle{Mechanical Motion}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Mechanical devices involve movement of one surface on another
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{figure}
+                \centering
+                \resizebox{\linewidth}{!}{
+                    \input{../assets/diagrams/SurfaceFinish_Diagram.tex}
+                }
+                
+                \vspace{0.5em}
+                {\tiny \textbf{Adapted from:} \href{https://commons.wikimedia.org/wiki/File:Friction_surface_microstructure.png}{CaoHao}, \href{http://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via Wikimedia Commons, converted to TikZ format\par}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Mechanical Motion}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Movement = friction
+                \item Friction = wear + heat
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A three-dimensional illustration showing two rectangular blocks in contact along jagged, microscopically rough surfaces against a white background, with a translucent blue-gray upper block resting atop a translucent orange-brown lower block so their irregular peaks and valleys interlock.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Friction_between_surfaces.jpg}{CaoHao}, \href{http://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0}, via Wikimedia Commons}{Friction_between_surfaces}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Surface Friction}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Smoother surface = less friction = higher speed/load
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \hexpic[]{0.75\linewidth}{A close-up photograph of a steel ball bearing resting on a light gray surface, showing its polished inner and outer rings with a ring of spherical steel balls held evenly spaced inside a riveted metal cage.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Ball_bearing.jpg}{Solaris2006}, \href{http://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via Wikimedia Commons}{Ball_bearing}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Lubrication}
+
+    \shadowpic[]{\linewidth}{A diagram of laminar shear flow between two horizontal gray plates separated by a vertical gap height h, showing a bottom stationary plate and a top moving plate of length or area A pulled to the right by a blue force arrow labeled F, with a blue triangular linear velocity profile labeled Vx increasing from zero at the bottom to maximum at the top, a red vertical segmented column representing shear stress labeled tau xy, and a three-dimensional xyz coordinate axes legend at the bottom left.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Pressure_driven_laminar_flow_between_on_fixed_plate_and_top_moving_plate_with_shear_stress.png}{MiltonOrlandoUSF}, \href{http://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0}, via Wikimedia Commons}{Pressure_driven_laminar_flow}
+
+    \vspace{0.5em}
+    {\footnotesize Lubrication helps, but surface finish \emph{still} limits speeds/loads. There are shear forces and friction within the fluid itself, both of which create heat.\par}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Friction May Not Be a Bad Thing}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Friction is why a small boat can pull a massive container ship
+                \item Imagine pulling the same ship on land\dots
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A red-hulled cargo ship with three white deck cranes and a white rear superstructure sits in calm gray harbor water under an overcast sky, assisted by two tugboats at its bow and stern in front of low port buildings and a tall red-and-white lattice tower.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Ship_Pietersgracht_with_tugboats_in_Saint_Nazaire_harbour_02.jpg}{Hellotheworld}, \href{http://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0}, via Wikimedia Commons}{Ship_Pietersgracht_with_tugboats_in_Saint_Nazaire_harbour_02}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\subsection{Surface Finish as a Condition}
+
+\begin{frame}
+	\frametitle{Condition}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Surface finish is a \emph{condition}
+                \item Cannot be specified as a linear dimension
+                \item Special instruments/units of measure defined to be able to specify/measure
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A close-up laser profilometry scan showing red vertical interference fringes across a metal surface, with a white horizontal arrow pointing from the left to a small dark circular corrosion pit near the center where the parallel lines curve and distort around the depression.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Laser_profilometry_-_pitting_corrosion.png}{Koz5000}, \href{http://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0}, via Wikimedia Commons}{Laser_profilometry_-_pitting_corrosion}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Nominal Surface}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Reference plane from which surface measurements will be taken
+                \item Theoretically perfect surface (solid model, drawing, etc.)
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A three-dimensional CAD rendering of two aligned gray keyed shafts separated by a small gap, each fitted with a cylindrical hub and toothed sprocket facing each other and secured by a set screw against a light gray background.}{}{ChainCoupling}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Surface Deviations}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item{Departures from the nominal (theoretically perfect) surface}
+                    \begin{itemize}
+                        \item{Flaws}
+                        \item{Waviness}
+                        \item{Roughness}
+                        \item{Lay}
+                        \item{Profile}
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{figure}
+                \centering
+                \resizebox{\linewidth}{!}{
+                    \input{../assets/diagrams/SurfaceFinish1.tex}
+                }
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Surface Flaws}
+    
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Irregularities that occur at one place or at relatively infrequent intervals
+                    \begin{itemize}
+                        \item Scratches
+                        \item Ridges
+                        \item Hollows
+                        \item Cracks 
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A three-dimensional surface topography map of a deep scratch across a flat glass surface, spanning 600 micrometers on both horizontal axes and up to 9.41 micrometers on the vertical axis, with the surrounding smooth surface colored pale pink and the deep groove shaded in a rainbow gradient from red and yellow down to dark blue at its deepest trough, crossed by a black and blue profile measurement line and accompanied by a vertical height color scale on the right.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Scratch_on_glass_surface,_3D_topography_(26711616455).jpg}{ZEISS Microscopy from Germany}, \href{http://creativecommons.org/licenses/by-sa/2.0/}{CC BY-SA 2.0}, via Wikimedia Commons}{Scratch_on_glass_surface,_3D_topography_(26711616455)}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Waves}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Recurrent or random irregularities on a surface in the form of waves
+                \item Peak-to-peak 0.030" to several inches
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{figure}
+                \centering
+                \resizebox{\linewidth}{!}{
+                    \input{../assets/diagrams/SurfaceFinish2.tex}
+                }
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Roughness (1 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Relatively finely spaced irregularities superimposed on a flat or wavy surface             
+                \item Roughness measurement deals with these irregularities
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A black-and-white technical cross-section diagram showing how stylus tip radius affects surface roughness measurement, with a jagged solid line and diagonal hatching representing the actual rough surface profile overlaid by two traced paths, a dashed line closely following the valleys for a 2.5 micrometer radius stylus and a dotted line bridging across the peaks for a 12.5 micrometer radius stylus, accompanied by an Italian legend at the bottom translating to path followed by a stylus with radius 2.5 micrometers and path followed by a stylus with radius 12.5 micrometers.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:STILO3.jpg}{Lucabu images}, CC0, via Wikimedia Commons}{STILO3}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Roughness (2 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Machining--produced by cutting action of the tool
+                \item Abrasive operations--cutting action of the grains
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A black-and-white technical cross-section diagram showing how stylus tip radius affects surface roughness measurement, with a jagged solid line and diagonal hatching representing the actual rough surface profile overlaid by two traced paths, a dashed line closely following the valleys for a 2.5 micrometer radius stylus and a dotted line bridging across the peaks for a 12.5 micrometer radius stylus, accompanied by an Italian legend at the bottom translating to path followed by a stylus with radius 2.5 micrometers and path followed by a stylus with radius 12.5 micrometers.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:STILO3.jpg}{Lucabu images}, CC0, via Wikimedia Commons}{STILO3}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Profile}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item A contour of the roughness and waviness of the surface
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A black-and-white technical cross-section diagram showing how stylus tip radius affects surface roughness measurement, with a jagged solid line and diagonal hatching representing the actual rough surface profile overlaid by two traced paths, a dashed line closely following the valleys for a 2.5 micrometer radius stylus and a dotted line bridging across the peaks for a 12.5 micrometer radius stylus, accompanied by an Italian legend at the bottom translating to path followed by a stylus with radius 2.5 micrometers and path followed by a stylus with radius 12.5 micrometers.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:STILO3.jpg}{Lucabu images}, CC0, via Wikimedia Commons}{STILO3}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Surface Lay (1 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Direction of the predominant surface pattern
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A technician wearing a dark flat cap, safety glasses, earplugs, a tan work shirt, and a black apron stands at a workshop bench holding a small round metal specimen on a light blue lapping surface next to a gray metal fixture block and assorted shop bottles and tools.}{\textbf{Attribution:} Dori Whipple, Public domain, via \href{https://www.dvidshub.net/image/3659435/machinists-create-scratch-production-plant-barstow}{U.S. Department of War Digital Visual Information Distribution System}}{3659435}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Surface Lay (2 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Milling, turning, grinding -- definite direction of lay
+                \item Lapping -- random pattern (multi-directional)
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A technician wearing a dark flat cap, safety glasses, earplugs, a tan work shirt, and a black apron stands at a workshop bench holding a small round metal specimen on a light blue lapping surface next to a gray metal fixture block and assorted shop bottles and tools.}{\textbf{Attribution:} Dori Whipple, Public domain, via \href{https://www.dvidshub.net/image/3659435/machinists-create-scratch-production-plant-barstow}{U.S. Department of War Digital Visual Information Distribution System}}{3659435}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Surface Finish Video}
+
+    \centering
+    {\large \href{https://www.youtube.com/watch?v=6ZFT4nBEEFY}{Machined Surface Finishes (Metal Machining Video 6)}\par}
+
+    \vspace{0.5em}
+    {\footnotesize \href{https://www.youtube.com/watch?v=6ZFT4nBEEFY}{https://www.youtube.com/watch?v=6ZFT4nBEEFY}\par}
+
+    \vspace{0.5em}
+    {\tiny Video \textcopyright{} Sofeast via YouTube.com\par}
+\end{frame}
+
+\section{Surface Finish Specification}
+
+\begin{frame}
+	\frametitle{Surface Finish}
+
+    \begin{figure}
+        \centering
+        \resizebox{\linewidth}{!}{
+            \input{../assets/diagrams/SurfaceFinish_DrawingEx.tex}
+        }
+
+        \vspace{0.5em}
+        {\footnotesize Surface finish has a specific set of symbols on engineering drawings.\par}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Surface Finish Symbol}
+
+    \begin{figure}
+        \centering
+        \resizebox{\linewidth}{!}{
+            \input{../assets/diagrams/SurfaceFinish_Symbol.tex}
+        }
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Surface Finish Specification}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth, alt={A black-and-white technical schematic grid illustrating standard engineering surface finish symbols and layout boxes against a white background, featuring a closed-triangle material-removal-required symbol with a horizontal extension bar in the upper left cell, parallel and perpendicular lay direction symbols in a narrow vertical column near the center, and two smaller surface texture symbols at the bottom left showing a circle inside a V-shape for material removal prohibited and a closed triangle for material removal required, alongside blank rectangular table cells on the right.}]{Surface_finish_specification2}
+
+        \vspace{0.5em}
+        {\tiny \textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Surface_finish_specification2.svg}{Surface\_finish\_specification.svg: Emok derivative work: Wizard191}, \href{http://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via Wikimedia Commons\par}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Lay Direction Example}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{figure}
+                \centering
+                \resizebox{\linewidth}{!}{
+                    \input{../assets/diagrams/SurfaceFinish_Parallel.tex}
+                }
+
+                \vspace{0.5em}
+                {\footnotesize Parallel to edge indicated\par}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{figure}
+                \centering
+                \resizebox{\linewidth}{!}{
+                    \input{../assets/diagrams/SurfaceFinish_Perpendicular.tex}
+                }
+
+                \vspace{0.5em}
+                {\footnotesize Perpendicular to edge indicated\par}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\section{Profilometers}
+
+\begin{frame}
+	\frametitle{Profilometer}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Mechanical-electronic instrument for measuring surface roughness in microinch (\SI{}{\micro in}, 0.000001") 
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.75\linewidth}{A vintage Talysurf Model 2 surface roughness measuring instrument on display in a museum, featuring a heavy dark metal base with a vertical column and horizontal stylus arm, a wooden chart recorder box on the right, and electronic control units stored on the lower shelves of a wheeled wooden-topped cart in front of a wood-paneled partition.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Talysurf,_Snibston.jpg}{Andy Dingley}, \href{http://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via Wikimedia Commons}{Talysurf,_Snibston}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Profilometer Setup}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item{Part placed under measurement head}
+                    \begin{itemize}
+                        \item{Some heads are motorized}
+                        \item{Some are moved by hand over part}
+                    \end{itemize}
+                \item{Skid or stud rides on part}
+                    \begin{itemize}
+                        \item{Skid/stud sets the reference surface}
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.875\linewidth}{A close-up photograph of a Taylor-Hobson Surtronic 3P portable surface roughness profilometer resting on a patterned metal surface plate, featuring a rectangular light gray display and control unit on the upper right with rotary dials and a small screen, connected to a vertical black adjustment column and a silver cylindrical stylus arm extending forward to rest its tip on a small metal cylinder seated atop a grooved dark V-block on the lower left.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Profilometr_Surtronic_3P.jpg}{Rrudzik}, CC0, via Wikimedia Commons}{Profilometr_Surtronic_3P}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Profilometer Measurement}
+
+    \shadowpic[]{0.5\linewidth}{A black-and-white technical schematic illustrating a skidded stylus profilometer traversing a rough surface from left to right as indicated by a horizontal arrow. In the upper section, a rounded mechanical skid slides over the peaks of a jagged cross-hatched profile labeled SUPERFICIE, while an adjacent pointed black stylus tip probes into the surface valleys to measure height variations. In the lower section, a wavy continuous line labeled GRAFICO displays the resulting recorded roughness profile below the physical surface.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:PATTINO3.jpg}{Lucabu}, CC0, via Wikimedia Commons}{PATTINO3}
+
+    \centering
+    \vspace{0.5em}
+    {\footnotesize A skid or stud rides on the surface, setting the reference surface. The stylus then rides on the surface--deviations in the stylus height are the recorded measurement.\par}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Profilometer Limits}
+
+    \shadowpic[]{0.75\linewidth}{A black-and-white technical cross-section diagram showing how stylus tip radius affects surface roughness measurement, with a jagged solid line and diagonal hatching representing the actual rough surface profile overlaid by two traced paths, a dashed line closely following the valleys for a 2.5 micrometer radius stylus and a dotted line bridging across the peaks for a 12.5 micrometer radius stylus, accompanied by an Italian legend at the bottom translating to path followed by a stylus with radius 2.5 micrometers and path followed by a stylus with radius 12.5 micrometers.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:STILO3.jpg}{Lucabu images}, CC0, via Wikimedia Commons}{STILO3}
+
+    \centering
+    \vspace{0.5em}
+    {\footnotesize The stylus size limits the how accurate the profilometer can be--it's simply too big to fit in \emph{all} of the valleys.\par}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Profilometer Videos}
+
+    \centering
+    {\large \href{https://www.youtube.com/watch?v=mQg7TPmhqfk}{Introduction to stylus profilometers}\par}
+
+    \vspace{0.5em}
+    {\footnotesize \href{https://www.youtube.com/watch?v=mQg7TPmhqfk}{https://www.youtube.com/watch?v=mQg7TPmhqfk}\par}
+
+    \vspace{0.5em}
+    {\tiny Video \textcopyright{} Surface Metrology Guide via YouTube.com\par}
+
+    \vspace{0.5in}
+
+    {\large \href{https://www.youtube.com/watch?v=MaQyQUxxWKo}{Profilometer}\par}
+
+    \vspace{0.5em}
+    {\footnotesize \href{https://www.youtube.com/watch?v=MaQyQUxxWKo}{https://www.youtube.com/watch?v=MaQyQUxxWKo}\par}
+
+    \vspace{0.5em}
+    {\tiny Video \textcopyright{} machinist. todd via YouTube.com\par}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Profilometer Drawbacks}
+
+    \begin{itemize}[<+- | alert@+>]
+        \item We're dragging a metal stylus across the part
+        \item If the stylus is soft (it isn't) it'll wear down and not be able to ride in the surface imperfections
+        \item If the stylus is hard (it is) we're dragging a \emph{hard} metal sylus across the part
+        \item The potential to add surface imperfections while taking the measurement
+    \end{itemize}
+\end{frame}
+
+\section{Optical Profilometers}
+
+\begin{frame}
+	\frametitle{Optical Profilometer (1 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item New technology allows non-contact profilometers
+                    \begin{itemize}
+                        \item Laser scanning
+                        \item Simpler light sources
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.75\linewidth}{A close-up photograph of a Nanovea PS50 non-contact optical profilometer against a light gray background, featuring a vertical cylindrical black optical sensor pen held in a blue anodized clamp on a black gantry frame with a braided silver fiber optic cable extending from the top, positioned directly above a small machined metal test sample resting on a square black stage framed in blue.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:NANOVEA_PS50_Non-Contact_Optical_Profilometer.jpg}{Materials Science 1}, \href{https://creativecommons.org/licenses/by-sa/4.0}{CC BY-SA 4.0}, via Wikimedia Commons}{NANOVEA_PS50_Non-Contact_Optical_Profilometer}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Optical Profilometer (1 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Light = no contact = no damage to part
+                \item Capable of producing a full 3D image of the surface instead of just profile
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.75\linewidth}{A close-up photograph of a Nanovea PS50 non-contact optical profilometer against a light gray background, featuring a vertical cylindrical black optical sensor pen held in a blue anodized clamp on a black gantry frame with a braided silver fiber optic cable extending from the top, positioned directly above a small machined metal test sample resting on a square black stage framed in blue.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:NANOVEA_PS50_Non-Contact_Optical_Profilometer.jpg}{Materials Science 1}, \href{https://creativecommons.org/licenses/by-sa/4.0}{CC BY-SA 4.0}, via Wikimedia Commons}{NANOVEA_PS50_Non-Contact_Optical_Profilometer}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{NANOVEA Non-Contact Profilometer Video}
+
+    \centering
+    {\large \href{https://www.youtube.com/watch?v=hw2YNwdWeLo}{Profilometer | 3D Non Contact Profilometry}\par}
+
+    \vspace{0.5em}
+    {\footnotesize \href{https://www.youtube.com/watch?v=hw2YNwdWeLo}{https://www.youtube.com/watch?v=hw2YNwdWeLo}\par}
+
+    \vspace{0.5em}
+    {\tiny Video \textcopyright{} NANOVEA via YouTube.com\par}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Optical Profilometer Surface Image}
+    
+    \shadowpic[]{0.75\linewidth}{A two-panel three-dimensional surface topography scan of a titanium nitride coating rendered in a rainbow height color map ranging from blue valleys to yellow and red peaks. On the left, an oblique view shows a square scan area measuring 0.841 millimeters by 0.841 millimeters with a maximum height of 8.07 micrometers, featuring a red rectangular highlight box in the center. On the right, a magnified view of the highlighted area shows flat-topped yellow plateaus with steep green and blue vertical sidewalls rising from deep blue valleys.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:TiN_coating.jpg}{Somnath Bharech}, \href{https://creativecommons.org/licenses/by/4.0}{CC BY 4.0}, via Wikimedia Commons}{TiN_coating}
+\end{frame}
+
+\begin{frame}
+    \centering
+    {\Huge \textbf{\textcolor{BakerADARed}{Questions?}}}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Copyright Notice}
+    
+    {\scriptsize
+    \PresTitle \textcopyright 2026 by Brad Peirson is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). To view a copy of the official license, visit \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{https://creativecommons.org/licenses/by-nc-sa/4.0/}.
+
+    \vspace{0.5em}
+
+    \textbf{Exceptions and Exclusions}
+
+    \begin{itemize}
+        \item[Baker College Branding \& Trademarks:]All Baker College logos, trademarks, wordmarks, seals, slide design templates, and proprietary branding elements contained in these materials are \textbf{EXCLUDED} from the CC BY-NC-SA 4.0 license. All rights are reserved by Baker College. Express written permission from Baker College is required for any use, copying, or redistribution of these elements.
+        \item[Third-Party Media \& Content:] Any third-party images, graphics, diagrams, or external media incorporated in these materials are included under their respective original licenses or permissions and are individually attributed at their point of use. 
+        \item[Original Author Content:] All unattributed figures, diagrams, text, code snippets, and media are original works created by the author and are licensed under the CC BY-NC-SA 4.0 license.
+    \end{itemize}
+
+    The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.
+    \par}
+\end{frame}
+
+\end{document}
+
+% \begin{frame}
+%     \frametitle{Test Todo}
+
+%     % Usage: \tikztodo[width]{height}{description/notes}
+%     \tikztodo[0.7\textwidth]{4cm}{Convert block diagram of feedback loop}
+% \end{frame}

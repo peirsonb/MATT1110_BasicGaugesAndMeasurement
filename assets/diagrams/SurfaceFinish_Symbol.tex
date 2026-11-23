@@ -1,0 +1,60 @@
+\begin{tikzpicture}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={An engineering drawing showing a stepped cylindrical shaft in side view on the left and end view on the right, crossed by a horizontal dashed red centerline extending through both views and a vertical dashed red centerline bisecting the end view. In the side view, a large black rectangle connects on the right to a smaller black rectangle, with a surface finish symbol resting on top of the smaller step displaying a roughness value of 16 on the left, a waviness height of 0.005 above the horizontal bar, and a perpendicular lay symbol followed by a sampling length of 0.030 on the right. To the right of the side view, the end view consists of two concentric black circles corresponding to the diameters of the two stepped sections.}
+    ]
+
+    \pic (symb) at (smallD.north) {roughness={16}{0.005}{$\perp$0.030}};
+
+    \draw[
+        UpNorthGreen,
+        <-
+    ]
+    (symb-topValue.north east)
+    to[out=45, in=180]
+    ++(1,1)
+    node[
+        text=BakerBlack,
+        align=left,
+        anchor=west
+    ]{Waviness\\height};
+
+    \draw[
+        UpNorthGreen,
+        <-
+    ]
+    (symb-leftValue.north west)
+    to[out=135, in=0]
+    ++(-1,1)
+    node[
+        text=BakerBlack,
+        anchor=east,
+        align=right
+    ]{Roughness\\height (\SI{}{\micro in})};
+
+    \draw[
+        UpNorthGreen,
+        <-
+    ]
+    (symb-rightValue.south east)
+    to[out=330, in=180]
+    ++(2,-0.5)
+    node[
+        text=BakerBlack,
+        anchor=west,
+        align=left
+    ]{Roughness\\width};
+
+    \draw[
+        UpNorthGreen,
+        <-
+    ]
+    ($(symb-rightValue.south west)+(0.25cm,0)$)
+    to[out=270, in=180]
+    ++(1,-1)
+    node[
+        text=BakerBlack,
+        anchor=west,
+        align=left
+    ]{Direction\\of lay};
+\end{tikzpicture}

@@ -1,0 +1,80 @@
+\begin{tikzpicture}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={An engineering diagram showing a rectangular prism in isometric perspective at the top, with its top surface covered in closely spaced thin red parallel lines running left-to-right across its width to indicate surface lay direction. Below the isometric block are two two-dimensional orthographic views side by side: a shorter black rectangle labeled Front on the left, and a wider black rectangle labeled Side on the right. Resting on the top edge of the Side view is a black surface finish symbol displaying a perpendicular lay symbol to the right of its bar, indicating that the surface texture runs perpendicular to the plane of the side view.}
+    ]
+
+    \def\width{4}
+    \def\height{1}
+    \def\depth{5}
+
+    \def\step{0.25}
+    \pgfmathsetmacro{\second}{2 * \step}
+    \pgfmathsetmacro{\dmax}{\depth - \step}
+
+    \node[
+        draw=BakerBlack,
+        ultra thick,
+        anchor=north west,
+        minimum height=\height cm,
+        minimum width=\width cm
+    ](front)
+    at (0,0)
+    {};
+
+    \draw[
+        BakerBlack,
+        ultra thick
+    ]
+    (0,0)
+    -- (30:\depth)
+    -- ++(\width cm,0)
+    -- (front.north east);
+
+    \draw[
+        BakerBlack,
+        ultra thick
+    ]
+    (front.south east)
+    -- ++(30:\depth)
+    -- ++(0,\height);
+
+    \foreach \d in {\step,\second,...,\dmax}
+    {
+        \draw[
+            BakerADARed,
+            ultra thin
+        ]
+        (30:\d)
+        -- ++(\width,0);
+    }
+
+    \begin{scope}[xshift=-1cm, yshift=-2cm]
+
+        \node[
+            draw=BakerBlack,
+            text=BakerBlack,
+            ultra thick,
+            anchor=north west,
+            minimum height=\height cm,
+            minimum width=\width cm
+        ](frontV)
+        at (0,0)
+        {Front};
+
+        \node[
+            draw=BakerBlack,
+            text=BakerBlack,
+            ultra thick,
+            anchor=north west,
+            minimum height=\height cm,
+            minimum width=\depth cm
+        ](sideV)
+        at ($(frontV.north east)+(1cm,0)$)
+        {Side};
+
+        \pic at (sideV.north) {roughness={}{}{$\perp$}};
+
+    \end{scope}
+
+\end{tikzpicture}

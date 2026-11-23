@@ -1,0 +1,63 @@
+\begin{tikzpicture}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={An engineering drawing showing a stepped cylindrical shaft in side view on the left and end view on the right, crossed by a horizontal dashed red centerline extending through both views and a vertical dashed red centerline bisecting the end view. In the side view, a large black rectangle connects on the right to a smaller black rectangle, with a surface finish symbol resting on top of the smaller step displaying a roughness value of 16 on the left, a waviness height of 0.005 above the horizontal bar, and a perpendicular lay symbol followed by a sampling length of 0.030 on the right. To the right of the side view, the end view consists of two concentric black circles corresponding to the diameters of the two stepped sections.}
+    ]
+
+    \node[
+        draw=BakerBlack,
+        ultra thick,
+        minimum height=3.5cm,
+        minimum width=8cm
+    ](bigD)
+    at (0,0)
+    {};
+
+    \node[
+        draw=BakerBlack,
+        ultra thick,
+        anchor=west,
+        minimum height=2cm,
+        minimum width=4cm
+    ](smallD)
+    at (bigD.east)
+    {};
+
+    \pic at (smallD.north) {roughness={16}{0.005}{$\perp$0.030}};
+
+    \node[
+        draw=BakerBlack,
+        anchor=west,
+        circle,
+        minimum size=3.5cm
+    ](lView)
+    at ($(smallD.east)+(2cm,0)$)
+    {};
+
+    \node[
+        draw=BakerBlack,
+        circle,
+        minimum size=2cm
+    ](lViewS)
+    at (lView.center)
+    {};
+
+    \draw[
+        BakerADARed,
+        dashed,
+        shorten <=-1cm,
+        shorten >=-1cm
+    ]
+    (bigD.west)
+    -- (lView.east);
+
+    \draw[
+        BakerADARed,
+        dashed,
+        shorten <=-1cm,
+        shorten >=-1cm
+    ]
+    (lView.north)
+    -- (lView.south);
+
+\end{tikzpicture}
