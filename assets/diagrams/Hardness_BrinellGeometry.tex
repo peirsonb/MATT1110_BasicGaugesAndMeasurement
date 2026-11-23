@@ -1,0 +1,144 @@
+\begin{tikzpicture}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={}
+    ]
+
+    \def\bigD{10}
+    \pgfmathsetmacro{\bigR}{\bigD / 2}
+    \pgfmathsetmacro{\chordXminus}{-0.375 * \bigR}
+    \pgfmathsetmacro{\chordXplus}{0.375 * \bigR}
+    \pgfmathsetmacro{\chordY}{-0.927 * \bigR}
+
+    \node[
+        draw=BakerBlack,
+        dashed,
+        circle,
+        minimum size=\bigD cm,
+        inner sep=0
+    ](ball)
+    at (0,0)
+    {};
+
+    \coordinate (chordStart) at (\chordXminus cm, \chordY cm);
+    \coordinate (chordEnd) at (\chordXplus cm, \chordY cm);
+
+    \draw[
+        LakeBlue,
+        ultra thick
+    ]
+    (-5,\chordY)
+    -- (chordStart)
+    arc[start angle=-112.024, end angle=-67.976, radius=\bigR]
+    -- (5,\chordY);
+
+    \draw[
+        BakerADARed,
+        dashed,
+        ultra thin
+    ]
+    (ball.west)
+    -- (ball.east)
+    node[
+        text=BakerBlack,
+        midway,
+        above
+    ]
+    {$D$};
+
+    \draw[
+        BakerADARed,
+        dashed,
+        ultra thin
+    ]
+    (chordStart)
+    -- (chordEnd)
+    coordinate[midway](chordMid);
+    
+    \node[
+        text=BakerBlack,
+        midway,
+        anchor=south west
+    ]
+    at (chordMid)
+    {$d=\frac{3D}{8}$};
+
+    \draw[
+        BakerADARed,
+        dashed,
+        ultra thin
+    ]
+    (chordEnd)
+    -- ++(22:5cm);
+
+    \draw[
+        BakerADARed,
+        dashed,
+        ultra thin
+    ]
+    (chordEnd)
+    -- ++(202:5cm) 
+    coordinate(tanRight);
+
+    \draw[
+        BakerADARed,
+        dashed,
+        ultra thin
+    ]
+    (chordStart)
+    -- ++(338:5cm)
+    coordinate(tanLeft);
+
+    \draw[
+        BakerADARed,
+        dashed,
+        ultra thin
+    ]
+    (chordStart)
+    -- ++(158:5cm);
+
+    \coordinate (P) at (intersection of chordStart--tanLeft and chordEnd--tanRight);
+
+    \draw[
+        BakerADARed,
+        dashed,
+        ultra thin
+    ]
+    (0,0)
+    -- (chordStart)
+    node[
+        text=BakerBlack,
+        midway,
+        anchor=south east
+    ]{$\frac{D}{2}$};
+
+    \draw[
+        BakerADARed,
+        dashed,
+        ultra thin
+    ]
+    (0,0)
+    -- (P);
+
+    \node[
+        text=BakerBlack,
+        anchor=south east
+    ]
+    at (chordMid)
+    {$\frac{3D}{16}$};
+
+    \node[
+        text=BakerBlack,
+        anchor=south west
+    ]
+    at (chordStart)
+    {$\beta$};
+
+    \node[
+        text=BakerBlack,
+        anchor=south east
+    ]
+    at (P)
+    {$\beta$};
+
+\end{tikzpicture}

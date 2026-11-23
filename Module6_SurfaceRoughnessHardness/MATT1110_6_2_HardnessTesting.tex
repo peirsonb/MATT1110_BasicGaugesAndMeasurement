@@ -1,0 +1,1252 @@
+%gswin64c -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dNOPAUSE -dQUIET -dBATCH -dPrinted=false -sOutputFile=foo-compressed.pdf foo.pdf
+
+% ============================================================================
+% Accessibility
+% ============================================================================
+\DocumentMetadata{
+  lang = en-US, 
+  pdfstandard = ua-2, 
+  tagging = on, 
+  tagging-setup = {math/setup=mathml-SE}
+}
+
+% ============================================================================
+% Document Properties - used on title slide and PDF metadata fields
+% ============================================================================
+\def\PresTitle{Hardness}  % Required - top line of title slide
+\def\PresSubtitle{Gauges and Measurement}         % Optional - second line
+\def\PresAuthor{Brad Peirson}               % Required - below dividing line
+\def\PresInstitute{College of Information Technology and Engineering}       % Optional
+\def\PresDate{}                             % Optional
+\def\PresKeywords{}                         % Optional - used for hyperref
+
+% Presentation Formatting
+% ============================================================================
+\input{../ltxtalk_preamble.tex}
+
+% ============================================================================
+% Document Content
+% ============================================================================
+\begin{document}
+
+\maketitle              % Redefined in the preamble to generate a full frame
+
+\begin{frame}
+    \frametitle{Agenda}
+    \begingroup
+        % Tighten the spacing between paragraphs/TOC lines
+        \setlength{\parskip}{0.3em} 
+        
+        % Optionally tighten the line spacing within an entry
+        %\baselineskip=1.2em 
+        
+        \setcounter{tocdepth}{1} % Show only sections
+    \tableofcontents
+    \setcounter{tocdepth}{2} % Reset back to default so subsections are tracked
+    \endgroup
+\end{frame}
+
+\section{Material Principles}
+
+\subsection{Properties of Steel}
+
+\begin{frame}
+	\frametitle{Strength}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item The ability of a material to withstand tensile, compressive, or shear loading without deformation or failing
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.75\linewidth}{A technical line diagram illustrating the five stages of ductile fracture in a cylindrical tensile specimen against a white background, starting on the left with a vertical cylinder narrowed in the middle labeled Necking, which zooms into a sequence of four dashed circular detail views connected by arrows showing Void Nucleation with three small green voids inside the neck, Void Coalescence where the voids merge into a single elongated green cavity, Crack Propagation with thin diagonal cracks extending from the cavity tips, and Separation where the specimen fractures completely into two jagged cup-and-cone pieces.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Ductile_fracture_upd.png}{Bbanerje at English Wikipedia}, \href{http://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via Wikimedia Commons}{Ductile_fracture_upd}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Toughness}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item The ability of a material to withstand impact or shock loading without fracturing
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.75\linewidth}{A stroboscopic time-lapse photograph against a solid black background showing a yellow basketball bouncing across the frame from left to right along two consecutive parabolic arcs, with the ball positions spaced wider apart during faster vertical movement near the bottom and overlapping closely near the slower peak of each bounce as the second arc reaches a lower maximum height than the first.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Bouncing_ball_strobe_edit.jpg}{MichaelMaggs Edit by Richard Bartz}, \href{http://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via Wikimedia Commons}{Bouncing_ball_strobe_edit}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Hardness}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item The ability of a material to withstand deformation, scratching, or other surface damage
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.75\linewidth}{A close-up macro photograph of several round brilliant-cut diamonds scattered on a bright white surface, featuring one large sharply focused diamond in the center displaying intricate internal facets and light reflections, surrounded by smaller out-of-focus diamonds resting both face-up and on their sides with soft shadows.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Brillanten.jpg}{Mario Sarto}, \href{http://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via Wikimedia Commons}{Brillanten}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Strength, Toughness, and Hardness}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item{Strength and toughness usually go together}
+                \item{Inverse proportion to hardness}
+                    \begin{itemize}
+                        \item{As steel becomes hard it becomes \emph{brittle}}
+                        \item{Very hard steel will shatter like glass--very low strength/toughness}
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.75\linewidth}{A rusted and severely bent structural steel beam from the World Trade Center on display inside a low-railing exhibit at the National September 11 Memorial and Museum, folded sharply back upon itself in a tight U-shaped curve against a stained concrete slurry wall featuring recessed square niches.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:2016_9-11_Museum_broken_steel.jpg}{Beyond My Ken}, \href{http://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0}, via Wikimedia Commons}{2016_9-11_Museum_broken_steel}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\subsection{Composition of Steel}
+
+\begin{frame}
+	\frametitle{Primary Elements of Steel}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Steel is a \emph{chemical mixture} of multiple elements
+                \item{Carbon steel = iron + carbon}
+                    \begin{itemize}
+                        \item Low carbon steel <0.2\% carbon
+                        \item High carbon steel >0.5\% carbon
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A row of cylindrical metal bars of varying diameters arranged side by side on a glossy dark surface that reflects their shiny machined end faces against a gray background, progressing from larger round bars on the left to smaller round and square bars on the right.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Stainless_Steel_Carbon_Steel_Mild_Steel_Duplex_Steel_nickel_Alloys_Titanium_CuproNickel_Round_Bar.jpg}{Jatinsanghvi}, \href{http://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via Wikimedia Commons}{Stainless_Steel_Carbon_Steel_Mild_Steel_Duplex_Steel_nickel_Alloys_Titanium_CuproNickel_Round_Bar}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Alloy Elements (1 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Other \emph{alloying} elements can be added for specific properties
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A row of cylindrical metal bars of varying diameters arranged side by side on a glossy dark surface that reflects their shiny machined end faces against a gray background, progressing from larger round bars on the left to smaller round and square bars on the right.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Stainless_Steel_Carbon_Steel_Mild_Steel_Duplex_Steel_nickel_Alloys_Titanium_CuproNickel_Round_Bar.jpg}{Jatinsanghvi}, \href{http://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via Wikimedia Commons}{Stainless_Steel_Carbon_Steel_Mild_Steel_Duplex_Steel_nickel_Alloys_Titanium_CuproNickel_Round_Bar}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Alloy Elements (2 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{description}[<+- | alert@+>]
+                \item[Manganese] decrease brittleness, increase strength
+                \item[Phosphorous] increase strength/corrosion resistance
+                \item[Sulphur] improves machinability
+            \end{description}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A row of cylindrical metal bars of varying diameters arranged side by side on a glossy dark surface that reflects their shiny machined end faces against a gray background, progressing from larger round bars on the left to smaller round and square bars on the right.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Stainless_Steel_Carbon_Steel_Mild_Steel_Duplex_Steel_nickel_Alloys_Titanium_CuproNickel_Round_Bar.jpg}{Jatinsanghvi}, \href{http://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via Wikimedia Commons}{Stainless_Steel_Carbon_Steel_Mild_Steel_Duplex_Steel_nickel_Alloys_Titanium_CuproNickel_Round_Bar}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{AISI Steel Designations}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item 4 digit designation for steel
+                    \begin{itemize}
+                        \item First 2: main alloy elements
+                        \item Second 2: carbon content
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A row of cylindrical metal bars of varying diameters arranged side by side on a glossy dark surface that reflects their shiny machined end faces against a gray background, progressing from larger round bars on the left to smaller round and square bars on the right.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Stainless_Steel_Carbon_Steel_Mild_Steel_Duplex_Steel_nickel_Alloys_Titanium_CuproNickel_Round_Bar.jpg}{Jatinsanghvi}, \href{http://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via Wikimedia Commons}{Stainless_Steel_Carbon_Steel_Mild_Steel_Duplex_Steel_nickel_Alloys_Titanium_CuproNickel_Round_Bar}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Example: 1018 Steel}
+
+    \begin{columns}[t]
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item General use--easy to machine/weld/heat treat
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{description}
+                \item[Carbon] 0.14-0.20\%
+                \item[Manganese] 0.60-0.90\%
+                \item[Phosphorous] $\leq$0.040\%
+                \item[Sulphur] $\leq$0.050\%
+            \end{description}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Example: 1045 Steel}
+
+    \begin{columns}[t]
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Higher strength/impact resistance
+                \item Not as easy to weld
+                \item fewer heat treat options
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{description}
+                \item[Carbon] 0.43-0.50\%
+                \item[Manganese] 0.60-0.90\%
+                \item[Phosphorous] $\leq$0.040\%
+                \item[Sulphur] $\leq$0.050\%
+            \end{description}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Example: 4140 Steel (1 of 2)}
+
+    \begin{columns}[t]
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item 41XX = Chromium/Molybdenum
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{description}[<+- | alert@+>]
+                \item[Chromium] hardness penetration
+                \item[Molybdenum] uniform hardness
+            \end{description}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Example: 4140 Steel (2 of 2)}
+
+    \begin{columns}[t]
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Easy to machine
+                \item Hard to weld
+                \item Easy to harden
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{description}
+                \item[Carbon] 0.38-0.43\%
+                \item[Chromium] 0.80-1.10\%
+                \item[Molybdenum] 0.15-0.25\%
+                \item[Manganese] 0.75-1.0\%
+                \item[Phosphorous] $\leq$0.035\%
+                \item[Sulphur] $\leq$0.040\%
+            \end{description}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\subsection{Constituents of Steel}
+
+\begin{frame}
+	\frametitle{Constituents of Steel}
+
+    \begin{columns}[t]
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Atoms in iron and steel form structures known as \emph{constituents}
+                \item Constiuents are basically the arrangement of iron and carbon crystals within the steel
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{enumerate}[<+- | alert@+>]
+                \item Ferrite
+                \item Cementite
+                \item Pearlite
+                \item Martensite
+                \item Austenite
+            \end{enumerate}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ferrite}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Almost pure iron
+                \item Soft and ductile
+                \item Called the alpha (\alpha{}) phase
+                \item Does not harden when quenched, but crystals get smaller
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A grayscale optical micrograph of ASTM A285 carbon steel showing a two-phase ferrite and pearlite microstructure, consisting of interlocking light gray polygonal and elongated ferrite grains interspersed with irregular dark black pearlite colonies, with a white 100 micrometer scale bar in the lower right corner.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Ferrite-perlite-steel-A285.jpeg}{A. J. Duncan, K. H. Subramanian, R. L. Sindelar, K. Miller, A. P. Reynolds, and Y. J. Chao}, Public domain, via Wikimedia Commons}{Ferrite-perlite-steel-A285}
+
+            \centering
+            \vspace{0.5em}
+            {\footnotesize The ferrite is gray in this micrograph.\par}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Cementite}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item $Fe_3C$ molecule
+                \item Extremely hard--harder than steel or glass
+                \item Increases with \% carbon
+                \item Contains 6.6\% carbon
+                \item Decreases tensile strength of steel, increases hardness and machinability
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A grayscale optical micrograph of ASTM A285 carbon steel showing a two-phase ferrite and pearlite microstructure, consisting of interlocking light gray polygonal and elongated ferrite grains interspersed with irregular dark black pearlite colonies, with a white 100 micrometer scale bar in the lower right corner.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Ferrite-perlite-steel-A285.jpeg}{A. J. Duncan, K. H. Subramanian, R. L. Sindelar, K. Miller, A. P. Reynolds, and Y. J. Chao}, Public domain, via Wikimedia Commons}{Ferrite-perlite-steel-A285}
+
+            \centering
+            \vspace{0.5em}
+            {\footnotesize The cementite is black in this micrograph.\par}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Pearlite (1 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item A mixture of 87.5\% ferrite and 12.5\% cementite
+                \item Alternating layers of ferrite and cementite
+                    \begin{itemize}
+                        \item Looks like a pearl--pearlite
+                    \end{itemize}
+                \item Rate of cooling determines thickness and distance between plates
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A scanning electron micrograph showing the lamellar microstructure of pearlite in steel, featuring densely packed parallel alternating layers of bright white cementite plates and darker gray ferrite bands arranged in differently oriented colonies, separated by smooth dark ferrite regions, with a black data bar at the bottom left displaying a 5 micrometer scale bar at 2000 times magnification.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Pearlite.jpg}{Michelshock}, Public domain, via Wikimedia Commons}{Pearlite}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Pearlite (2 of 2)}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item 0\% in pure iron
+                \item 100\% in 0.9\% carbon steel
+                \item Soft steel = mixture of ferrite and pearlite
+                \item Hardness increases with proportion of pearlite
+                \item Hard steel = mixture of pearlite and cementite
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A scanning electron micrograph showing the lamellar microstructure of pearlite in steel, featuring densely packed parallel alternating layers of bright white cementite plates and darker gray ferrite bands arranged in differently oriented colonies, separated by smooth dark ferrite regions, with a black data bar at the bottom left displaying a 5 micrometer scale bar at 2000 times magnification.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Pearlite.jpg}{Michelshock}, Public domain, via Wikimedia Commons}{Pearlite}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Martensite}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Hard, brittle mass of fibrous/needle like structures
+                \item Chief component of hardened steel
+                \item Formed by rapid quenching of steel above critical temperature
+                \item Not as tough as austenite
+                \item Magnetic
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{An optical micrograph of tempered martensite in steel, displaying a dense, fine-grained matrix of dark intersecting needle-like laths interspersed with small bright white patches, with a dark reddish-brown 50 micrometer scale bar in the lower right corner.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:20180308_Martensite_rinvenuta.jpg}{Melancholia\textasciitilde{}itwiki}, \href{http://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0}, via Wikimedia Commons}{Pearlite}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Austenite (1 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Only exists within a particular range of temperature
+                \item Forms when >1.1\% carbon steel is quenched from \qty{1,000}{\degreeCelsius}
+                \item Below \qty{700}{\degreeCelsius} transforms into pearlite, ferrite, cementite
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{An optical micrograph showing the austenitic grain structure of AISI 304 stainless steel against a pale golden-brown background, featuring interlocking polygonal crystal grains defined by dark grain boundaries, straight parallel annealing twin bands across several grains, scattered small dark inclusion dots, and a 100 micrometer scale bar in the upper left corner.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:AISI_304_-_austenitic_structure.jpg}{Melancholia\textasciitilde{}itwiki}, \href{http://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0}, via Wikimedia Commons}{AISI_304_-_austenitic_structure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Austenite (2 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Austenitic steels require special heat treatment
+                \item Non-magnetic
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{An optical micrograph showing the austenitic grain structure of AISI 304 stainless steel against a pale golden-brown background, featuring interlocking polygonal crystal grains defined by dark grain boundaries, straight parallel annealing twin bands across several grains, scattered small dark inclusion dots, and a 100 micrometer scale bar in the upper left corner.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:AISI_304_-_austenitic_structure.jpg}{Melancholia\textasciitilde{}itwiki}, \href{http://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0}, via Wikimedia Commons}{AISI_304_-_austenitic_structure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\subsection{Heat Treatment}
+
+\begin{frame}
+    \frametitle{Phase Diagrams}
+
+    \begin{figure}
+        \centering
+        \resizebox{0.5\linewidth}{!}{
+            \input{../assets/diagrams/Hardness_IronCarbonPhaseDiagram.tex}
+        }
+
+        \vspace{0.5em}
+        {\tiny \textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Iron_carbon_phase_diagram.svg}{AG Caesar}, \href{http://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0}, via Wikimedia Commons, converted to TikZ format\par}
+
+        \vspace{0.5em}
+        {\footnotesize A given iron-carbon ratio always creates the same constituents at the same temperatures--a \emph{phase diagram} is a graph showing what constituent forms when across a range of carbon contents\par}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Heat Treatment}
+
+    \begin{itemize}[<+- | alert@+>]
+        \item Heat treatment is the controlled heating and cooling of steel to create the desired constituents in the desired ratios
+        \item Some constituents are hard, some are soft and ductile
+        \item Looking for the right combination of strength, toughness, and hardness for the application
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Critical Temperature (1 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Critical temperature is \emph{usually} the boiling point
+                \item In terms of steel, it marks the temperature where the steel undergoes a phase change
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{An industrial heat-treating furnace glowing bright orange inside, filled with rows of large artillery shell casings positioned vertically on a roller conveyor.}{\textbf{Attribution:} Dori Whipple, Public domain, via \href{https://www.dvidshub.net/image/8162132/projectiles-cartridge-cases-being-heat-treated}{U.S. Department of War Digital Visual Information Distribution System}}{8162132}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Critical Temperature (2 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Steel has 2: \textasciitilde{}\qty{700}{\degreeCelsius} and \textasciitilde{}\qty{1400}{\degreeCelsius}
+                \item Most heat treatments target one of these
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{figure}
+                \centering
+                \resizebox{\linewidth}{!}{
+                    \input{../assets/diagrams/Hardness_IronCarbonPhaseDiagram.tex}
+                }
+
+                \vspace{0.5em}
+                {\tiny \textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Iron_carbon_phase_diagram.svg}{AG Caesar}, \href{http://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0}, via Wikimedia Commons, converted to TikZ format\par}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Hardening (1 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Steel is heated to the just below melting (\textasciitilde{}\qty{1300}{\degreeCelsius})
+                    \begin{itemize}
+                        \item Usually called \emph{cherry red}
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{An open electric heat-treating furnace glowing intense bright orange and yellow inside a dark room, lined with horizontal heating coils along the brick walls and containing two white-hot metal workpieces resting on the floor, including a flat rectangular block stamped with the word HOBART on the right and an elongated piece on the left, with the heavy refractory door swung down in the foreground.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Heat-Treating-Furnace.jpg}{Ichudov}, \href{http://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via Wikimedia Commons}{Heat-Treating-Furnace}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Hardening (2 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Rapidly cooled (\emph{quenched})
+                \item Different alloys require different cooling medium--oil, water, air
+                \item Generally faster cooling = harder
+                \item Harder = less strength/toughness (brittle)
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{An industrial foundry scene showing a massive glowing red-hot metal hull casting suspended by heavy chains and a spreader beam from an overhead crane as it is lowered into a circular quenching tank filled with liquid, igniting bright orange flames across the surface of the bath inside a dimly lit factory building.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Com_C26-023-001.jpg}{Comet Photo AG (Zürich)}, \href{https://creativecommons.org/licenses/by-sa/4.0}{CC BY-SA 4.0}, via Wikimedia Commons}{Com_C26-023-001}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Tempering (1 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Fully hardened steel is \emph{way} too brittle to be used for anything
+                \item \emph{Tempering} is used to \emph{draw back} the hardness
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A reference chart on a white background titled Tempering colors of steel, displaying ten rectangular steel bars arranged horizontally in a row to show surface oxide colors at increasing temperatures, progressing from bright silver for Normalized and Quenched on the far left through pale straw at 350 degrees Fahrenheit or 176 degrees Celsius, light yellow at 400 degrees Fahrenheit or 204 degrees Celsius, golden brown at 440 degrees Fahrenheit or 227 degrees Celsius, reddish brown at 500 degrees Fahrenheit or 260 degrees Celsius, deep purple at 540 degrees Fahrenheit or 282 degrees Celsius, dark blue at 590 degrees Fahrenheit or 310 degrees Celsius, light blue at 650 degrees Fahrenheit or 343 degrees Celsius, and dull gray at 730 degrees Fahrenheit or 388 degrees Celsius on the far right.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Tempering_standards_used_in_blacksmithing.JPG}{Zaereth}, CC0, via Wikimedia Commons}{Tempering_standards_used_in_blacksmithing}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Tempering (2 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Heated below critical temp and allowed to naturally cool
+                \item Phase diagram determines where
+                \item Colors can also be used to cheat
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A reference chart on a white background titled Tempering colors of steel, displaying ten rectangular steel bars arranged horizontally in a row to show surface oxide colors at increasing temperatures, progressing from bright silver for Normalized and Quenched on the far left through pale straw at 350 degrees Fahrenheit or 176 degrees Celsius, light yellow at 400 degrees Fahrenheit or 204 degrees Celsius, golden brown at 440 degrees Fahrenheit or 227 degrees Celsius, reddish brown at 500 degrees Fahrenheit or 260 degrees Celsius, deep purple at 540 degrees Fahrenheit or 282 degrees Celsius, dark blue at 590 degrees Fahrenheit or 310 degrees Celsius, light blue at 650 degrees Fahrenheit or 343 degrees Celsius, and dull gray at 730 degrees Fahrenheit or 388 degrees Celsius on the far right.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Tempering_standards_used_in_blacksmithing.JPG}{Zaereth}, CC0, via Wikimedia Commons}{Tempering_standards_used_in_blacksmithing}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Normalizing}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Used to set up for further heat treatments or to relieve stresses from working
+                \item Heated above critical temperature, air cooled
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{An industrial heat-treating furnace glowing bright orange inside, filled with rows of large artillery shell casings positioned vertically on a roller conveyor.}{\textbf{Attribution:} Dori Whipple, Public domain, via \href{https://www.dvidshub.net/image/8162132/projectiles-cartridge-cases-being-heat-treated}{U.S. Department of War Digital Visual Information Distribution System}}{8162132}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Annealing}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Used to fully soften steel
+                \item Heated above critical temperature, left in heat treat oven to cool
+                \item Longer cooling time = bigger portions of pure ferrite = softer
+                \item Basically a ``reset"
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A two-part black-and-white photomicrograph comparing the microstructures of annealed and quenched steel. The top panel displays annealed steel featuring a uniform, wavy pattern of alternating light and dark lamellar bands characteristic of pearlite, while the bottom panel shows quenched steel with a chaotic, intersecting arrangement of angular dark needle-like laths characteristic of martensite.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Photomicrograph_of_annealed_and_quenched_steel,_from_1911_Britannica_plates_11_and_14.jpg}{Osmond and Cartaud.}, Public domain, via Wikimedia Commons}{Photomicrograph_of_annealed_and_quenched_steel,_from_1911_Britannica_plates_11_and_14}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\section{Hardness Testing}
+
+\begin{frame}
+	\frametitle{Hardness Testing}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item \emph{All} hardness tests are \emph{destructive} tests
+                \item In order to test hardness we have to damage the surface
+                \item \emph{Any} damage to the part is destructive
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{A grayscale optical micrograph of case-hardened steel showing a diamond-shaped Vickers hardness indentation on the left side, impressed into a fine-grained, mottled martensitic microstructure with visible diagonal lines converging at the center of the pyramidal impression.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Case_hardened_steel-vickers_hardness_test.png}{I, Blastwave}, \href{http://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, via Wikimedia Commons}{Case_hardened_steel-vickers_hardness_test}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Hardness Testing}
+
+    \begin{itemize}[<+- | alert@+>]
+        \item Quick and dirty test is the file test
+        \item Used \emph{only} after quench
+        \item Steel is so hard file won't bite in
+        \item \emph{Still} destructive--if hardness isn't right you just filed the part
+    \end{itemize}
+\end{frame}
+
+\subsection{Brinell Hardness}
+
+\begin{frame}
+	\frametitle{Johna August Brinell}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Swedish metallurgical engineer
+                \item Chief engineer at Swedish Ironmasters' Association
+                \item Royal Academy of Swedish Scientists
+                \item Royal Swedish Academy of Engineering Sciences
+                \item Bessemer Gold Medal--Iron and Steel Institute
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.75\linewidth}{A black-and-white studio portrait of Swedish metallurgical engineer Johan August Brinell shown from the chest up in a three-quarter profile facing left against a dark gradient background, featuring neatly combed wavy white hair, a thick mustache and small soul patch, wearing a dark tailored suit jacket, dark tie, and crisp white standing collar.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Johan_August_Brinell_-_1920_(2).jpg}{Albert Wilhelm Rahm(n) (1871–1947)}, Public domain, via Wikimedia Commons}{Johan_August_Brinell_-_1920_(2)}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Brinell Hardness Test (1 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Steel ball (usually 10mm)
+                    \begin{itemize}
+                        \item Tungsten carbide used for harder materials 
+                    \end{itemize}
+                \item 3,000 kgf applied 
+                    \begin{itemize}
+                        \item Smaller force used for softer material
+                    \end{itemize}
+                \item Size of the indentation = hardness
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.625\linewidth}{A technical diagram illustrating the Brinell hardness test on a white background, featuring a side cross-sectional view above a top-down view. In the upper view, accompanied by x and z coordinate axes on the left, a vertical downward arrow labeled F presses a yellow sphere of diameter D into a light blue hatched test material. In the lower view, accompanied by x and y coordinate axes on the left, dashed projection lines align the spherical indenter with the resulting circular impression on the light blue hatched surface, where two perpendicular double-headed arrows measure the indentation diameters labeled d1 and d2.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:BrinellHardness.svg}{BrinellSkizze.jpg: Lokilech derivative work: Nerdture}, \href{https://creativecommons.org/licenses/by-sa/2.5}{CC BY-SA 2.5}, via Wikimedia Commons}{BrinellHardness}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Brinell Hardness Test (2 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Indent is very rarely perfectly circular
+                \item Two diameters 90\textdegree{} apart are averaged
+            \end{itemize}
+            \[d=\dfrac{d_1 + d_2}{2}\]
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.625\linewidth}{A technical diagram illustrating the Brinell hardness test on a white background, featuring a side cross-sectional view above a top-down view. In the upper view, accompanied by x and z coordinate axes on the left, a vertical downward arrow labeled F presses a yellow sphere of diameter D into a light blue hatched test material. In the lower view, accompanied by x and y coordinate axes on the left, dashed projection lines align the spherical indenter with the resulting circular impression on the light blue hatched surface, where two perpendicular double-headed arrows measure the indentation diameters labeled d1 and d2.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:BrinellHardness.svg}{BrinellSkizze.jpg: Lokilech derivative work: Nerdture}, \href{https://creativecommons.org/licenses/by-sa/2.5}{CC BY-SA 2.5}, via Wikimedia Commons}{BrinellHardness}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Brinell Hardness Number}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \[BHN=\dfrac{2P}{\pi D(D-\sqrt{D^2 - d^2})}\]
+            \begin{description}[<+- | alert@+>]
+                \item[$BHN$] Brinell Hardness Number (\qty{}{\kilo\gram{}f\per\milli\square\meter})
+                \item[$P$] test load (\qty{}{\kilo\gram{}f})
+                \item[$D$] diameter of test ball (\qty{}{\milli\meter})
+                \item[$d$] average diameter of the indent (\qty{}{\milli\meter})
+            \end{description}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.625\linewidth}{A technical diagram illustrating the Brinell hardness test on a white background, featuring a side cross-sectional view above a top-down view. In the upper view, accompanied by x and z coordinate axes on the left, a vertical downward arrow labeled F presses a yellow sphere of diameter D into a light blue hatched test material. In the lower view, accompanied by x and y coordinate axes on the left, dashed projection lines align the spherical indenter with the resulting circular impression on the light blue hatched surface, where two perpendicular double-headed arrows measure the indentation diameters labeled d1 and d2.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:BrinellHardness.svg}{BrinellSkizze.jpg: Lokilech derivative work: Nerdture}, \href{https://creativecommons.org/licenses/by-sa/2.5}{CC BY-SA 2.5}, via Wikimedia Commons}{BrinellHardness}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% \begin{frame}
+% 	\frametitle{HBW}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item[H]{Hardness}
+%                 \item[B]{Brinell}
+%                 \item[W]{Tungsten Carbide}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=0.95\columnwidth]{416px-BrinellHardness}
+%                 \caption*{\cite{BrinellTest}}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{HBW}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{ATM E10-14, ISO 6506-1:2005 -- most commonly used test standards for Brinell}
+%                 \item{Both prescribe a tungsten carbide ball \textbf{only}}
+%                 \item{\textbf{Both} define HBW in units of MPa}
+%                     \begin{itemize}
+%                         \item{1 MPa = 1 N/mm$^2$}
+%                         \item{1 kgf = 9.81 N}
+%                         \item{1 MPa = 0.102 $\times$ 1 kgf/mm$^2$}
+%                     \end{itemize}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=0.95\columnwidth]{416px-BrinellHardness}
+%                 \caption*{\cite{BrinellTest}}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{HBW}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \[HBW=0.102\dfrac{2F}{\pi D(D-\sqrt{D^2 - d^2})}\]
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item[$HBW$]{Hardness Brinell Tungsten (MPa)}
+%                 \item[$F$]{test load (N)}
+%                 \item[$D$]{diameter of test ball (mm)}
+%                 \item[$d$]{average diameter of the indent (mm)}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=0.95\columnwidth]{416px-BrinellHardness}
+%                 \caption*{\cite{BrinellTest}}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+\begin{frame}
+	\frametitle{Brinell Hardness Machine}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Anvil for part
+                \item Collet for test probe
+                \item Anvil on adjustable screw to bring part into probe
+                \item Counterweight provides test force
+                \item Modern machines are motorized, integrated magnification
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.25\linewidth}{A vintage Brinell hardness testing machine standing on a gray pedestal against a plain off-white wall, featuring a heavy dark cast-iron frame, a vertical threaded screw column with a circular handwheel for adjusting the specimen stage, a small indenter beneath the upper head, a side pump lever, two cylindrical counterweights suspended from a top crossbar, and a large round brass pressure dial gauge mounted at the top.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Brinell_machine.jpg}{AlphaZeta}, Public domain, via Wikimedia Commons}{Brinell_machine}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\subsection{Vickers Hardness}
+
+\begin{frame}
+	\frametitle{Vickers Ltd}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Formed in 1921
+                \item Began as foundry, became \emph{massive} building WWI ships
+                \item Robert L. Smith
+                \item George E. Sandland
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.25\linewidth}{A Vickers microhardness testing machine positioned in front of a white cinder block wall with an orange electrical outlet on the left, featuring a black cast-iron main body, an upper optical microscope turret with three silver objective lenses, a pointed diamond indenter next to the turret, and a silver micrometer-controlled specimen stage mounted on a vertical elevating column below.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Vickers-tester.png}{Tariqabjotu}, Public domain, via Wikimedia Commons}{Vickers-tester}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Vickers Indenter (1 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item{Diamond shaped indenter}
+                    \begin{itemize}
+                        \item{Ideal Brinell impression = \qty{0.375}{in} ball diameter}
+                        \item{Two tangents of a chord 3d/8 = 136\textdegree{}}
+                        \item{Included angle on the indenter is 136\textdegree{}}
+                    \end{itemize}
+                \item{Unlike Brinell, same indenter used on all hardnesses}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{An extreme close up macro photograph against a dark out of focus background showing a faceted pyramid shaped diamond indenter embedded into the flat end of a rough oxidized cylindrical metal holder with a smooth circular metal plug visible on its textured rusty side.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Vickers-tester.png}{R. Tanaka}, \href{https://creativecommons.org/licenses/by/3.0}{CC BY 3.0}, via Wikimedia Commons}{Vickers_anvil_diamons}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Vickers Indenter (1 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item{Diamond shaped indenter}
+                    \begin{itemize}
+                        \item{Ideal Brinell impression = \qty{0.375}{in} ball diameter}
+                        \item{Two tangents of a chord 3d/8 = 136\textdegree{}}
+                        \item{Included angle on the indenter is 136\textdegree{}}
+                    \end{itemize}
+                \item{Unlike Brinell, same indenter used on all hardnesses}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{An extreme close up macro photograph against a dark out of focus background showing a faceted pyramid shaped diamond indenter embedded into the flat end of a rough oxidized cylindrical metal holder with a smooth circular metal plug visible on its textured rusty side.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Vickers-tester.png}{R. Tanaka}, \href{https://creativecommons.org/licenses/by/3.0}{CC BY 3.0}, via Wikimedia Commons}{Vickers_anvil_diamons}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Brinell}
+
+    \begin{figure}
+        \centering
+        \resizebox{0.375\linewidth}{!}{
+            \input{../assets/diagrams/Hardness_BrinellGeometry.tex}
+        }
+    \end{figure}
+\end{frame}
+
+% \begin{frame}
+% 	\frametitle{Vickers Hardness Test}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{Hardness (HV) is simply $F/A$}
+%                     \begin{itemize}
+%                         \item[$F$]{applied force (kgf)}
+%                         \item[$A$]{surface area of the indentation (mm$^2$)}
+%                     \end{itemize}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=0.9\columnwidth]{416px-Vickers-path}
+%                 \caption*{\cite{VickersTest}}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Vickers Hardness Test}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \[A=\dfrac{d^2}{2\sin (136/2)}\]
+%             \[A\approx \dfrac{d^2}{1.8544}\]
+%             \[d=\dfrac{d_1 + d_2}{2}\]
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=\columnwidth]{481px-Vicker_Hardness_-_Diamond_Indentation}
+%                 \caption*{\cite{VickersIndent}}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Vickers Hardness Test}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \[HV=\dfrac{F}{A}=\dfrac{1.8544F}{d^2}\]
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item[$HV$]{Hardness Vickers (kgf/mm$^2$)}
+%                 \item[$F$]{applied load (kgf)}
+%                 \item[$d$]{diagonal length of indent (mm)}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=0.9\columnwidth]{416px-Vickers-path}
+%                 \caption*{\cite{VickersTest}}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Vickers Hardness Test}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{Again, kgf isn't used anymore -- MPa}
+%                 \item{With $F$ on top, \textbf{divide} by 9.81}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=0.9\columnwidth]{416px-Vickers-path}
+%                 \caption*{\cite{VickersTest}}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Vickers Hardness Test}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \[HV \approx 0.1891\dfrac{F}{d^2}\]
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item[$HV$]{Hardness Vickers (N/mm$^2$, MPa)}
+%                 \item[$F$]{applied load (N)}
+%                 \item[$d$]{diagonal length of indent (mm)}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=0.9\columnwidth]{416px-Vickers-path}
+%                 \caption*{\cite{VickersTest}}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \subsection{Rockwell Hardness}
+
+% \begin{frame}
+% 	\frametitle{Rockwell Hardness}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{1908 -- Paul Ludwik}
+%                     \begin{itemize}
+%                         \item{Differential depth hardness}
+%                         \item{Hardness can be determined by the difference in depth between a minor load and a major load}
+%                     \end{itemize}
+%                 \item{1914 -- Hugh and Stanley Rockwell}
+%                     \begin{itemize}
+%                         \item{First patent for a differential depth hardness machine}
+%                     \end{itemize}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=0.9\columnwidth]{360px-Rockwell_hardness_tester_001}
+%                 \caption*{\cite{RockwellMachine}}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Rockwell Hardness Test}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{4 step test:}
+%                     \begin{enumerate}
+%                         \item{Apply a \textbf{minor force}}
+%                         \item{Apply a \textbf{major foce}}
+%                         \item{Dwell time}
+%                         \item{Release major force}
+%                     \end{enumerate}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=0.9\columnwidth]{640px-Dureté_rockwell}
+%                 \caption*{\cite{RockwellTest}}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Minor Force}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{Depends on which Rockwell test is being performed}
+%                     \begin{itemize}
+%                         \item{Rockwell minor force = 10 kgf (98 N, 22 lb)}
+%                         \item{Superficial Rockwell minor force = 3 kgf (29 N, 6.6 lb)}
+%                     \end{itemize}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=0.9\columnwidth]{640px-Dureté_rockwell}
+%                 \caption*{\cite{RockwellTest}}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Major Force}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{Depends on the scale being used}
+%                 \item{Rockwell has 17 different scales}
+%                     \begin{itemize}
+%                         \item{Indenter shape changes}
+%                         \item{Major force changes}
+%                     \end{itemize}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=0.9\columnwidth]{640px-Dureté_rockwell}
+%                 \caption*{\cite{RockwellTest}}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Dwell Time}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{We're introducing stress into the material}
+%                 \item{Stress = energy transfer}
+%                 \item{Energy transfer takes time}
+%                 \item{No defined time, we just need to give the material time to settle}
+%                     \begin{itemize}
+%                         \item{Usually >5s}
+%                     \end{itemize}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=0.9\columnwidth]{640px-Dureté_rockwell}
+%                 \caption*{\cite{RockwellTest}}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Remove Major Force}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{Material has been permanently deformed under the major force}
+%                 \item{Some material will rebound leaving \textbf{only} the permanent deformation}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=0.8\columnwidth]{360px-Rockwell_hardness_tester_closeup_001}
+%                 \caption*{\cite{RockwellCloseup}}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Remove Major Force}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{The minor load is still applied -- difference in height equates to the hardness}
+%                 \item{There \textbf{is} math involved, but it doesn't matter -- the scale on the tester gives hardness}
+%                 \item{Rockwell hardness is unitless}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=0.8\columnwidth]{360px-Rockwell_hardness_tester_closeup_001}
+%                 \caption*{\cite{RockwellCloseup}}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Rockwell Hardness Scales}
+%     \begin{columns}
+%         \begin{column}{0.48\linewidth}
+%             \begin{itemize}[<+- | alert@+>]
+%                 \item{Rockwell has a total of 21 scales}
+%                     \begin{itemize}
+%                         \item{6 are superficial}
+%                         \item{Most common are B and C}
+%                     \end{itemize}
+%                 \item{Intended to measure different hardnesses}
+%                 \item{Indenter shape and major force change}
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.48\linewidth}
+%             \begin{figure}
+%                 \centering
+%                 \includegraphics[width=0.8\columnwidth]{360px-Rockwell_hardness_tester_001}
+%                 \caption*{\cite{RockwellMachine}}
+%             \end{figure}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Rockwell Hardness Scales}
+%     \begin{table}
+%         \centering
+%         \resizebox{\linewidth}{!}{
+%         \begin{tabular}{cccp{1in}p{3in}}
+%             \toprule
+%                 Scale&Abbreviation&Major Load (kgf)&Indenter&Use\\
+%             \midrule
+%                 A   &   HRA &   60  &   spheroconical diamond   &   Cemented carbides, thin steel, shallow case-hardened steel\\
+%                 B   &   HRB &   100  &   1/16 in ball   &   Copper alloys, soft steels, aluminum alloys, malleable iron\\
+%                 C   &   HRC &   150  &   spheroconical diamond   &   Steel, hard cast irons, pearlitic malleable iron, titanium, deep case-hardened steel, other materials harder than 100 HRB\\
+%                 D   &   HRD &   100  &   spheroconical diamond   &   Thin steel and medium case-hardened steel and pearlitic malleable cast iron\\
+%                 E   &   HRE &   100  &   1/8 in ball   &   Cast iron, aluminum and magnesium alloys, bearing metals, thermoset plastics\\
+%                 F   &   HRF &   60  &   1/16 in ball   &   Annealed copper alloy, thin soft sheet metals\\
+%                 G   &   HRG &   150  &   1/16 in ball   &   Phosphor bronze, beryllium copper, malleable irons\\
+%             \bottomrule                
+%         \end{tabular}
+%         }
+%     \end{table}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Rockwell Hardness Scales}
+%     \begin{table}
+%         \centering
+%         \resizebox{\linewidth}{!}{
+%         \begin{tabular}{cccp{1in}p{3in}}
+%             \toprule
+%                 Scale&Abbreviation&Major Load (kgf)&Indenter&Use\\
+%             \midrule
+%                 H   &   HRH &   60  &   1/8 in ball   &   Aluminum, Zinc, Lead\\
+%                 K   &   HRK &   150  &   1/8 in ball   &   Bearing alloy, tin, hard plastic materials\\
+%                 L   &   HRL &   60  &   1/4 in ball   &   Bearing metals and other very soft or thin materials\\
+%                 M   &   HRM &   100  &   1/4 in ball   &   Thermoplastics, bearing metals and other very soft or thin materials\\
+%                 P   &   HRP &   150  &   1/4 in ball   &   Bearing metals and other very soft or thin materials\\
+%                 R   &   HRR &   60  &   1/2 in ball   &   Thermoplastics, bearing metals, and other very soft or thin materials\\
+%                 S   &   HRS &   100  &   1/2 in ball   &   Bearing metals and other very soft or thin materials\\
+%                 V   &   HRV &   150  &   1/2 in ball   &   Bearing metals and other very soft or thin materials\\
+%             \bottomrule                
+%         \end{tabular}
+%         }
+%     \end{table}
+% \end{frame}
+
+% \begin{frame}
+% 	\frametitle{Rockwell Hardness Scales}
+%     \begin{table}
+%         \centering
+%         \resizebox{\linewidth}{!}{
+%         \begin{tabular}{cccp{1in}p{3in}}
+%             \toprule
+%                 Scale&Abbreviation&Major Load (kgf)&Indenter&Use\\
+%             \midrule
+%                 \multicolumn{2}{c}{15T, 30T, 45T} &   60  &   1/16 in ball   &   Superficial: for soft coatings\\
+%                 \multicolumn{2}{c}{15N, 30N, 45N}   &   150  &   spheroconical diamond   &   Superficial: for case-hardened materials\\
+%             \bottomrule                
+%         \end{tabular}
+%         }
+%     \end{table}
+% \end{frame}
+
+\begin{frame}
+    \centering
+    {\Huge \textbf{\textcolor{BakerADARed}{Questions?}}}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Copyright Notice}
+    
+    {\scriptsize
+    \PresTitle{} \textcopyright{} 2026 by Brad Peirson is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). To view a copy of the official license, visit \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{https://creativecommons.org/licenses/by-nc-sa/4.0/}.
+
+    \vspace{0.5em}
+
+    \textbf{Exceptions and Exclusions}
+
+    \begin{itemize}
+        \item[Baker College Branding \& Trademarks:]All Baker College logos, trademarks, wordmarks, seals, slide design templates, and proprietary branding elements contained in these materials are \textbf{EXCLUDED} from the CC BY-NC-SA 4.0 license. All rights are reserved by Baker College. Express written permission from Baker College is required for any use, copying, or redistribution of these elements.
+        \item[Third-Party Media \& Content:] Any third-party images, graphics, diagrams, or external media incorporated in these materials are included under their respective original licenses or permissions and are individually attributed at their point of use. 
+        \item[Original Author Content:] All unattributed figures, diagrams, text, code snippets, and media are original works created by the author and are licensed under the CC BY-NC-SA 4.0 license.
+    \end{itemize}
+
+    The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.
+    \par}
+\end{frame}
+
+\end{document}
+
+% \begin{frame}
+%     \frametitle{Test Todo}
+
+%     % Usage: \tikztodo[width]{height}{description/notes}
+%     \tikztodo[0.7\textwidth]{4cm}{Convert block diagram of feedback loop}
+% \end{frame}
