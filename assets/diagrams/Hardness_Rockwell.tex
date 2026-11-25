@@ -1,0 +1,32 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={A right triangle outlined in thick red and filled with semi-transparent light red, with its right angle at the bottom right vertex indicated by a red square corner marker, its horizontal bottom leg labeled B, its vertical right leg labeled A, its hypotenuse labeled C, its top angle marked with a thin black arc labeled beta, and its bottom left angle marked with a thin black arc labeled alpha.}
+    ]
+
+    \def\plateHeight{3}
+    \def\plateWidth{10}
+    \def\ballDiameter{5}
+
+    \node[
+        draw=BakerBlack,
+        fill=Abbey,
+        pattern=crosshatch,
+        pattern color=BakerBlack,
+        minimum height=\plateHeight cm,
+        minimum width=\plateWidth cm
+    ](plate1)
+    at (0,0)
+    {};
+
+    \node[
+        draw=BakerBlack,
+        fill=LakeBlue,
+        circle,
+        minimum size=\ballDiameter cm,
+        anchor=south
+    ](ball1)
+    at(plate1.center)
+    {};
+
+\end{circuitikz}

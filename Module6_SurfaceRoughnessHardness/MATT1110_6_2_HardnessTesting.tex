@@ -700,10 +700,10 @@
         \begin{column}{0.48\linewidth}
             \[BHN=\dfrac{2P}{\pi D(D-\sqrt{D^2 - d^2})}\]
             \begin{description}[<+- | alert@+>]
-                \item[$BHN$] Brinell Hardness Number (\qty{}{\kilo\gram{}f\per\milli\square\meter})
-                \item[$P$] test load (\qty{}{\kilo\gram{}f})
-                \item[$D$] diameter of test ball (\qty{}{\milli\meter})
-                \item[$d$] average diameter of the indent (\qty{}{\milli\meter})
+                \item[$BHN$] Brinell Hardness Number (\unit{\kilo\gram{}f\per\milli\square\meter})
+                \item[$P$] test load (\unit{\kilo\gram{}f})
+                \item[$D$] diameter of test ball (\unit{\milli\meter})
+                \item[$d$] average diameter of the indent (\unit{\milli\meter})
             \end{description}
         \end{column}
         \begin{column}{0.48\linewidth}
@@ -712,25 +712,22 @@
     \end{columns}
 \end{frame}
 
-% \begin{frame}
-% 	\frametitle{HBW}
-%     \begin{columns}
-%         \begin{column}{0.48\linewidth}
-%             \begin{itemize}[<+- | alert@+>]
-%                 \item[H]{Hardness}
-%                 \item[B]{Brinell}
-%                 \item[W]{Tungsten Carbide}
-%             \end{itemize}
-%         \end{column}
-%         \begin{column}{0.48\linewidth}
-%             \begin{figure}
-%                 \centering
-%                 \includegraphics[width=0.95\columnwidth]{416px-BrinellHardness}
-%                 \caption*{\cite{BrinellTest}}
-%             \end{figure}
-%         \end{column}
-%     \end{columns}
-% \end{frame}
+\begin{frame}
+	\frametitle{HBW}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item[H] Hardness
+                \item[B] Brinell
+                \item[W] Tungsten Carbide
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.625\linewidth}{A technical diagram illustrating the Brinell hardness test on a white background, featuring a side cross-sectional view above a top-down view. In the upper view, accompanied by x and z coordinate axes on the left, a vertical downward arrow labeled F presses a yellow sphere of diameter D into a light blue hatched test material. In the lower view, accompanied by x and y coordinate axes on the left, dashed projection lines align the spherical indenter with the resulting circular impression on the light blue hatched surface, where two perpendicular double-headed arrows measure the indentation diameters labeled d1 and d2.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:BrinellHardness.svg}{BrinellSkizze.jpg: Lokilech derivative work: Nerdture}, \href{https://creativecommons.org/licenses/by-sa/2.5}{CC BY-SA 2.5}, via Wikimedia Commons}{BrinellHardness}
+        \end{column}
+    \end{columns}
+\end{frame}
 
 % \begin{frame}
 % 	\frametitle{HBW}
@@ -793,7 +790,7 @@
             \end{itemize}
         \end{column}
         \begin{column}{0.48\linewidth}
-            \shadowpic[]{0.25\linewidth}{A vintage Brinell hardness testing machine standing on a gray pedestal against a plain off-white wall, featuring a heavy dark cast-iron frame, a vertical threaded screw column with a circular handwheel for adjusting the specimen stage, a small indenter beneath the upper head, a side pump lever, two cylindrical counterweights suspended from a top crossbar, and a large round brass pressure dial gauge mounted at the top.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Brinell_machine.jpg}{AlphaZeta}, Public domain, via Wikimedia Commons}{Brinell_machine}
+            \shadowpic[]{0.5\linewidth}{A vintage Brinell hardness testing machine standing on a gray pedestal against a plain off-white wall, featuring a heavy dark cast-iron frame, a vertical threaded screw column with a circular handwheel for adjusting the specimen stage, a small indenter beneath the upper head, a side pump lever, two cylindrical counterweights suspended from a top crossbar, and a large round brass pressure dial gauge mounted at the top.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Brinell_machine.jpg}{AlphaZeta}, Public domain, via Wikimedia Commons}{Brinell_machine}
         \end{column}
     \end{columns}
 \end{frame}
@@ -812,55 +809,47 @@
             \end{itemize}
         \end{column}
         \begin{column}{0.48\linewidth}
-            \shadowpic[]{0.25\linewidth}{A Vickers microhardness testing machine positioned in front of a white cinder block wall with an orange electrical outlet on the left, featuring a black cast-iron main body, an upper optical microscope turret with three silver objective lenses, a pointed diamond indenter next to the turret, and a silver micrometer-controlled specimen stage mounted on a vertical elevating column below.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Vickers-tester.png}{Tariqabjotu}, Public domain, via Wikimedia Commons}{Vickers-tester}
+            \shadowpic[]{0.5\linewidth}{A Vickers microhardness testing machine positioned in front of a white cinder block wall with an orange electrical outlet on the left, featuring a black cast-iron main body, an upper optical microscope turret with three silver objective lenses, a pointed diamond indenter next to the turret, and a silver micrometer-controlled specimen stage mounted on a vertical elevating column below.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Vickers-tester.png}{Tariqabjotu}, Public domain, via Wikimedia Commons}{Vickers-tester}
         \end{column}
     \end{columns}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Vickers Indenter (1 of 2)}
+	\frametitle{Limits of Brinell}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Brinell results can be finicky
+                \item Too shallow: hard to see edges of indent to measure
+                \item Too deep: walls of material pushed up around dent \emph{and} ball begins to flatten
+                \item Standards set so $0.25D<d<0.5D$
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.5\linewidth}{A Vickers microhardness testing machine positioned in front of a white cinder block wall with an orange electrical outlet on the left, featuring a black cast-iron main body, an upper optical microscope turret with three silver objective lenses, a pointed diamond indenter next to the turret, and a silver micrometer-controlled specimen stage mounted on a vertical elevating column below.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Vickers-tester.png}{Tariqabjotu}, Public domain, via Wikimedia Commons}{Vickers-tester}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Vickers Indenter (1 of 3)}
 
     \begin{columns}
         \begin{column}{0.48\linewidth}
             \begin{itemize}[<+- | alert@+>]
-                \item{Diamond shaped indenter}
-                    \begin{itemize}
-                        \item{Ideal Brinell impression = \qty{0.375}{in} ball diameter}
-                        \item{Two tangents of a chord 3d/8 = 136\textdegree{}}
-                        \item{Included angle on the indenter is 136\textdegree{}}
-                    \end{itemize}
-                \item{Unlike Brinell, same indenter used on all hardnesses}
+                \item Ideal Brinell impression: $d=\frac{3}{8}D$
+                \item Two tangents of a chord $\frac{3}{8}D$=136\textdegree{}
+                \item Included angle on the indenter is 136\textdegree{}
             \end{itemize}
         \end{column}
         \begin{column}{0.48\linewidth}
-            \shadowpic[]{\linewidth}{An extreme close up macro photograph against a dark out of focus background showing a faceted pyramid shaped diamond indenter embedded into the flat end of a rough oxidized cylindrical metal holder with a smooth circular metal plug visible on its textured rusty side.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Vickers-tester.png}{R. Tanaka}, \href{https://creativecommons.org/licenses/by/3.0}{CC BY 3.0}, via Wikimedia Commons}{Vickers_anvil_diamons}
+            \shadowpic[]{0.5\linewidth}{A technical diagram illustrating the Vickers hardness test on a white background, featuring a side cross-sectional view above a top-down view. In the upper view, accompanied by x and z coordinate axes on the left, a vertical downward arrow labeled F presses a yellow pyramidal indenter with a 22 degree face inclination angle into a light blue hatched test material. In the lower view, accompanied by x and y coordinate axes on the left, dashed projection lines align the indenter with the resulting square impression on the light blue hatched surface, where two perpendicular double-headed arrows measure the indentation diagonals labeled d1 and d2.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Vickers-path.svg}{User A1 at English Wikipedia}, \href{https://creativecommons.org/licenses/by-sa/3.0}{CC BY-SA 3.0}, via Wikimedia Commons}{Vickers_path}
         \end{column}
     \end{columns}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Vickers Indenter (1 of 2)}
-
-    \begin{columns}
-        \begin{column}{0.48\linewidth}
-            \begin{itemize}[<+- | alert@+>]
-                \item{Diamond shaped indenter}
-                    \begin{itemize}
-                        \item{Ideal Brinell impression = \qty{0.375}{in} ball diameter}
-                        \item{Two tangents of a chord 3d/8 = 136\textdegree{}}
-                        \item{Included angle on the indenter is 136\textdegree{}}
-                    \end{itemize}
-                \item{Unlike Brinell, same indenter used on all hardnesses}
-            \end{itemize}
-        \end{column}
-        \begin{column}{0.48\linewidth}
-            \shadowpic[]{\linewidth}{An extreme close up macro photograph against a dark out of focus background showing a faceted pyramid shaped diamond indenter embedded into the flat end of a rough oxidized cylindrical metal holder with a smooth circular metal plug visible on its textured rusty side.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Vickers-tester.png}{R. Tanaka}, \href{https://creativecommons.org/licenses/by/3.0}{CC BY 3.0}, via Wikimedia Commons}{Vickers_anvil_diamons}
-        \end{column}
-    \end{columns}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Brinell}
+    \frametitle{Vickers Indenter (2 of 3)}
 
     \begin{figure}
         \centering
@@ -870,134 +859,156 @@
     \end{figure}
 \end{frame}
 
-% \begin{frame}
-% 	\frametitle{Vickers Hardness Test}
-%     \begin{columns}
-%         \begin{column}{0.48\linewidth}
-%             \begin{itemize}[<+- | alert@+>]
-%                 \item{Hardness (HV) is simply $F/A$}
-%                     \begin{itemize}
-%                         \item[$F$]{applied force (kgf)}
-%                         \item[$A$]{surface area of the indentation (mm$^2$)}
-%                     \end{itemize}
-%             \end{itemize}
-%         \end{column}
-%         \begin{column}{0.48\linewidth}
-%             \begin{figure}
-%                 \centering
-%                 \includegraphics[width=0.9\columnwidth]{416px-Vickers-path}
-%                 \caption*{\cite{VickersTest}}
-%             \end{figure}
-%         \end{column}
-%     \end{columns}
-% \end{frame}
+\begin{frame}
+	\frametitle{Vickers Indenter (3 of 3)}
 
-% \begin{frame}
-% 	\frametitle{Vickers Hardness Test}
-%     \begin{columns}
-%         \begin{column}{0.48\linewidth}
-%             \[A=\dfrac{d^2}{2\sin (136/2)}\]
-%             \[A\approx \dfrac{d^2}{1.8544}\]
-%             \[d=\dfrac{d_1 + d_2}{2}\]
-%         \end{column}
-%         \begin{column}{0.48\linewidth}
-%             \begin{figure}
-%                 \centering
-%                 \includegraphics[width=\columnwidth]{481px-Vicker_Hardness_-_Diamond_Indentation}
-%                 \caption*{\cite{VickersIndent}}
-%             \end{figure}
-%         \end{column}
-%     \end{columns}
-% \end{frame}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Diamond shaped indenter
+                \item Unlike Brinell, same indenter used on all hardnesses                
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{\linewidth}{An extreme close up macro photograph against a dark out of focus background showing a faceted pyramid shaped diamond indenter embedded into the flat end of a rough oxidized cylindrical metal holder with a smooth circular metal plug visible on its textured rusty side.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Vickers-tester.png}{R. Tanaka}, \href{https://creativecommons.org/licenses/by/3.0}{CC BY 3.0}, via Wikimedia Commons}{Vickers_anvil_diamons}
+        \end{column}
+    \end{columns}
+\end{frame}
 
-% \begin{frame}
-% 	\frametitle{Vickers Hardness Test}
-%     \begin{columns}
-%         \begin{column}{0.48\linewidth}
-%             \[HV=\dfrac{F}{A}=\dfrac{1.8544F}{d^2}\]
-%             \begin{itemize}[<+- | alert@+>]
-%                 \item[$HV$]{Hardness Vickers (kgf/mm$^2$)}
-%                 \item[$F$]{applied load (kgf)}
-%                 \item[$d$]{diagonal length of indent (mm)}
-%             \end{itemize}
-%         \end{column}
-%         \begin{column}{0.48\linewidth}
-%             \begin{figure}
-%                 \centering
-%                 \includegraphics[width=0.9\columnwidth]{416px-Vickers-path}
-%                 \caption*{\cite{VickersTest}}
-%             \end{figure}
-%         \end{column}
-%     \end{columns}
-% \end{frame}
+\begin{frame}
+	\frametitle{Vickers Hardness Test (1 of )}
 
-% \begin{frame}
-% 	\frametitle{Vickers Hardness Test}
-%     \begin{columns}
-%         \begin{column}{0.48\linewidth}
-%             \begin{itemize}[<+- | alert@+>]
-%                 \item{Again, kgf isn't used anymore -- MPa}
-%                 \item{With $F$ on top, \textbf{divide} by 9.81}
-%             \end{itemize}
-%         \end{column}
-%         \begin{column}{0.48\linewidth}
-%             \begin{figure}
-%                 \centering
-%                 \includegraphics[width=0.9\columnwidth]{416px-Vickers-path}
-%                 \caption*{\cite{VickersTest}}
-%             \end{figure}
-%         \end{column}
-%     \end{columns}
-% \end{frame}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Vicker's Hardness (HV) is simply $\frac{F}{A}$ 
+                    \begin{itemize}
+                        \item[$F$] applied force (\unit{\kilogram{}f}) 
+                        \item[$A$] surface area of the indentation (\unit{\milli\square\meter})
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.5\linewidth}{A technical diagram illustrating the Vickers hardness test on a white background, featuring a side cross-sectional view above a top-down view. In the upper view, accompanied by x and z coordinate axes on the left, a vertical downward arrow labeled F presses a yellow pyramidal indenter with a 22 degree face inclination angle into a light blue hatched test material. In the lower view, accompanied by x and y coordinate axes on the left, dashed projection lines align the indenter with the resulting square impression on the light blue hatched surface, where two perpendicular double-headed arrows measure the indentation diagonals labeled d1 and d2.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Vickers-path.svg}{User A1 at English Wikipedia}, \href{https://creativecommons.org/licenses/by-sa/3.0}{CC BY-SA 3.0}, via Wikimedia Commons}{Vickers_path}
+        \end{column}
+    \end{columns}
+\end{frame}
 
-% \begin{frame}
-% 	\frametitle{Vickers Hardness Test}
-%     \begin{columns}
-%         \begin{column}{0.48\linewidth}
-%             \[HV \approx 0.1891\dfrac{F}{d^2}\]
-%             \begin{itemize}[<+- | alert@+>]
-%                 \item[$HV$]{Hardness Vickers (N/mm$^2$, MPa)}
-%                 \item[$F$]{applied load (N)}
-%                 \item[$d$]{diagonal length of indent (mm)}
-%             \end{itemize}
-%         \end{column}
-%         \begin{column}{0.48\linewidth}
-%             \begin{figure}
-%                 \centering
-%                 \includegraphics[width=0.9\columnwidth]{416px-Vickers-path}
-%                 \caption*{\cite{VickersTest}}
-%             \end{figure}
-%         \end{column}
-%     \end{columns}
-% \end{frame}
+\begin{frame}
+	\frametitle{Vickers Hardness Test (2 of )}
+    
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{align*}
+                A&=\dfrac{d^2}{2\sin (\frac{136}{2})}\\
+                A&\approx \dfrac{d^2}{1.8544}\\
+                d&=\dfrac{d_1 + d_2}{2}\\
+            \end{align*}        
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \hexpic[]{0.875\linewidth}{A circular optical microscope view bathed in bright green illumination against a black border, showing a diamond-shaped Vickers hardness indentation centered between two parallel vertical filar crosshair lines on a polished metal surface with faint measurement markings to the left.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Vicker_Hardness_-_Diamond_Indentation.jpg}{Encik Tekateki}, \href{https://creativecommons.org/licenses/by-sa/4.0}{CC BY-SA 4.0}, via Wikimedia Commons}{Vicker_Hardness_-_Diamond_Indentation}
+        \end{column}
+    \end{columns}
+\end{frame}
 
-% \subsection{Rockwell Hardness}
+\begin{frame}
+	\frametitle{Vickers Hardness Test}
 
-% \begin{frame}
-% 	\frametitle{Rockwell Hardness}
-%     \begin{columns}
-%         \begin{column}{0.48\linewidth}
-%             \begin{itemize}[<+- | alert@+>]
-%                 \item{1908 -- Paul Ludwik}
-%                     \begin{itemize}
-%                         \item{Differential depth hardness}
-%                         \item{Hardness can be determined by the difference in depth between a minor load and a major load}
-%                     \end{itemize}
-%                 \item{1914 -- Hugh and Stanley Rockwell}
-%                     \begin{itemize}
-%                         \item{First patent for a differential depth hardness machine}
-%                     \end{itemize}
-%             \end{itemize}
-%         \end{column}
-%         \begin{column}{0.48\linewidth}
-%             \begin{figure}
-%                 \centering
-%                 \includegraphics[width=0.9\columnwidth]{360px-Rockwell_hardness_tester_001}
-%                 \caption*{\cite{RockwellMachine}}
-%             \end{figure}
-%         \end{column}
-%     \end{columns}
-% \end{frame}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \[HV=\dfrac{F}{A}=\dfrac{1.8544F}{d^2}\]
+            \begin{itemize}[<+- | alert@+>]
+                \item[$HV$] Hardness Vickers (\unit{\kilogram{}f\per\milli\square\meter})
+                \item[$F$] applied load (\unit{\kilogram{}f})
+                \item[$d$] diagonal length of indent (\unit{\milli\meter})
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.5\linewidth}{A technical diagram illustrating the Vickers hardness test on a white background, featuring a side cross-sectional view above a top-down view. In the upper view, accompanied by x and z coordinate axes on the left, a vertical downward arrow labeled F presses a yellow pyramidal indenter with a 22 degree face inclination angle into a light blue hatched test material. In the lower view, accompanied by x and y coordinate axes on the left, dashed projection lines align the indenter with the resulting square impression on the light blue hatched surface, where two perpendicular double-headed arrows measure the indentation diagonals labeled d1 and d2.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Vickers-path.svg}{User A1 at English Wikipedia}, \href{https://creativecommons.org/licenses/by-sa/3.0}{CC BY-SA 3.0}, via Wikimedia Commons}{Vickers_path}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{New Vickers Units}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item \unit{\kilogram{}f} isn't used anymore -- \unit{\mega\pascal}
+                \item With $F$ on top, \emph{divide} by \qty{9.81}{\meter\per\square\second}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.5\linewidth}{A technical diagram illustrating the Vickers hardness test on a white background, featuring a side cross-sectional view above a top-down view. In the upper view, accompanied by x and z coordinate axes on the left, a vertical downward arrow labeled F presses a yellow pyramidal indenter with a 22 degree face inclination angle into a light blue hatched test material. In the lower view, accompanied by x and y coordinate axes on the left, dashed projection lines align the indenter with the resulting square impression on the light blue hatched surface, where two perpendicular double-headed arrows measure the indentation diagonals labeled d1 and d2.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Vickers-path.svg}{User A1 at English Wikipedia}, \href{https://creativecommons.org/licenses/by-sa/3.0}{CC BY-SA 3.0}, via Wikimedia Commons}{Vickers_path}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Modern Vickers Hardness Test}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \[HV \approx 0.1891\dfrac{F}{d^2}\]
+            \begin{itemize}[<+- | alert@+>]
+                \item[$HV$] Hardness Vickers (\unit{\newton\per\milli\square\meter}, \unit{\mega\pascal})
+                \item[$F$] applied load (\unit{\newton})
+                \item[$d$] diagonal length of indent (\unit{\milli\meter})
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.5\linewidth}{A technical diagram illustrating the Vickers hardness test on a white background, featuring a side cross-sectional view above a top-down view. In the upper view, accompanied by x and z coordinate axes on the left, a vertical downward arrow labeled F presses a yellow pyramidal indenter with a 22 degree face inclination angle into a light blue hatched test material. In the lower view, accompanied by x and y coordinate axes on the left, dashed projection lines align the indenter with the resulting square impression on the light blue hatched surface, where two perpendicular double-headed arrows measure the indentation diagonals labeled d1 and d2.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Vickers-path.svg}{User A1 at English Wikipedia}, \href{https://creativecommons.org/licenses/by-sa/3.0}{CC BY-SA 3.0}, via Wikimedia Commons}{Vickers_path}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\subsection{Rockwell Hardness}
+
+\begin{frame}
+	\frametitle{Rockwell History (1 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item 1908--Paul Ludwik
+                    \begin{itemize}
+                        \item Differential depth hardness
+                        \item Hardness can be determined by the difference in depth between a minor load and a major load
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.5\linewidth}{A black textured Clark Rockwell hardness testing machine resting on a red workbench against a gray wall, featuring a circular depth indicator dial gauge mounted at the front top, a side load-application lever, a vertical elevating screw column with a spoked handwheel and flat circular anvil below, a reference chart plate on the C-frame, and stacked cylindrical weights suspended on the back.}{}{RockwellTester}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Rockwell History (2 of 2)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item 1914--Hugh and Stanley Rockwell
+                    \begin{itemize}
+                        \item First patent for a differential depth hardness machine
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.5\linewidth}{A black textured Clark Rockwell hardness testing machine resting on a red workbench against a gray wall, featuring a circular depth indicator dial gauge mounted at the front top, a side load-application lever, a vertical elevating screw column with a spoked handwheel and flat circular anvil below, a reference chart plate on the C-frame, and stacked cylindrical weights suspended on the back.}{}{RockwellTester}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{test}
+
+    \resizebox{0.5\linewidth}{!}{
+        \input{../assets/diagrams/Hardness_Rockwell.tex}
+    }
+\end{frame}
+
 
 % \begin{frame}
 % 	\frametitle{Rockwell Hardness Test}

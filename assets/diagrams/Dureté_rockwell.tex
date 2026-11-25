@@ -1,0 +1,69 @@
+% Required libraries in your preamble:
+% \usepackage{tikz}
+% \usetikzlibrary{arrows.meta}
+
+\begin{tikzpicture}[
+    >=Stealth,
+    line cap=round,
+    line join=round,
+    font=\sffamily
+]
+
+% --- Geometry Parameters ---
+\def\R{1.15}          % Sphere radius
+\def\blockW{2.80}     % Specimen block width
+\def\blockTop{0.14}   % Top edge of specimen block
+\def\yOne{0.00}       % Stage 1 indentation level (minor load)
+\def\yThree{-0.22}    % Stage 3 indentation level (final depth)
+\def\yTwo{-0.44}      % Stage 2 indentation level (major load / block bottom)
+
+% --- Coordinate Axes (Bottom Left) ---
+\draw[BakerBlack, line width=0.6pt, <->]
+    (0.20, 1.30) node[left, yshift=-2pt] {z} -- (0.20, 0.35) -- (0.95, 0.35) node[above, xshift=-5pt] {x};
+
+% --- Three Stages of the Rockwell Hardness Test ---
+\foreach \cx/\ybot/\arrLen in {
+    2.60/\yOne/1.35,
+    5.60/\yTwo/1.45,
+    8.60/\yThree/1.35
+} {
+    % Specimen Block (Abbey fill + diagonal hatching)
+    \begin{scope}
+        \path[fill=Abbey!55] (\cx - \blockW/2, \yTwo) rectangle (\cx + \blockW/2, \blockTop);
+        \clip (\cx - \blockW/2, \yTwo) rectangle (\cx + \blockW/2, \blockTop);
+        \foreach \i in {-2.0, -1.8, ..., 2.0} {
+            \draw[Abbey, line width=0.45pt]
+                (\cx + \i - 0.5, \blockTop + 0.1) -- (\cx + \i + 0.5, \yTwo - 0.1);
+        }
+    \end{scope}
+
+    % Indenter Sphere (Solid HoneyYellow)
+    \pgfmathsetmacro{\cy}{\ybot + \R}
+    \fill[HoneyYellow] (\cx, \cy) circle (\R);
+
+    % Diameter Arrow inside Sphere
+    \draw[BakerBlack, line width=0.55pt, <->]
+        ({\cx + \R*cos(212)}, {\cy + \R*sin(212)}) -- ({\cx + \R*cos(32)}, {\cy + \R*sin(32)});
+
+    % Applied Force Arrow above Sphere
+    \pgfmathsetmacro{\ytop}{\cy + \R + 0.06}
+    \draw[BakerBlack, line width=0.9pt, ->]
+        (\cx, \ytop + \arrLen) -- (\cx, \ytop);
+}
+
+% --- Horizontal Reference Depth Lines ---
+\def\xLeft{1.05}
+\def\xRight{10.15}
+\draw[BakerBlack, line width=0.55pt] (\xLeft, \yOne)   -- (\xRight, \yOne);
+\draw[BakerBlack, line width=0.55pt] (\xLeft, \yThree) -- (\xRight, \yThree);
+\draw[BakerBlack, line width=0.55pt] (\xLeft, \yTwo)   -- (\xRight, \yTwo);
+
+% --- Vertical Depth-Difference Arrows ---
+% Left side: incremental depths
+\draw[BakerBlack, line width=0.45pt, <->] (\xLeft + 0.05, \yOne)   -- (\xLeft + 0.05, \yThree);
+\draw[BakerBlack, line width=0.45pt, <->] (\xLeft + 0.05, \yThree) -- (\xLeft + 0.05, \yTwo);
+
+% Right side: total depth under major load
+\draw[BakerBlack, line width=0.45pt, <->] (\xRight - 0.05, \yOne)  -- (\xRight - 0.05, \yTwo);
+
+\end{tikzpicture}
