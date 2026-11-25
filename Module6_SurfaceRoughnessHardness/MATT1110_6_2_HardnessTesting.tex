@@ -304,7 +304,7 @@
             \begin{itemize}[<+- | alert@+>]
                 \item Almost pure iron
                 \item Soft and ductile
-                \item Called the alpha (\alpha{}) phase
+                \item Called the alpha ($\alpha$) phase
                 \item Does not harden when quenched, but crystals get smaller
             \end{itemize}
         \end{column}
@@ -1002,231 +1002,281 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{test}
+	\frametitle{Rockwell Hardness Test}
 
-    \resizebox{0.5\linewidth}{!}{
-        \input{../assets/diagrams/Hardness_Rockwell.tex}
-    }
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item 4 step test:
+                    \begin{enumerate}
+                        \item Apply a \emph{minor force}
+                        \item Apply a \emph{major foce}
+                        \item Dwell time
+                        \item Release major force
+                    \end{enumerate}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \begin{figure}
+                \centering
+                \resizebox{\linewidth}{!}{
+                    \input{../assets/diagrams/Hardness_Rockwell.tex}
+                }
+            \end{figure}
+        \end{column}
+    \end{columns}
 \end{frame}
 
+\begin{frame}
+    \frametitle{Rockwell Test Step 1}
 
-% \begin{frame}
-% 	\frametitle{Rockwell Hardness Test}
-%     \begin{columns}
-%         \begin{column}{0.48\linewidth}
-%             \begin{itemize}[<+- | alert@+>]
-%                 \item{4 step test:}
-%                     \begin{enumerate}
-%                         \item{Apply a \textbf{minor force}}
-%                         \item{Apply a \textbf{major foce}}
-%                         \item{Dwell time}
-%                         \item{Release major force}
-%                     \end{enumerate}
-%             \end{itemize}
-%         \end{column}
-%         \begin{column}{0.48\linewidth}
-%             \begin{figure}
-%                 \centering
-%                 \includegraphics[width=0.9\columnwidth]{640px-Dureté_rockwell}
-%                 \caption*{\cite{RockwellTest}}
-%             \end{figure}
-%         \end{column}
-%     \end{columns}
-% \end{frame}
+    \begin{figure}
+        \centering
+        \resizebox{\linewidth}{!}{
+            \input{../assets/diagrams/Hardness_Rockwell.tex}
+        }
 
-% \begin{frame}
-% 	\frametitle{Minor Force}
-%     \begin{columns}
-%         \begin{column}{0.48\linewidth}
-%             \begin{itemize}[<+- | alert@+>]
-%                 \item{Depends on which Rockwell test is being performed}
-%                     \begin{itemize}
-%                         \item{Rockwell minor force = 10 kgf (98 N, 22 lb)}
-%                         \item{Superficial Rockwell minor force = 3 kgf (29 N, 6.6 lb)}
-%                     \end{itemize}
-%             \end{itemize}
-%         \end{column}
-%         \begin{column}{0.48\linewidth}
-%             \begin{figure}
-%                 \centering
-%                 \includegraphics[width=0.9\columnwidth]{640px-Dureté_rockwell}
-%                 \caption*{\cite{RockwellTest}}
-%             \end{figure}
-%         \end{column}
-%     \end{columns}
-% \end{frame}
+        \vspace{0.5em}
+        {\footnotesize The preload is applied and the indenter presses into the part (note that this diagram is \emph{heavily} exaggerated for clarity)\par}
+    \end{figure}
+\end{frame}
 
-% \begin{frame}
-% 	\frametitle{Major Force}
-%     \begin{columns}
-%         \begin{column}{0.48\linewidth}
-%             \begin{itemize}[<+- | alert@+>]
-%                 \item{Depends on the scale being used}
-%                 \item{Rockwell has 17 different scales}
-%                     \begin{itemize}
-%                         \item{Indenter shape changes}
-%                         \item{Major force changes}
-%                     \end{itemize}
-%             \end{itemize}
-%         \end{column}
-%         \begin{column}{0.48\linewidth}
-%             \begin{figure}
-%                 \centering
-%                 \includegraphics[width=0.9\columnwidth]{640px-Dureté_rockwell}
-%                 \caption*{\cite{RockwellTest}}
-%             \end{figure}
-%         \end{column}
-%     \end{columns}
-% \end{frame}
+\begin{frame}
+    \frametitle{Rockwell Test Step 2}
 
-% \begin{frame}
-% 	\frametitle{Dwell Time}
-%     \begin{columns}
-%         \begin{column}{0.48\linewidth}
-%             \begin{itemize}[<+- | alert@+>]
-%                 \item{We're introducing stress into the material}
-%                 \item{Stress = energy transfer}
-%                 \item{Energy transfer takes time}
-%                 \item{No defined time, we just need to give the material time to settle}
-%                     \begin{itemize}
-%                         \item{Usually >5s}
-%                     \end{itemize}
-%             \end{itemize}
-%         \end{column}
-%         \begin{column}{0.48\linewidth}
-%             \begin{figure}
-%                 \centering
-%                 \includegraphics[width=0.9\columnwidth]{640px-Dureté_rockwell}
-%                 \caption*{\cite{RockwellTest}}
-%             \end{figure}
-%         \end{column}
-%     \end{columns}
-% \end{frame}
+    \begin{figure}
+        \centering
+        \resizebox{\linewidth}{!}{
+            \input{../assets/diagrams/Hardness_Rockwell.tex}
+        }
 
-% \begin{frame}
-% 	\frametitle{Remove Major Force}
-%     \begin{columns}
-%         \begin{column}{0.48\linewidth}
-%             \begin{itemize}[<+- | alert@+>]
-%                 \item{Material has been permanently deformed under the major force}
-%                 \item{Some material will rebound leaving \textbf{only} the permanent deformation}
-%             \end{itemize}
-%         \end{column}
-%         \begin{column}{0.48\linewidth}
-%             \begin{figure}
-%                 \centering
-%                 \includegraphics[width=0.8\columnwidth]{360px-Rockwell_hardness_tester_closeup_001}
-%                 \caption*{\cite{RockwellCloseup}}
-%             \end{figure}
-%         \end{column}
-%     \end{columns}
-% \end{frame}
+        \vspace{0.5em}
+        {\footnotesize The major load is applied and the indenter drives into the part\par}
+    \end{figure}
+\end{frame}
 
-% \begin{frame}
-% 	\frametitle{Remove Major Force}
-%     \begin{columns}
-%         \begin{column}{0.48\linewidth}
-%             \begin{itemize}[<+- | alert@+>]
-%                 \item{The minor load is still applied -- difference in height equates to the hardness}
-%                 \item{There \textbf{is} math involved, but it doesn't matter -- the scale on the tester gives hardness}
-%                 \item{Rockwell hardness is unitless}
-%             \end{itemize}
-%         \end{column}
-%         \begin{column}{0.48\linewidth}
-%             \begin{figure}
-%                 \centering
-%                 \includegraphics[width=0.8\columnwidth]{360px-Rockwell_hardness_tester_closeup_001}
-%                 \caption*{\cite{RockwellCloseup}}
-%             \end{figure}
-%         \end{column}
-%     \end{columns}
-% \end{frame}
+\begin{frame}
+    \frametitle{Rockwell Test Step 3}
 
-% \begin{frame}
-% 	\frametitle{Rockwell Hardness Scales}
-%     \begin{columns}
-%         \begin{column}{0.48\linewidth}
-%             \begin{itemize}[<+- | alert@+>]
-%                 \item{Rockwell has a total of 21 scales}
-%                     \begin{itemize}
-%                         \item{6 are superficial}
-%                         \item{Most common are B and C}
-%                     \end{itemize}
-%                 \item{Intended to measure different hardnesses}
-%                 \item{Indenter shape and major force change}
-%             \end{itemize}
-%         \end{column}
-%         \begin{column}{0.48\linewidth}
-%             \begin{figure}
-%                 \centering
-%                 \includegraphics[width=0.8\columnwidth]{360px-Rockwell_hardness_tester_001}
-%                 \caption*{\cite{RockwellMachine}}
-%             \end{figure}
-%         \end{column}
-%     \end{columns}
-% \end{frame}
+    \begin{figure}
+        \centering
+        \resizebox{\linewidth}{!}{
+            \input{../assets/diagrams/Hardness_Rockwell.tex}
+        }
 
-% \begin{frame}
-% 	\frametitle{Rockwell Hardness Scales}
-%     \begin{table}
-%         \centering
-%         \resizebox{\linewidth}{!}{
-%         \begin{tabular}{cccp{1in}p{3in}}
-%             \toprule
-%                 Scale&Abbreviation&Major Load (kgf)&Indenter&Use\\
-%             \midrule
-%                 A   &   HRA &   60  &   spheroconical diamond   &   Cemented carbides, thin steel, shallow case-hardened steel\\
-%                 B   &   HRB &   100  &   1/16 in ball   &   Copper alloys, soft steels, aluminum alloys, malleable iron\\
-%                 C   &   HRC &   150  &   spheroconical diamond   &   Steel, hard cast irons, pearlitic malleable iron, titanium, deep case-hardened steel, other materials harder than 100 HRB\\
-%                 D   &   HRD &   100  &   spheroconical diamond   &   Thin steel and medium case-hardened steel and pearlitic malleable cast iron\\
-%                 E   &   HRE &   100  &   1/8 in ball   &   Cast iron, aluminum and magnesium alloys, bearing metals, thermoset plastics\\
-%                 F   &   HRF &   60  &   1/16 in ball   &   Annealed copper alloy, thin soft sheet metals\\
-%                 G   &   HRG &   150  &   1/16 in ball   &   Phosphor bronze, beryllium copper, malleable irons\\
-%             \bottomrule                
-%         \end{tabular}
-%         }
-%     \end{table}
-% \end{frame}
+        \vspace{0.5em}
+        {\footnotesize We need the part to permanently deform, which takes time. The exact dwell time depends on the standard used, but is typically \qtyrange{2}{6}{\second}.\par}
+    \end{figure}
+\end{frame}
 
-% \begin{frame}
-% 	\frametitle{Rockwell Hardness Scales}
-%     \begin{table}
-%         \centering
-%         \resizebox{\linewidth}{!}{
-%         \begin{tabular}{cccp{1in}p{3in}}
-%             \toprule
-%                 Scale&Abbreviation&Major Load (kgf)&Indenter&Use\\
-%             \midrule
-%                 H   &   HRH &   60  &   1/8 in ball   &   Aluminum, Zinc, Lead\\
-%                 K   &   HRK &   150  &   1/8 in ball   &   Bearing alloy, tin, hard plastic materials\\
-%                 L   &   HRL &   60  &   1/4 in ball   &   Bearing metals and other very soft or thin materials\\
-%                 M   &   HRM &   100  &   1/4 in ball   &   Thermoplastics, bearing metals and other very soft or thin materials\\
-%                 P   &   HRP &   150  &   1/4 in ball   &   Bearing metals and other very soft or thin materials\\
-%                 R   &   HRR &   60  &   1/2 in ball   &   Thermoplastics, bearing metals, and other very soft or thin materials\\
-%                 S   &   HRS &   100  &   1/2 in ball   &   Bearing metals and other very soft or thin materials\\
-%                 V   &   HRV &   150  &   1/2 in ball   &   Bearing metals and other very soft or thin materials\\
-%             \bottomrule                
-%         \end{tabular}
-%         }
-%     \end{table}
-% \end{frame}
+\begin{frame}
+    \frametitle{Rockwell Test Step 4}
 
-% \begin{frame}
-% 	\frametitle{Rockwell Hardness Scales}
-%     \begin{table}
-%         \centering
-%         \resizebox{\linewidth}{!}{
-%         \begin{tabular}{cccp{1in}p{3in}}
-%             \toprule
-%                 Scale&Abbreviation&Major Load (kgf)&Indenter&Use\\
-%             \midrule
-%                 \multicolumn{2}{c}{15T, 30T, 45T} &   60  &   1/16 in ball   &   Superficial: for soft coatings\\
-%                 \multicolumn{2}{c}{15N, 30N, 45N}   &   150  &   spheroconical diamond   &   Superficial: for case-hardened materials\\
-%             \bottomrule                
-%         \end{tabular}
-%         }
-%     \end{table}
-% \end{frame}
+    \begin{figure}
+        \centering
+        \resizebox{\linewidth}{!}{
+            \input{../assets/diagrams/Hardness_Rockwell.tex}
+        }
+
+        \vspace{0.5em}
+        {\footnotesize When the major force is released the part will rebound. The difference between this height and the original preload height is used to calculate the hardness.\par}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Minor Force}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Depends on which Rockwell test is being performed
+                    \begin{itemize}
+                        \item Rockwell minor force = \qty{10}{\kilogram{}f} (\qty{98}{\newton}, \qty{22}{lb})
+                        \item Superficial Rockwell minor force = \qty{3}{\kilogram{}f} (\qty{29}{\newton}, \qty{6.6}{lb})
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.5\linewidth}{A black textured Clark Rockwell hardness testing machine resting on a red workbench against a gray wall, featuring a circular depth indicator dial gauge mounted at the front top, a side load-application lever, a vertical elevating screw column with a spoked handwheel and flat circular anvil below, a reference chart plate on the C-frame, and stacked cylindrical weights suspended on the back.}{}{RockwellTester}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Major Force}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Depends on the scale being used
+                \item Rockwell has 17 different scales
+                    \begin{itemize}
+                        \item Indenter shape changes
+                        \item Major force changes
+                    \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.5\linewidth}{A black textured Clark Rockwell hardness testing machine resting on a red workbench against a gray wall, featuring a circular depth indicator dial gauge mounted at the front top, a side load-application lever, a vertical elevating screw column with a spoked handwheel and flat circular anvil below, a reference chart plate on the C-frame, and stacked cylindrical weights suspended on the back.}{}{RockwellTester}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Dwell Time}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item We're introducing stress into the material
+                \item Stress = energy transfer
+                \item Energy transfer takes time
+                \item How much time depends on the exact standard
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.5\linewidth}{A black textured Clark Rockwell hardness testing machine resting on a red workbench against a gray wall, featuring a circular depth indicator dial gauge mounted at the front top, a side load-application lever, a vertical elevating screw column with a spoked handwheel and flat circular anvil below, a reference chart plate on the C-frame, and stacked cylindrical weights suspended on the back.}{}{RockwellTester}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Remove Major Force}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Material has been permanently deformed under the major force
+                \item Some material will rebound leaving \emph{only} the permanent deformation
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.5\linewidth}{A close-up photograph of a Rockwell hardness testing machine in a workshop setting, focusing on the conical indenter tip with a side thumbscrew suspended above a flat circular steel specimen anvil, while two metal instruction plates mounted on the black textured C-frame to the right display minor load directions and a reference table of hardness scale symbols, penetrators, loads, and dial figures.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Rockwell_hardness_tester_closeup_001.jpg}{Three-quarter-ten}, \href{https://creativecommons.org/licenses/by-sa/3.0}{CC BY-SA 3.0}, via Wikimedia Commons}{Rockwell_hardness_tester_closeup_001}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Rockwell Hardness Number}
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item The minor load is still applied--difference in height equates to the hardness
+                \item There \emph{is} math involved, but it doesn't matter
+                \item The math is built into the scale on the tester
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.5\linewidth}{A close-up photograph of a Rockwell hardness testing machine in a workshop setting, focusing on the conical indenter tip with a side thumbscrew suspended above a flat circular steel specimen anvil, while two metal instruction plates mounted on the black textured C-frame to the right display minor load directions and a reference table of hardness scale symbols, penetrators, loads, and dial figures.}{\textbf{Attribution:} \href{https://commons.wikimedia.org/wiki/File:Rockwell_hardness_tester_closeup_001.jpg}{Three-quarter-ten}, \href{https://creativecommons.org/licenses/by-sa/3.0}{CC BY-SA 3.0}, via Wikimedia Commons}{Rockwell_hardness_tester_closeup_001}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Rockwell Hardness Scales (1 of 4)}
+
+    \begin{columns}
+        \begin{column}{0.48\linewidth}
+            \begin{itemize}[<+- | alert@+>]
+                \item Rockwell has a total of 21 scales
+                    \begin{itemize}
+                        \item 6 are superficial
+                        \item Most common are B and C
+                    \end{itemize}
+                \item Indenter shape and major force change
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.48\linewidth}
+            \shadowpic[]{0.5\linewidth}{A black textured Clark Rockwell hardness testing machine resting on a red workbench against a gray wall, featuring a circular depth indicator dial gauge mounted at the front top, a side load-application lever, a vertical elevating screw column with a spoked handwheel and flat circular anvil below, a reference chart plate on the C-frame, and stacked cylindrical weights suspended on the back.}{}{RockwellTester}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Rockwell Hardness Scales (2 of 4)}
+
+    \begin{table}
+        \tagpdfsetup{table/header-rows={1}}
+        \centering
+        \footnotesize
+        \setlength{\tabcolsep}{4pt}
+        \begin{tabularx}{\linewidth}{
+            c
+            c
+            c
+            >{\hsize=0.65\hsize\raggedright\arraybackslash}X
+            >{\hsize=1.35\hsize\raggedright\arraybackslash}X
+        }
+            \toprule
+                Scale & Abbr. & Load (kgf) & Indenter & Use \\
+            \midrule
+                A & HRA & 60  & spheroconical diamond & Cemented carbides, thin steel, shallow case-hardened steel \\
+                B & HRB & 100 & 1/16 in ball          & Copper alloys, soft steels, aluminum alloys, malleable iron \\
+                C & HRC & 150 & spheroconical diamond & Steel, hard cast irons, pearlitic malleable iron, titanium, deep case-hardened steel, materials harder than 100 HRB \\
+                D & HRD & 100 & spheroconical diamond & Thin steel, medium case-hardened steel, pearlitic malleable cast iron \\
+                E & HRE & 100 & 1/8 in ball           & Cast iron, aluminum and magnesium alloys, bearing metals, thermoset plastics \\
+                F & HRF & 60  & 1/16 in ball          & Annealed copper alloy, thin soft sheet metals \\
+                G & HRG & 150 & 1/16 in ball          & Phosphor bronze, beryllium copper, malleable irons \\
+            \bottomrule
+        \end{tabularx}
+    \end{table}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Rockwell Hardness Scales (3 of 4)}
+
+    \begin{table}
+        \tagpdfsetup{table/header-rows={1}}
+        \centering
+        \footnotesize
+        \setlength{\tabcolsep}{4pt}
+        \begin{tabularx}{\linewidth}{
+            c
+            c
+            c
+            >{\hsize=0.65\hsize\raggedright\arraybackslash}X
+            >{\hsize=1.35\hsize\raggedright\arraybackslash}X
+        }
+            \toprule
+                Scale & Abbr. & Load (kgf) & Indenter & Use \\
+            \midrule
+                H   &   HRH &   60  &   1/8 in ball   &   Aluminum, Zinc, Lead\\
+                K   &   HRK &   150  &   1/8 in ball   &   Bearing alloy, tin, hard plastic materials\\
+                L   &   HRL &   60  &   1/4 in ball   &   Bearing metals and other very soft or thin materials\\
+                M   &   HRM &   100  &   1/4 in ball   &   Thermoplastics, bearing metals and other very soft or thin materials\\
+                P   &   HRP &   150  &   1/4 in ball   &   Bearing metals and other very soft or thin materials\\
+                R   &   HRR &   60  &   1/2 in ball   &   Thermoplastics, bearing metals, and other very soft or thin materials\\
+                S   &   HRS &   100  &   1/2 in ball   &   Bearing metals and other very soft or thin materials\\
+                V   &   HRV &   150  &   1/2 in ball   &   Bearing metals and other very soft or thin materials\\
+            \bottomrule
+        \end{tabularx}
+    \end{table}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Rockwell Hardness Scales (4 of 4)}
+
+    \begin{table}
+        \tagpdfsetup{table/header-rows={1}}
+        \centering
+        \footnotesize
+        \setlength{\tabcolsep}{4pt}
+        \begin{tabularx}{\linewidth}{
+            c
+            c
+            c
+            >{\hsize=0.65\hsize\raggedright\arraybackslash}X
+            >{\hsize=1.35\hsize\raggedright\arraybackslash}X
+        }
+            \toprule
+                Scale & Abbr. & Load (kgf) & Indenter & Use \\
+            \midrule
+                \multicolumn{2}{c}{15T, 30T, 45T} &   60  &   1/16 in ball   &   Superficial: for soft coatings\\
+                \multicolumn{2}{c}{15N, 30N, 45N}   &   150  &   spheroconical diamond   &   Superficial: for case-hardened materials\\
+            \bottomrule
+        \end{tabularx}
+    \end{table}
+\end{frame}
 
 \begin{frame}
     \centering

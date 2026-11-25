@@ -1,32 +1,299 @@
 \begin{circuitikz}[
     american, 
     >={Latex[length=5mm, width=2mm]},
-    alt={A right triangle outlined in thick red and filled with semi-transparent light red, with its right angle at the bottom right vertex indicated by a red square corner marker, its horizontal bottom leg labeled B, its vertical right leg labeled A, its hypotenuse labeled C, its top angle marked with a thin black arc labeled beta, and its bottom left angle marked with a thin black arc labeled alpha.}
+    alt={Four-step indentation test diagram showing a spherical indenter pressing into a flat test plate from left to right. Step 1, Preload: downward force F0 pushes the indenter to an initial dashed reference depth. Step 2, Preload plus Major Load: a larger downward force F0 plus F1 drives the indenter to a deeper dashed full-load depth. Step 3, Dwell: a leader between the second and third plates indicates the dwell period under major load. Step 4, Rebound: removing the major load while maintaining F0 allows the indenter to rise to an intermediate settled depth, with dimension arrows marking the permanent indentation depth h between the initial preload line and the final rebound line.}
     ]
 
-    \def\plateHeight{3}
-    \def\plateWidth{10}
-    \def\ballDiameter{5}
+    \def\plateHeight{2cm}
+    \def\plateWidth{6cm}
+    \def\ballDiameter{4cm}
+    \pgfmathsetlengthmacro{\plateShiftA}{\plateWidth + 2cm}
+    \pgfmathsetlengthmacro{\plateShiftB}{\plateShiftA * 2}
+    
+    \begin{pgfonlayer}{bg}
+        \node[
+            draw=BakerBlack,
+            fill=Iron1,
+            fill opacity=0.5,
+            minimum height=\plateHeight,
+            minimum width=\plateWidth,
+            anchor=south west
+        ](plate1)
+        at (0,0)
+        {};
 
-    \node[
-        draw=BakerBlack,
-        fill=Abbey,
-        pattern=crosshatch,
-        pattern color=BakerBlack,
-        minimum height=\plateHeight cm,
-        minimum width=\plateWidth cm
-    ](plate1)
-    at (0,0)
-    {};
+        \node[
+            text=BakerBlack,
+            anchor=north,
+            align=center
+        ]
+        at (plate1.south)
+        {Step 1:\\Preload};
+    \end{pgfonlayer}
 
+    \begin{pgfonlayer}{main}
+    
+        \path 
+        (plate1.north west) 
+        -- (plate1.south west) 
+        coordinate[pos=0.25](plate1Preload);
+
+    \draw[
+        BakerADARed,
+        dashed,
+        dash pattern=on 6pt off 6pt,
+    ]
+    ([xshift=-0.5cm]plate1Preload)
+    -- ([xshift=0.5cm]plate1Preload -| plate1.east)
+    coordinate[pos=0.5](plate1Preloadmid);
+
+    \end{pgfonlayer}
+
+    \begin{pgfonlayer}{ft}
+        \node[
+            draw=BakerBlack,
+            fill=LakeBlue,
+            circle,
+            minimum size=\ballDiameter,
+            anchor=south
+        ](ball1)
+        at(plate1Preloadmid)
+        {};
+
+        \draw[
+            UpNorthGreen,
+            ultra thick,
+            <-
+        ]
+        (ball1.north)
+        -- ++(0,1)
+        node[
+            text=BakerBlack,
+            anchor=south
+        ]{$F_0$};
+    \end{pgfonlayer}
+
+    \begin{scope}[xshift=\plateShiftA]
+        \begin{pgfonlayer}{bg}
+            \node[
+                draw=BakerBlack,
+                fill=Iron1,
+                fill opacity=0.5,
+                minimum height=\plateHeight,
+                minimum width=\plateWidth,
+                anchor=south west
+            ](plate2)
+            at (0,0)
+            {};
+
+            \node[
+                text=BakerBlack,
+                anchor=north,
+                align=center
+            ](step2Lab)
+            at (plate2.south)
+            {Step 2:\\Preload + Major Load};
+        \end{pgfonlayer}
+
+        \begin{pgfonlayer}{main}
+        
+            \path 
+            (plate2.north west) 
+            -- (plate2.south west) 
+            coordinate[pos=0.25](plate2Preload)
+            coordinate[pos=0.75](plate2FullLoad);
+
+            \draw[
+                BakerADARed,
+                dashed,
+                dash pattern=on 6pt off 6pt,
+            ]
+            ([xshift=-0.5cm]plate2Preload)
+            -- ([xshift=0.5cm]plate2Preload -| plate2.east)
+            coordinate[pos=0.5](plate2Preloadmid);
+
+            \draw[
+                BakerADARed,
+                dashed,
+                dash pattern=on 6pt off 6pt,
+            ]
+            ([xshift=-0.5cm]plate2FullLoad)
+            -- ([xshift=0.5cm]plate2FullLoad -| plate2.east)
+            coordinate[pos=0.5](plate2FullLoadmid);
+
+        \end{pgfonlayer}
+
+        \begin{pgfonlayer}{ft}
+            \node[
+                draw=BakerBlack,
+                fill=LakeBlue,
+                circle,
+                minimum size=\ballDiameter,
+                anchor=south
+            ](ball2)
+            at(plate2FullLoadmid)
+            {};
+
+            \draw[
+                UpNorthGreen,
+                line width=3pt,
+                >={Latex[length=7mm, width=4mm]},
+                <-
+            ]
+            (ball2.north)
+            -- ++(0,3)
+            node[
+                text=BakerBlack,
+                anchor=south
+            ]{$F_0+F_1$};
+        \end{pgfonlayer}
+    \end{scope}
+
+    \begin{scope}[xshift=\plateShiftB]
+
+        \begin{pgfonlayer}{bg}
+            \node[
+                draw=BakerBlack,
+                fill=Iron1,
+                fill opacity=0.5,
+                minimum height=\plateHeight,
+                minimum width=\plateWidth,
+                anchor=south west
+            ](plate3)
+            at (0,0)
+            {};
+
+            \node[
+                text=BakerBlack,
+                anchor=north,
+                align=center
+            ](step4Lab)
+            at (plate3.south)
+            {Step 4:\\Rebound};
+        \end{pgfonlayer}
+
+        \begin{pgfonlayer}{main}
+        
+            \path 
+            (plate3.north west) 
+            -- (plate3.south west) 
+            coordinate[pos=0.25](plate3Preload)
+            coordinate[pos=0.5](plate3Settle)
+            coordinate[pos=0.75](plate3FullLoad);
+
+            \draw[
+                BakerADARed,
+                dashed,
+                dash pattern=on 6pt off 6pt,
+            ]
+            ([xshift=-0.5cm]plate3Preload)
+            -- ([xshift=0.5cm]plate3Preload -| plate3.east)
+            coordinate[pos=0.5](plate3Preloadmid)
+            coordinate(h1);
+
+            \draw[
+                BakerADARed,
+                dashed,
+                dash pattern=on 6pt off 6pt,
+            ]
+            ([xshift=-0.5cm]plate3FullLoad)
+            -- ([xshift=0.5cm]plate3FullLoad -| plate3.east)
+            coordinate[pos=0.5](plate3FullLoadmid);
+
+            \draw[
+                BakerADARed,
+                dashed,
+                dash pattern=on 6pt off 6pt,
+            ]
+            ([xshift=-0.5cm]plate3Settle)
+            -- ([xshift=0.5cm]plate3Settle -| plate3.east)
+            coordinate[pos=0.5](plate3Settlemid)
+            coordinate(h2);
+
+        \end{pgfonlayer}
+
+        \begin{pgfonlayer}{ft}
+            \node[
+                draw=BakerBlack,
+                fill=LakeBlue,
+                circle,
+                minimum size=\ballDiameter,
+                anchor=south
+            ](ball3)
+            at(plate3Settlemid)
+            {};
+
+            \draw[
+                UpNorthGreen,
+                ultra thick,
+                <-
+            ]
+            (ball3.north)
+            -- ++(0,1)
+            node[
+                text=BakerBlack,
+                anchor=south
+            ]{$F_0$};
+
+            \draw[
+                BakerBlack,
+            ]
+            (h1)
+            -- ++(1,0)
+            coordinate[pos=0.5](h1_arrow);
+
+            \draw[
+                BakerBlack,
+            ]
+            (h2)
+            -- ++(1,0)
+            coordinate[pos=0.5](h2_arrow);
+
+            \draw[
+                BakerBlack,
+                <-
+            ]
+            (h1_arrow)
+            -- ++(0,1.5)
+            node[
+                text=BakerBlack,
+                anchor=south
+            ]{$h$};
+
+            \draw[
+                BakerBlack,
+                <-
+            ]
+            (h2_arrow)
+            -- ++(0,-1.5);
+        \end{pgfonlayer}
+
+    \end{scope}
+
+    \path 
+        (plate2.east) 
+        -- (plate3.west)
+        coordinate[pos=0.5](step3Start);
+    
+    \path 
+        (step2Lab.north east) 
+        -- (step4Lab.north west)
+        coordinate[pos=0.5](step3End);
+    
     \node[
-        draw=BakerBlack,
-        fill=LakeBlue,
-        circle,
-        minimum size=\ballDiameter cm,
-        anchor=south
-    ](ball1)
-    at(plate1.center)
-    {};
+        text=BakerBlack,
+        anchor=north,
+        align=center
+    ](step3Lab)
+    at (step3End)
+    {Step 3:\\Dwell};
+
+    \draw[
+        UpNorthGreen,
+        {Circle[length=3mm]}-
+    ]
+    (step3Start)
+    to[out=225, in=180]
+    (step3Lab.west);
 
 \end{circuitikz}
