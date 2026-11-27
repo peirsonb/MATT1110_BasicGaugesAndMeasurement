@@ -1,0 +1,158 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={A technical diagram featuring a sphere of diameter $D$ interacting with a hatched rectangular plate. An upward arrow labeled $F$ points from the top of the sphere. Below, a second view shows a circular indentation zone within a material layer, marked with internal diameter dimensions $d_1$ and $d_2$, with dashed red alignment lines connecting the upper plate edges to the indentation boundaries.}
+    ]
+
+    \def\plateHeight{2cm}
+    \def\plateWidth{6cm}
+    \def\plateDepth{4cm}
+    \def\ballDiameter{6cm}
+    \pgfmathsetlengthmacro{\dentD}{\ballDiameter * 0.375}
+    \pgfmathsetlengthmacro{\dentR}{\dentD / 2}
+    
+    \begin{pgfonlayer}{bg}
+        \node[
+            draw=BakerBlack,
+            preaction={
+                fill=Iron1,
+                %fill opacity=0.5,
+            },
+            pattern={Lines[
+                angle=45,
+                distance=0.25cm
+            ]},
+            pattern color=Abbey,
+            minimum height=\plateHeight,
+            minimum width=\plateWidth,
+            anchor=south west
+        ](plate1)
+        at (0,0)
+        {};
+    \end{pgfonlayer}
+
+    \begin{pgfonlayer}{main}
+
+    \end{pgfonlayer}
+
+    \begin{pgfonlayer}{ft}
+        \node[
+            draw=BakerBlack,
+            fill=LakeBlue,
+            circle,
+            minimum size=\ballDiameter,
+            anchor=south
+        ](ball1)
+        at([yshift=-0.03649*\ballDiameter] plate1.north)
+        {};
+        
+        \draw[
+                UpNorthGreen,
+                line width=3pt,
+                >={Latex[length=7mm, width=4mm]},
+                <-
+            ]
+            (ball1.north)
+            -- ++(0,1.5)
+            node[
+                text=BakerBlack,
+                anchor=south
+            ]{\Large{$F$}};
+    \end{pgfonlayer}
+
+    \begin{scope}[yshift=-1cm]
+
+        \begin{pgfonlayer}{bg}
+
+            \node[
+                draw=BakerBlack,
+                preaction={
+                    fill=Iron1,
+                    %fill opacity=0.5,
+                },
+                pattern={Lines[
+                    angle=45,
+                    distance=0.25cm
+                ]},
+                pattern color=Abbey,
+                minimum height=\plateDepth,
+                minimum width=\plateWidth,
+                anchor=north west
+            ](plate2)
+            at (0,0)
+            {};
+
+        \end{pgfonlayer}
+
+        \begin{pgfonlayer}{main}
+            
+            \node[
+                draw=BakerBlack,
+                ultra thick,
+                fill=Iron1,
+                circle,
+                minimum size=\dentD
+            ](dent)
+            at (plate2.center)
+            {};
+
+        \end{pgfonlayer}
+
+        \begin{pgfonlayer}{ft}
+
+            \draw[
+                BakerBlack,
+                <->
+            ]
+            (ball1.east)
+            -- (ball1.west)
+            node[
+                text=BakerBlack,
+                midway,
+                above
+            ]{$D$};
+            
+            \draw[
+                BakerBlack,
+                <->
+            ]
+            (dent.north east)
+            -- (dent.south west)
+            node[
+                text=BakerBlack,
+                fill=Iron1,
+                anchor=north east
+            ]{$d_1$};
+
+            \draw[
+                BakerBlack,
+                <->
+            ]
+            (dent.north west)
+            -- (dent.south east)
+            node[
+                text=BakerBlack,
+                fill=Iron1,
+                anchor=north west
+            ]{$d_2$};
+
+        \end{pgfonlayer}
+
+    \end{scope}
+
+    \draw[
+        BakerADARed,
+        dashed
+    ]
+    ($(plate1.north)-(\dentR,0)$)
+    -- (dent.west);
+
+    \draw[
+        BakerADARed,
+        dashed
+    ]
+    ($(plate1.north)+(\dentR,0)$)
+    -- (dent.east);
+    
+
+\end{circuitikz}

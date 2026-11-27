@@ -1,0 +1,163 @@
+\begin{circuitikz}[
+    american, 
+    >={Latex[length=5mm, width=2mm]},
+    alt={A technical diagram illustrating a hardness test or indentation process. A wedge-shaped indenter with a trapezoidal body, subjected to an upward force vector $F$, is aligned above two hatched rectangular material layers. In the lower layer, a diamond-shaped indentation is marked with orthogonal dimensions $d_1$ and $d_2$, and dashed red lines project the corners of the upper indenter down to the indentation footprint.}
+    ]
+
+    \def\plateHeight{2cm}
+    \def\plateWidth{6cm}
+    \def\plateDepth{4cm}
+    \def\indenterWidth{3cm}
+    \def\bodyHeight{1cm}
+    %\pgfmathsetlengthmacro{\longSide}{\indenterWidth + 2 * \indenterWidth * tan(30)}
+    \pgfmathsetlengthmacro{\bodyWidth}{\indenterWidth + 2 * \bodyHeight * tan(60)}
+    \pgfmathsetlengthmacro{\dentDiag}{\indenterWidth * cos(45)}
+    
+    \begin{pgfonlayer}{ft}
+
+        \node[
+            draw=BakerBlack,
+            fill=HoneyYellow,
+            isosceles triangle,
+            isosceles triangle apex angle=136,
+            minimum width=\indenterWidth,
+            inner sep=0,
+            shape border rotate=-90,
+            anchor=lower side
+        ](diamond)
+        at (0,0)
+        {};
+
+        \draw[
+            BakerBlack
+        ]
+        (diamond.apex)
+        -- (diamond.lower side);
+
+        %\tikzset{trapezium stretches=true}
+        \node[
+            draw=BakerBlack,
+            fill=HoneyYellow,
+            trapezium,
+            minimum width=\bodyWidth,
+            %minimum height=\bodyHeight,
+            %inner sep=0,
+            shape border rotate=180,
+            anchor=top side
+        ](body)
+        at (diamond.lower side)
+        {};
+
+    \end{pgfonlayer}
+
+    \begin{pgfonlayer}{bg}
+        
+        \node[
+            draw=BakerBlack,
+            preaction={
+                fill=Iron1,
+                %fill opacity=0.5,
+            },
+            pattern={Lines[
+                angle=45,
+                distance=0.25cm
+            ]},
+            pattern color=Abbey,
+            minimum height=\plateHeight,
+            minimum width=\plateWidth,
+            anchor=north
+        ](plate1)
+        at (diamond.lower side)
+        {};
+
+        \node[
+            draw=BakerBlack,
+            preaction={
+                fill=Iron1,
+                %fill opacity=0.5,
+            },
+            pattern={Lines[
+                angle=45,
+                distance=0.25cm
+            ]},
+            pattern color=Abbey,
+            minimum height=\plateDepth,
+            minimum width=\plateWidth,
+            anchor=north
+        ](plate2)
+        at ([yshift=-1cm]plate1.south)
+        {};
+
+    \end{pgfonlayer}   
+
+    \begin{pgfonlayer}{main}
+
+        \node[
+            draw=BakerBlack,
+            fill=Iron1,
+            diamond,
+            minimum height=\indenterWidth,            
+            minimum width=\indenterWidth,
+            inner sep=0,
+        ](dent)
+        at (plate2.center)
+        {};
+
+        \draw[
+            BakerADARed,
+            dashed
+        ]
+        (diamond.left corner)
+        -- (dent.east);
+
+        \draw[
+            BakerADARed,
+            dashed
+        ]
+        (diamond.right corner)
+        -- (dent.west);
+
+        \draw[
+            BakerBlack,
+            <->
+        ]
+        (dent.east)
+        -- (dent.west)
+        node[
+            left,
+            text=BakerBlack,
+            fill=Iron1
+        ]{$d_1$};
+
+        \draw[
+            BakerBlack,
+            <->
+        ]
+        (dent.north)
+        -- (dent.south)
+        node[
+            below,
+            text=BakerBlack,
+            fill=Iron1
+        ]{$d_2$};
+
+        \draw[
+            UpNorthGreen,
+            line width=3pt,
+            >={Latex[length=7mm, width=4mm]},
+            <-
+        ]
+        (body.bottom side)
+        -- ++(0,1.5)
+        node[
+            text=BakerBlack,
+            anchor=south
+        ]{\Large{$F$}};
+
+    \end{pgfonlayer}
+
+    
+
+     
+
+\end{circuitikz}
